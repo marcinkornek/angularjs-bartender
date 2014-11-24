@@ -49,3 +49,17 @@ en:
 
   # CATEGORIES
   "CATEGORIES_INDEX_TITLE": "Categories"
+
+  # FOOD
+  "FOOD_INDEX_TITLE": "Food"
+
+  "FOOD_SHOW_NAME": "Name"
+  "FOOD_SHOW_SIZE": "Size"
+  "FOOD_SHOW_PRICE": "Price"
+  "FOOD_SHOW_FOOD_ORDER": "Order"
+  "FOOD_SHOW_FOOD_AMOUNT_ERROR": "Amount is required"
+  "FOOD_SHOW_FOOD_AMOUNT": "Amount"
+  "FOOD_SHOW_FOOD_AMOUNT_PLACEHOLDER": "Type amount"
+  "FOOD_SHOW_ORDER_FOOD": "Order food"
+  "FOOD_SHOW_CLEAR_ORDER_FOOD": "Clear order"
+  "FOOD_SHOW_CURRENCY": "zł"

@@ -49,3 +49,17 @@ pl:
 
   # CATEGORIES
   "CATEGORIES_INDEX_TITLE": "Kategorie"
+
+  # FOOD
+  "FOOD_INDEX_TITLE": "Jedzenie"
+
+  "FOOD_SHOW_NAME": "Nazwa"
+  "FOOD_SHOW_SIZE": "Rozmiar"
+  "FOOD_SHOW_PRICE": "Cena"
+  "FOOD_SHOW_FOOD_ORDER": "Zamówienie"
+  "FOOD_SHOW_FOOD_AMOUNT_ERROR": "Ilość jest wymagana"
+  "FOOD_SHOW_FOOD_AMOUNT": "Ilość"
+  "FOOD_SHOW_FOOD_AMOUNT_PLACEHOLDER": "Wybierz ilość"
+  "FOOD_SHOW_ORDER_FOOD": "Zamów jedzenie"
+  "FOOD_SHOW_CLEAR_ORDER_FOOD": "Wyczyść zamówienie"
+  "FOOD_SHOW_CURRENCY": "zł"
