@@ -1,0 +1,11 @@
+.container
+  h1.text-center translate="FOOD_INDEX_TITLE"
+  .categories.align-center
+    row(ng-repeat="food in data.food")
+      .food
+        h3.align-center(ng-click="navFoodShow(food.id)")
+          ' {{ food.name }}
+
+        / .food-image
+        /   img(ng-src="{{ food.image }}" ng-click="navFoodShow(food.id)")
+

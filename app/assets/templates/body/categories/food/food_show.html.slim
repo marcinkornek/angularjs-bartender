@@ -1,0 +1,55 @@
+div ng-show="data.food.error"
+  h1.text-center
+    ' {{ data.food.error }}
+
+
+div ng-hide="data.food.error"
+  .food-data
+    h1.border-bottom
+      ' {{ data.food.name }}
+    .row
+      .col-md-2
+        div ng-show="data.food.image"
+          .food-image
+            img(ng-src="{{data.food.image}}")
+
+      .col-md-10
+        table
+          tr
+            th
+              ' {{ "FOOD_SHOW_NAME" | translate }}:
+            td
+              ' {{ data.food.name }}
+          tr
+            th
+              ' {{ "FOOD_SHOW_SIZE" | translate }}:
+            td
+              ' {{ data.food.size }}
+          tr
+            th
+              ' {{ "FOOD_SHOW_PRICE" | translate }}:
+            td
+              ' {{ data.food.price }}
+
+
+h1
+  ' {{ "FOOD_SHOW_FOOD_ORDER" | translate }}
+
+.errors.text-center
+  div ng-show="foodOrder.amount.$error.required && foodOrder.amount.$dirty"
+    ' {{ "FOOD_SHOW_FOOD_AMOUNT_ERROR" | translate }}
+
+form name="foodOrder"
+  .field
+    label
+      strong
+        ' {{ "FOOD_SHOW_FOOD_AMOUNT" | translate }}
+    input.span12(name="amount" ng-model="formData.amount" required placeholder="{{ 'FOOD_SHOW_FOOD_AMOUNT_PLACEHOLDER' | translate }}" type="number")
+
+  .price ng-show="formData.amount"
+    ' {{ formData.amount * data.food.price }}
+    ' {{ "FOOD_SHOW_CURRENCY" | translate }}
+  button.btn.btn-primary(ng-click="createOrder()")
+    ' {{ "FOOD_SHOW_ORDER_FOOD" | translate }}
+  button.btn.btn-danger(ng-click="clearOrder()")
+    ' {{ "FOOD_SHOW_CLEAR_ORDER_FOOD" | translate }}

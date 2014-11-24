@@ -80,3 +80,56 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "body":   { templateUrl: 'body/about.html' }
       }
     })
+
+
+    # Categories
+
+    .state('categories_index', {
+      url: '/categories',
+      data: {
+        roles: ['User']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'CategoriesIndexCtrl',  templateUrl: 'body/categories/categories_index.html' }
+      }
+    })
+
+    .state('category_show', {
+      url: '/categories/:categoryId',
+      data: {
+        roles: ['User']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'CategoryShowCtrl',  templateUrl: 'body/categories/category_show.html' }
+      }
+    })
+
+
+    # Food
+    .state('food_index', {
+      url: '/food',
+      data: {
+        roles: ['User']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'FoodIndexCtrl',  templateUrl: 'body/categories/food/food_index.html' }
+      }
+    })
+
+    .state('food_show', {
+      url: '/food/:foodId',
+      data: {
+        roles: ['User']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'FoodShowCtrl',  templateUrl: 'body/categories/food/food_show.html' }
+      }
+    })
