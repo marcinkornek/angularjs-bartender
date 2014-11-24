@@ -1,7 +1,7 @@
 class Api::CategoriesController < ApplicationController
 
   def index
-    @categories = Category.all.order(id: :asc)
+    @categories = Category.all
     render json: @categories
   end
 
@@ -15,12 +15,6 @@ class Api::CategoriesController < ApplicationController
 
   def category
     @category ||= Category.find(params[:id])
-  end
-
-  def current_user?
-    unless current_user == post.user
-      render json: {error: 'unpermited user'}, status: :not_acceptable
-    end
   end
 
 end

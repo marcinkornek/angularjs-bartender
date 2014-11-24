@@ -54,8 +54,6 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'UserShowCtrl',     templateUrl: 'body/users/user_show.html' }
-        "posts@user_show":    { controller: 'UserPostsShowCtrl', templateUrl: 'body/users/user_show.posts.html' }
-        "comments@user_view": { controller: 'UserCommentsShowCtrl', templateUrl: 'body/users/user_show.comments.html' }
       }
     })
     .state('user_edit', {
