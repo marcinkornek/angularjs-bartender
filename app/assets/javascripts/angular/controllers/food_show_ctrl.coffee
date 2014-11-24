@@ -1,4 +1,4 @@
-@FoodShowCtrl = ($scope, $stateParams, $state, foodData, orderDetailsData) ->
+@FoodShowCtrl = ($scope, $stateParams, $state, foodData, ordersData) ->
 
   # loading data
 
@@ -25,6 +25,15 @@
     $state.go('home')
 
   $scope.createOrder = ->
+    ordersData.save({}, {amount: $scope.formData.amount, type: 'Food', id: $scope.data.food.id, price: $scope.data.food.price}
+      , (success) =>
+        console.log 'success'
+        console.log success
+        $state.go('home')
+      , (error) ->
+        console.log 'error'
+        console.log error
+    )
 
   $scope.clearOrder = ->
     $scope.formData.amount = ''
@@ -37,4 +46,4 @@
   $scope.navEditFood = (foodId) ->
     $state.go('food_edit', {foodId: foodId})
 
-@FoodShowCtrl.$inject = ['$scope', '$stateParams', '$state', 'foodData', 'orderDetailsData']
+@FoodShowCtrl.$inject = ['$scope', '$stateParams', '$state', 'foodData', 'ordersData']

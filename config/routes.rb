@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :food
     resources :drinks
     resources :snacks
-    resources :order_details
+    resources :orders
     resources :users do
       member do
         get :activate
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get   '/api/check_if_unique_username'  => 'api/users#check_if_unique'
   get   '/auth/:provider/callback'       => 'api/sessions#oauth', as: :oauth
   post  '/api/users/upload'              => 'api/users#avatar_upload'
+  post  '/api/orders/:id'                => 'api/orders#create'
 
 end
 
