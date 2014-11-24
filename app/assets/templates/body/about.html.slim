@@ -1,0 +1,36 @@
+.container(style="margin-top: 40px")
+
+  h1.text-center translate="ABOUT_PAGE_TITLE"
+
+  div
+    .col-md-2.align-center
+      = image_tag 'about.jpg', {size: "101x139", alt: "My photo"}
+
+    .col-md-10
+      ' {{ "ABOUT_ME1" | translate }}
+      br
+      ' {{ "ABOUT_ME2" | translate }}
+      br
+      ' {{ "ABOUT_ME3" | translate }}
+      br
+      li
+        ' HTML
+      li
+        ' CSS
+      li
+        ' JavaScript (CoffeeScript)
+      li
+        ' SQL
+
+      br
+      ' {{ "ABOUT_ME4" | translate }}
+      li
+        a href="https://pine.fm/LearnToProgram" translate="ABOUT_LINK1"
+      li
+        a href="http://www.railstutorial.org" translate="ABOUT_LINK2"
+      li
+        a href="http://railscasts.com" translate="ABOUT_LINK3"
+      li
+        a href="https://www.codeschool.com" translate="ABOUT_LINK4"
+      li
+        a href="http://www.w3schools.com" translate="ABOUT_LINK5"

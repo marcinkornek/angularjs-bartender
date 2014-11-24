@@ -1,0 +1,51 @@
+en:
+  # HEADER
+  "HEADER_LOGO": "Bartender"
+  "HEADER_USERS": "Users"
+  "HEADER_DROPDOWN_ACCOUNT": "Account"
+  "HEADER_DROPDOWN_VIEW": "View profile"
+  "HEADER_DROPDOWN_EDIT": "Edit profile"
+  "HEADER_DROPDOWN_LOGOUT": "Logout"
+  "HEADER_SIGN_IN": "Sign in"
+  "HEADER_SIGN_UP": "Sign up"
+
+  # FOOTER
+  "FOOTER_AUTHOR": "by Marcin Kornek"
+  "FOOTER_ABOUT": "About me"
+
+
+  # ABOUT ME
+  "ABOUT_PAGE_TITLE": "About me"
+  "ABOUT_LINK1": "Learn to Program by Chris Pine"
+  "ABOUT_LINK2": "Ruby on Rails Tutorial - Learn Rails by Example by Michale Hartl"
+  "ABOUT_LINK3": "RailsCasts - Ruby on Rails Screencasts by Ryan Bates"
+  "ABOUT_LINK4": "CodeSchool"
+  "ABOUT_LINK5": "w3schools"
+  "ABOUT_ME1": "My name is Marcin. I am Master of Science in Civil Engineering in Wrocław University of Technology."
+  "ABOUT_ME2": "After 5 years studies I decided to quit Civil Engineering and to start programming."
+  "ABOUT_ME3": "A day after graduation I started to learn Ruby and then Ruby on Rails and other similiars languages and front-end such like:"
+  "ABOUT_ME4": "I learnt mainly from:"
+
+  # USERS
+  "USER_SHOW_USERNAME": "Username"
+  "USER_SHOW_EMAIL": "Email"
+  "USER_SHOW_ID": "ID:"
+  "USER_SHOW_CREATED_AT": "Created at"
+  "USER_SHOW_EDIT": "Edit"
+  "USER_SHOW_DELETE": "Delete"
+
+  "USER_EDIT_USERNAME": "Username"
+  "USER_EDIT_EMAIL": "Email"
+  "USER_EDIT_AVATAR": "Avatar"
+  "USER_EDIT_CURRENT_AVATAR": "Current Avatar"
+  "USER_EDIT_CURRENT_GRAVATAR": "Current Gravatar"
+  "USER_EDIT_SIZE_AVATAR": "size"
+  "USER_EDIT_PREVIEW_AVATAR": "preview"
+  "USER_EDIT_REMOVE_AVATAR": "remove"
+  "USER_EDIT_UPDATE": "Edit user"
+
+  # NAVIGATION
+  "NAV_HOME": "Home"
+
+  # CATEGORIES
+  "CATEGORIES_INDEX_TITLE": "Categories"

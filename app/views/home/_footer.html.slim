@@ -1,0 +1,9 @@
+div ng-controller="GlobalFooterCtrl"
+  .container-fluid
+    footer
+      small
+        ' {{ "FOOTER_AUTHOR" | translate }}
+      nav
+        li
+          a(ng-click="navAbout()")
+            ' {{ "FOOTER_ABOUT" | translate }}

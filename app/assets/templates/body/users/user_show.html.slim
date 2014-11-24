@@ -1,0 +1,48 @@
+div ng-show="data.user.error"
+  h1.text-center
+    ' {{ data.user.error }}
+
+
+div ng-hide="data.user.error"
+  .user-data
+
+    h1.border-bottom
+      ' {{ data.user.username }}
+    .row
+      .col-md-2
+        .avatar-gravatar
+          div ng-show="data.user.avatar.avatar.thumb.url"
+            img(ng-src="{{data.user.avatar.avatar.thumb.url}}")
+          div ng-hide="data.user.avatar.avatar.thumb.url"
+            img gravatar-src="'{{data.user.email}}'" gravatar-size="100"
+
+      .col-md-10
+        table
+          tr
+            th
+              ' {{ "USER_SHOW_USERNAME" | translate }}:
+            td
+              ' {{ data.user.username }}
+          tr
+            th
+              ' {{ "USER_SHOW_EMAIL" | translate }}:
+            td
+              ' {{ data.user.email }}
+          tr
+            th
+              ' {{ "USER_SHOW_ID" | translate }}:
+            td
+              ' {{ data.user.id }}
+          tr
+            th
+              ' {{ "USER_SHOW_CREATED_AT" | translate }}:
+            td
+              ' {{ data.user.created_at | date }}
+
+    div ng-show="data.user.id==data.user.currentUser.id"
+      button.btn.btn-default(ng-click="navEditUser(data.user.id)")
+        ' {{ "USER_SHOW_EDIT" | translate }}
+      button.btn.btn-default(ng-really-message="Are you sure?" ng-really-click="destroyUser(data.user.id)")
+        ' {{ "USER_SHOW_DELETE" | translate }}
+      / delete button uses 'delete_confirmation directive'
+

@@ -1,0 +1,23 @@
+.errors.text-center
+    div ng-show="signupForm.username.$error.required && signupForm.username.$dirty"
+      ' Username is required.
+    div ng-show="signupForm.username.$error.pattern"
+      ' Username must start with a letter.
+    div ng-show="signupForm.username.$error.minlength"
+      ' Username is too short.
+    div ng-show="signupForm.username.$error.maxlength"
+      ' Username is too long.
+    div ng-show="signupForm.username.$error.unique"
+      ' Username already exists.
+    div ng-show="signupForm.email.$error.required && signupForm.email.$dirty"
+      ' Email is required.
+    div ng-show="signupForm.email.$error.pattern"
+      ' Email is invalid.
+    div ng-show="signupForm.email.$error.unique"
+      ' Email already exists.
+    div ng-show="signupForm.pw1.$error.required && signupForm.pw1.$dirty"
+      ' Password is required.
+    div ng-show="signupForm.pw1.$error.minlength"
+      ' Password is too short.
+    div ng-show="signupForm.pw2.$error.pwmatch && signupForm.pw2.$dirty"
+      ' Password don't match.

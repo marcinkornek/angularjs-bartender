@@ -1,0 +1,60 @@
+div ng-show="formData.error"
+  h1.text-center
+    ' {{ formData.error }}
+
+div ng-hide="formData.error"
+  h1.text-center Edit user
+
+  div ui-view="errors"
+
+  form(style='width:30%;margin-left:auto;margin-right:auto' name="editUserForm" enctype="multipart/form-data")
+    .field
+      label
+        strong
+          ' {{ "USER_EDIT_USERNAME" | translate }}
+      input.span12(type="text" maxlength="20" name="username" ng-model="formData.username" required ng-pattern="/^[a-zA-Z]\w*$/" ng-minlength='4' ng-maxlength='20')
+
+    .field
+      label
+        strong
+          ' {{ "USER_EDIT_EMAIL" | translate }}
+      input.span12(type="text" maxlength="60" name="email" ng-model="formData.email" required ng-pattern="/^[\w+\-.]+@[a-zA-Z\d\-]+(?:\.[a-zA-Z\d\-]+)*\.[a-zA-Z]+$/")
+
+    .field
+      label
+        strong
+          ' {{ "USER_EDIT_AVATAR" | translate }}
+
+      div ng-show="formData.avatar"
+        ' {{ "USER_EDIT_CURRENT_AVATAR" | translate }}
+        .avatar-gravatar
+          img(ng-src="{{formData.avatar}}")
+
+      div ng-hide="formData.avatar"
+        ' {{ "USER_EDIT_CURRENT_GRAVATAR" | translate }}
+        .avatar-gravatar
+          img gravatar-src="'{{formData.email}}'" gravatar-size="100"
+
+      input.span12(type="file" nv-file-select uploader="uploader")
+      br
+
+      div ng-repeat=("item in uploader.queue")
+        p
+          ' {{ "USER_EDIT_SIZE_AVATAR" | translate }}: {{ item.file.size/1024/1024|number:2 }}  MB
+        p
+          ' {{ "USER_EDIT_PREVIEW_AVATAR" | translate }}:
+          br
+          p ng-thumb="{ file: item._file, height: 100 }"
+        p
+          .progress style=("margin-bottom: 0;")
+            .progress-bar ng-style=("{ 'width': item.progress + '%' }") role="progressbar"
+        p
+          / button.btn.btn-success.btn-xs ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess" type="button"
+          /   span.glyphicon.glyphicon-upload
+          /     | Upload
+          button.btn.btn-danger.btn-xs ng-click="item.remove()" type="button"
+            span.glyphicon.glyphicon-trash
+            ' {{ "USER_EDIT_REMOVE_AVATAR" | translate }}
+
+    button.btn.btn-primary(style='width:100%' ng-click="editUser(formData.id)")
+      ' {{ "USER_EDIT_UPDATE" | translate }}

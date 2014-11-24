@@ -1,0 +1,50 @@
+h1.text-center Sign up
+
+.oauth-login.text-center
+  a href='/auth/facebook' class="btn btn-facebook width342"
+    i class="fa fa-facebook-square"
+    ' Sign up with Facebook
+
+.oauth-login.text-center
+  a href='/auth/google'  class="btn btn-google-plus width342"
+    i class="fa fa-google-plus"
+    ' Sign up with Google
+
+.oauth-login.text-center
+  a href='/auth/github' class="btn btn-github width342"
+    i class="fa fa-github"
+    ' Sign up with GitHub
+
+.oauth-login.text-center
+  button class="btn login-button width342" ng-click="showMe()"
+    ' Sign up
+
+.login ng-show="show"
+
+  div ui-view="errors"
+
+  form(style='width:30%;margin-left:auto;margin-right:auto' name='signupForm')
+    .field
+      label
+        strong username
+      input.span12(type="text" maxlength="20" name="username" ng-model="formData.username" required ng-pattern="/^[a-zA-Z]\w*$/" ng-minlength='4' ng-maxlength='20' ng-unique="username")
+
+    .field
+      label
+        strong email
+      input.span12(type="text" maxlength="60" name="email" ng-model="formData.email" required ng-pattern="/^[\w+\-.]+@[a-zA-Z\d\-]+(?:\.[a-zA-Z\d\-]+)*\.[a-zA-Z]+$/" ng-unique="email")
+
+    .field
+      label
+        strong password
+      input.span12(type="password" maxlength="60" ng-model="formData.password" required id='pw1' name='pw1' ng-minlength='6')
+
+    .field
+      label
+        strong password confirmation
+      input.span12(type="password" maxlength="60" ng-model="formData.password_confirmation" required id='pw2' name='pw2' pw-check="pw1")
+
+
+
+    button.btn.btn-primary(style='width:100%' ng-click="createUser()") Sign up
+

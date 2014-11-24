@@ -1,0 +1,22 @@
+doctype html
+html ng-app="Bartender"
+  head
+    meta charset="utf-8"
+
+    title Bartender
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+
+    - if logged_in?
+      javascript:
+        window.currentUser = #{ raw current_user.extend(ListUserRepresenter).to_json}
+    - else
+      javascript:
+        window.currentUser = {}
+
+
+  body
+    = yield
+
+    = javascript_include_tag 'application'
+    = js_env

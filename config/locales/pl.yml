@@ -1,0 +1,51 @@
+pl:
+  # HEADER
+  "HEADER_LOGO": "Barman"
+  "HEADER_USERS": "Użytkownicy"
+  "HEADER_DROPDOWN_ACCOUNT": "Konto"
+  "HEADER_DROPDOWN_VIEW": "Zobacz konto"
+  "HEADER_DROPDOWN_EDIT": "Edytuj konto"
+  "HEADER_DROPDOWN_LOGOUT": "Wyloguj się"
+  "HEADER_SIGN_IN": "Zaloguj się"
+  "HEADER_SIGN_UP": "Zarejestruj się"
+
+  # FOOTER
+  "FOOTER_AUTHOR": "Marcin Kornek"
+  "FOOTER_ABOUT": "O mnie"
+
+  # ABOUT ME
+  "ABOUT_PAGE_TITLE": "O mnie"
+  "ABOUT_LINK1": "Learn to Program - Chris Pine"
+  "ABOUT_LINK2": "Ruby on Rails Tutorial - Learn Rails by Example - Michale Hartl"
+  "ABOUT_LINK3": "RailsCasts - Ruby on Rails Screencasts - Ryan Bates"
+  "ABOUT_LINK4": "CodeSchool"
+  "ABOUT_LINK5": "w3schools"
+  "ABOUT_ME1": "Nazywam się Marcin. Jestem magistrem inżynierem Budownictwa Lądowego i Wodnego na Politechnice Wrocławskiej."
+  "ABOUT_ME2": "Po 5 latach studiów zdecydowałem rzucić budownictwo i zacząłem programować."
+  "ABOUT_ME3": "Dzień po obronie zacząłem się uczyć języka programowania Ruby, później Ruby on Rails oraz innych takiech jak:"
+  "ABOUT_ME4": "Uczyłem się głównie z:"
+
+  # USERS
+  "USER_SHOW_USERNAME": "Login"
+  "USER_SHOW_EMAIL": "Email"
+  "USER_SHOW_ID": "ID:"
+  "USER_SHOW_CREATED_AT": "Utworzono"
+  "USER_SHOW_EDIT": "Edytuj"
+  "USER_SHOW_DELETE": "Usuń"
+
+  "USER_EDIT_USERNAME": "Login"
+  "USER_EDIT_EMAIL": "Email"
+  "USER_EDIT_AVATAR": "Awatar"
+  "USER_EDIT_CURRENT_AVATAR": "Obecny Awatar"
+  "USER_EDIT_CURRENT_GRAVATAR": "Obecny Gravatar"
+  "USER_EDIT_SIZE_AVATAR": "rozmiar"
+  "USER_EDIT_PREVIEW_AVATAR": "podgląd"
+  "USER_EDIT_REMOVE_AVATAR": "usuń"
+  "USER_EDIT_UPDATE": "Edytuj użytkownika"
+
+
+  # NAVIGATION
+  "NAV_HOME": "Strona główna"
+
+  # CATEGORIES
+  "CATEGORIES_INDEX_TITLE": "Kategorie"

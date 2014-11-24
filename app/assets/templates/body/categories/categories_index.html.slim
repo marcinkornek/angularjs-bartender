@@ -1,0 +1,11 @@
+.container
+  h1.text-center translate="CATEGORIES_INDEX_TITLE"
+  .categories.align-center
+    row(ng-repeat="category in data.categories")
+      .category
+        h3.align-center
+          ' {{ category.name }}
+
+        .category-image
+          img(ng-src="{{ category.image }}" ng-click="navCategoryShow(category.id)")
+

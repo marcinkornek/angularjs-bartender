@@ -1,0 +1,47 @@
+.container(style="margin-top: 40px")
+  h1.text-center Sign in
+
+  .oauth-login.text-center
+    a href='/auth/facebook' class="btn btn-facebook width342"
+      i class="fa fa-facebook-square"
+      ' Sign in with Facebook
+
+  .oauth-login.text-center
+    a href='/auth/google'  class="btn btn-google-plus width342"
+      i class="fa fa-google-plus"
+      ' Sign in with Google
+
+  .oauth-login.text-center
+    a href='/auth/github' class="btn btn-github width342"
+      i class="fa fa-github"
+      ' Sign in with GitHub
+
+  .oauth-login.text-center
+    button class="btn login-button width342" ng-click="showMe()"
+      ' Sign in
+
+  .login ng-show="show"
+    .errors.text-center
+      div ng-show="formData.data_error"
+        ' {{ formData.data_error }}
+
+
+    form(style='width:30%;margin-left:auto;margin-right:auto' name='signinForm')
+
+      .field
+        label
+          strong Username/email
+        input.span12(type="text" id="session_email" name="email" maxlength="60" ng-model="formData.email" required)
+
+      .field
+        label
+          strong Password
+        input.span12(type="password" id="session_password" name="password" maxlength="60" ng-model="formData.password" required)
+
+      .field
+        input.span12(type="checkbox" id="session_remember_me" name="remember_me" ng-model="formData.remember")
+        label
+          strong Remember me
+
+      button.btn.btn-primary(style="width:100%" ng-click="createSession()") Sign in
+
