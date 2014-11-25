@@ -18,7 +18,7 @@
           ' food
           .category-image
             - if Rails.env.production?
-              img(ng-src="https://s3-eu-west-1.amazonaws.com/bartender-app-heroku/category_images/food.jpg" ng-click="navFoodIndex()")
+              img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/food.jpg" ng-click="navFoodIndex()")
             - else
               img(ng-src="https://s3-eu-west-1.amazonaws.com/bartender-app/category_images/food.jpg" ng-click="navFoodIndex()")
       .category
@@ -26,7 +26,7 @@
           ' drinks
           .category-image
             - if Rails.env.production?
-              img(ng-src="https://s3-eu-west-1.amazonaws.com/bartender-app-heroku/category_images/drink.jpg" ng-click="navDrinksIndex()")
+              img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/drink.jpg" ng-click="navDrinksIndex()")
             - else
               img(ng-src="https://s3-eu-west-1.amazonaws.com/bartender-app/category_images/drink.jpg" ng-click="navDrinksIndex()")
       .category
@@ -34,7 +34,7 @@
           ' snacks
           .category-image
             - if Rails.env.production?
-              img(ng-src="https://s3-eu-west-1.amazonaws.com/bartender-app-heroku/category_images/snack.jpg" ng-click="navSnacksIndex()")
+              img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/snack.jpg" ng-click="navSnacksIndex()")
             - else
               img(ng-src="https://s3-eu-west-1.amazonaws.com/bartender-app/category_images/snack.jpg" ng-click="navSnacksIndex()")
 
