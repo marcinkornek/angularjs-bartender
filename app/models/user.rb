@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :orders, foreign_key: 'bartender_id'
+  has_many :orders, foreign_key: 'bartender_id', dependent: :destroy
 
   before_save { email.downcase! }
   before_save { username.downcase! }

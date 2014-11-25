@@ -3,7 +3,7 @@
   .categories.align-center
     row(ng-repeat="food in data.food")
       .food
-        h3.align-center(ng-click="navFoodShow(food.id)")
+        a.align-center(ng-click="navFoodShow(food.id)")
           ' {{ food.name }}
 
         / .food-image

@@ -3,6 +3,7 @@ class Api::OrdersController < ApplicationController
   def order_summary
     session_order = session[:order] || session[:closed_order]
     session_items(session_order)
+    session.delete(:closed_order)
   end
 
   def create
@@ -25,16 +26,17 @@ class Api::OrdersController < ApplicationController
 
   def order_close
     session[:closed_order] = session[:order]
+    Order.find(session[:order]).close_order
     render json: session.delete(:order)
   end
 
-  def update
-    render json: order.update_attributes(order_params)
-  end
+  # def update
+  #   render json: order.update_attributes(order_params)
+  # end
 
-  def destroy
-    render json: order.destroy
-  end
+  # def destroy
+  #   render json: order.destroy
+  # end
 
   ###################################################
 
@@ -63,17 +65,11 @@ class Api::OrdersController < ApplicationController
           amount: od.amount
         }
       end
-      render json: { items: items, total_price: order.total_price }
+      render json: { items: items, total_price: order.total_price, state: order.state }
     else
       render json: {}
     end
   end
-
-
-
-  # def order_params
-  #   params.permit(order)
-  # end
 
 end
 

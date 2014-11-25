@@ -1,9 +1,14 @@
 class Order < ActiveRecord::Base
   has_many :order_details
-  belongs_to :bartender, class_name: 'User'
+  belongs_to :bartender, class_name: 'User', dependent: :destroy
 
   def set_total_price
     self.total_price = order_details.map(&:price).reduce(:+).to_f
+    self.save
+  end
+
+  def close_order
+    self.state = 'closed'
     self.save
   end
 
