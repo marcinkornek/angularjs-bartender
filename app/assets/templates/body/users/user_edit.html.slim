@@ -3,7 +3,8 @@ div ng-show="formData.error"
     ' {{ formData.error }}
 
 div ng-hide="formData.error"
-  h1.text-center Edit user
+  h1.text-center
+    ' {{ "USER_EDIT_TITLE" | translate }}
 
   div ui-view="errors"
 

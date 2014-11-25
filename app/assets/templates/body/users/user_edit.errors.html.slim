@@ -4,20 +4,20 @@
   div ng-show="formData.email_error"
     ' {{ formData.email_error }}
   div ng-show="editUserForm.username.$error.required && editUserForm.username.$dirty"
-    ' Username is required.
+    ' {{ "USER_EDIT_ERROR_USERNAME_REQUIRED" | translate }}
   div ng-show="editUserForm.username.$error.pattern"
-    ' Username must start with a letter.
+    ' {{ "USER_EDIT_ERROR_USERNAME_START_LETTER" | translate }}
   div ng-show="editUserForm.username.$error.minlength"
-    ' Username is too short.
+    ' {{ "USER_EDIT_ERROR_USERNAME_SHORT" | translate }}
   div ng-show="editUserForm.username.$error.maxlength"
-    ' Username is too long.
+    ' {{ "USER_EDIT_ERROR_USERNAME_LONG" | translate }}
   div ng-show="editUserForm.username.$error.unique"
-    ' Username already exists.
+    ' {{ "USER_EDIT_ERROR_USERNAME_EXISTS" | translate }}
   div ng-show="editUserForm.email.$error.required && editUserForm.email.$dirty"
-    ' Email is required.
+    ' {{ "USER_EDIT_ERROR_EMAIL_REQUIRED" | translate }}
   div ng-show="editUserForm.email.$error.pattern"
-    ' Email is invalid.
+    ' {{ "USER_EDIT_ERROR_EMAIL_INVALID" | translate }}
   div ng-show="editUserForm.email.$error.unique"
-    ' Email already exists.
+    ' {{ "USER_EDIT_ERROR_EMAIL_EXISTS" | translate }}
   div ng-show="formData.user_error"
     ' {{ formData.user_error }}
