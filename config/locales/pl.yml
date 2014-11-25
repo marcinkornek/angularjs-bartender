@@ -63,3 +63,9 @@ pl:
   "FOOD_SHOW_ORDER_FOOD": "Zamów jedzenie"
   "FOOD_SHOW_CLEAR_ORDER_FOOD": "Wyczyść zamówienie"
   "FOOD_SHOW_CURRENCY": "zł"
+
+  # ORDERS
+  "ORDERS_INDEX_COUNT": "szt."
+  "ORDERS_INDEX_CURRENCY": "zł"
+  "ORDERS_INDEX_TOTAL_PRICE": "Łączna kwota"
+  "ORDERS_INDEX_CLOSE_ORDER": "Zamknij zamówienie"

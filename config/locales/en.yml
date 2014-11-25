@@ -63,3 +63,9 @@ en:
   "FOOD_SHOW_ORDER_FOOD": "Order food"
   "FOOD_SHOW_CLEAR_ORDER_FOOD": "Clear order"
   "FOOD_SHOW_CURRENCY": "zł"
+
+  # ORDERS
+  "ORDERS_INDEX_COUNT": "pc."
+  "ORDERS_INDEX_CURRENCY": "zł"
+  "ORDERS_INDEX_TOTAL_PRICE": "Total price"
+  "ORDERS_INDEX_CLOSE_ORDER": "Close order"

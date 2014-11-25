@@ -12,7 +12,6 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_create_params)
     user.send_activation_email = true
     if @user.save
-      # login(params[:email], params[:password])
       @user = User.find(@user.id)
       @user.extend(ListUserRepresenter)
       render json: {user: @user.to_hash}
@@ -26,9 +25,6 @@ class Api::UsersController < ApplicationController
   end
 
   def avatar_upload
-    p '--------av-------'
-    p params
-    p '--------av-------'
     if current_user.update_attributes(avatar: params[:file])
       render json: current_user.extend(UserRepresenter)
     else
@@ -37,9 +33,6 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    p '---------------'
-    p params
-    p '---------------'
     if user.update_attributes(user_params)
       render json: user.extend(UserRepresenter)
     else
@@ -52,10 +45,6 @@ class Api::UsersController < ApplicationController
   end
 
   def check_if_unique
-    # p '---------------'
-    # p params[:key]
-    # p params[:value]
-    # p '---------------'
     if User.where(params['key'] => params['value']).exists?
       render json: {error: 'unique: false'}, status: :not_acceptable
     else

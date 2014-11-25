@@ -1,26 +1,11 @@
 class Api::OrdersController < ApplicationController
 
-  def index
-    @order = Order.all
-    render json: @order
-  end
-
-  def show
-    @order = Order.find(session[:order])
-    items = @order.order_details.map do |od|
-      {
-        item: od.orderable,
-        price: od.price,
-        amount: od.amount
-      }
-    end
-    render json: items
+  def order_summary
+    session_order = session[:order] || session[:closed_order]
+    session_items(session_order)
   end
 
   def create
-    p '-----------------'
-    p session[:order]
-    p '-----------------'
     if session[:order]
       @order = Order.find(session[:order])
     else
@@ -38,9 +23,9 @@ class Api::OrdersController < ApplicationController
     end
   end
 
-  def close_order
-    session.delete[:order]
-
+  def order_close
+    session[:closed_order] = session[:order]
+    render json: session.delete(:order)
   end
 
   def update
@@ -50,8 +35,6 @@ class Api::OrdersController < ApplicationController
   def destroy
     render json: order.destroy
   end
-
-
 
   ###################################################
 
@@ -66,6 +49,23 @@ class Api::OrdersController < ApplicationController
       params[:type].constantize
     else
       raise "error"
+    end
+  end
+
+  def session_items(session_order)
+    if session_order
+      order = Order.find(session_order)
+      order.set_total_price
+      items = order.order_details.map do |od|
+        {
+          item: od.orderable,
+          price: od.price,
+          amount: od.amount
+        }
+      end
+      render json: { items: items, total_price: order.total_price }
+    else
+      render json: {}
     end
   end
 

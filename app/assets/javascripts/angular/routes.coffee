@@ -18,6 +18,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'CategoriesIndexCtrl',  templateUrl: 'body/categories/categories_index.html' }
+        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
       }
     })
 
@@ -93,6 +94,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'CategoriesIndexCtrl',  templateUrl: 'body/categories/categories_index.html' }
+        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
       }
     })
 
@@ -105,6 +107,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'CategoryShowCtrl',  templateUrl: 'body/categories/category_show.html' }
+        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
       }
     })
 
@@ -119,6 +122,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'FoodIndexCtrl',  templateUrl: 'body/categories/food/food_index.html' }
+        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
       }
     })
 
@@ -131,5 +135,20 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'FoodShowCtrl',  templateUrl: 'body/categories/food/food_show.html' }
+        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
+      }
+    })
+
+    # Orders
+
+    .state('order_summary', {
+      url: '/orders',
+      data: {
+        roles: ['User']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/order_summary.html' }
       }
     })
