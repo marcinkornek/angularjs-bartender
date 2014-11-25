@@ -58,6 +58,7 @@ en:
   "FOOD_SHOW_PRICE": "Price"
   "FOOD_SHOW_FOOD_ORDER": "Order"
   "FOOD_SHOW_FOOD_AMOUNT_ERROR": "Amount is required"
+  "FOOD_SHOW_FOOD_MIN_ERROR": "Amount must be greater or equal 0"
   "FOOD_SHOW_FOOD_AMOUNT": "Amount"
   "FOOD_SHOW_FOOD_AMOUNT_PLACEHOLDER": "Type amount"
   "FOOD_SHOW_ORDER_FOOD": "Order food"

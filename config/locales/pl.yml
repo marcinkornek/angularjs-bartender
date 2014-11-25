@@ -58,6 +58,7 @@ pl:
   "FOOD_SHOW_PRICE": "Cena"
   "FOOD_SHOW_FOOD_ORDER": "Zamówienie"
   "FOOD_SHOW_FOOD_AMOUNT_ERROR": "Ilość jest wymagana"
+  "FOOD_SHOW_FOOD_MIN_ERROR": "Ilość musi być większa lub równa 0"
   "FOOD_SHOW_FOOD_AMOUNT": "Ilość"
   "FOOD_SHOW_FOOD_AMOUNT_PLACEHOLDER": "Wybierz ilość"
   "FOOD_SHOW_ORDER_FOOD": "Zamów jedzenie"

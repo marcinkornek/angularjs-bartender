@@ -35,16 +35,18 @@ div ng-hide="data.food.error"
 h1
   ' {{ "FOOD_SHOW_FOOD_ORDER" | translate }}
 
-.errors.text-center
+.errors
   div ng-show="foodOrder.amount.$error.required && foodOrder.amount.$dirty"
     ' {{ "FOOD_SHOW_FOOD_AMOUNT_ERROR" | translate }}
+  div ng-show="foodOrder.amount.$error.min && foodOrder.amount.$dirty"
+    ' {{ "FOOD_SHOW_FOOD_MIN_ERROR" | translate }}
 
 form name="foodOrder"
   .field
     label
       strong
         ' {{ "FOOD_SHOW_FOOD_AMOUNT" | translate }}
-    input.span12(name="amount" ng-model="formData.amount" required placeholder="{{ 'FOOD_SHOW_FOOD_AMOUNT_PLACEHOLDER' | translate }}" type="number")
+    input.span12(name="amount" ng-model="formData.amount" min="0" required placeholder="{{ 'FOOD_SHOW_FOOD_AMOUNT_PLACEHOLDER' | translate }}" type="number")
 
   .price ng-show="formData.amount"
     ' {{ formData.amount * data.food.price }}
