@@ -64,4 +64,3 @@
   })
 
 @UserEditCtrl.$inject = ['$scope', '$stateParams', '$state', 'userData', 'FileUploader']
-

@@ -19,6 +19,9 @@ class Api::FoodController < ApplicationController
   end
 
   def image_upload
+    p '-----------------'
+    p params
+    p '-----------------'
     if @food = Food.all.order(:updated_at).last.update_attributes(image: params[:file])
       render json: @food
     else
