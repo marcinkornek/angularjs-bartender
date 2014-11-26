@@ -29,6 +29,8 @@ div ng-hide="data.food.error"
               ' {{ "FOOD_SHOW_PRICE" | translate }}:
             td
               ' {{ data.food.price }}
+        button(type="button" class="btn btn-default navbar-btn" ng-click="navFoodEdit(data.food.id)")
+          ' {{ "FOOD_SHOW_EDIT_FOOD" | translate }}
 
 h1
   ' {{ "FOOD_SHOW_FOOD_ORDER" | translate }}

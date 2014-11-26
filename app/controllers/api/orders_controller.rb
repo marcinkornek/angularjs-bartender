@@ -1,7 +1,14 @@
 class Api::OrdersController < ApplicationController
 
   def index
-    render json: @orders = Order.all.paginate(:page => params[:page], :per_page => 5)
+    orders = Order.all.paginate(:page => params[:page], :per_page => 5).map do |o|
+      {
+        bartender: o.bartender.username,
+        updated: o.updated_at,
+        total_price: o.total_price
+      }
+    end
+    render json: orders
   end
 
   def order_summary

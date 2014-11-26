@@ -1,9 +1,15 @@
-.container(style="margin-top: 40px")
+h1.text-center translate="ORDERS_HISTORY_TITLE"
 
-  h1.text-center translate="ORDERS_HISTORY_TITLE"
-
-  div ng-show="data.orders"
-    row(ng-repeat="order in data.orders")
-      li
-        ' {{ order }}
-        / ' {{ order.updated_at }}
+div ng-show="data.orders"
+  row(ng-repeat="order in data.orders")
+    li
+      .col-md-3
+        ' {{ "ORDERS_HISTORY_BARTENDER" | translate }}:
+        ' {{ order.bartender }}
+      .col-md-3
+        ' {{ "ORDERS_HISTORY_UPDATED" | translate }}:
+        ' {{ order.updated | date:"dd/MM/yyyy - HH:mm" }}
+      .col-md-3
+        ' {{ "ORDERS_HISTORY_TOTAL_PRICE" | translate }}:
+        ' {{ order.total_price }}
+        ' {{ "ORDERS_HISTORY_CURRENCY" | translate }}:

@@ -67,12 +67,14 @@ en:
 
   # NAVIGATION
   "NAV_HOME": "Home"
+  "NAV_ORDERS_HISTORY": "Orders history"
 
   # CATEGORIES
   "CATEGORIES_INDEX_TITLE": "Categories"
 
   # FOOD
   "FOOD_INDEX_TITLE": "Food"
+  "FOOD_INDEX_ADD_FOOD": "Add food"
 
   "FOOD_NEW_TITLE": "Add food"
   "FOOD_NEW_NAME": "Name"
@@ -101,6 +103,7 @@ en:
   "FOOD_SHOW_ORDER_FOOD": "Order food"
   "FOOD_SHOW_CLEAR_ORDER_FOOD": "Clear order"
   "FOOD_SHOW_CURRENCY": "zł"
+  "FOOD_SHOW_EDIT_FOOD": "Edit food"
 
   "FOOD_EDIT_TITLE": "Edit food"
   "FOOD_EDIT_NAME": "Name"
@@ -120,6 +123,7 @@ en:
   "FOOD_EDIT_ERROR_IMAGE_REQUIRED": "Image is required"
 
   # ORDERS
+  "ORDERS_INDEX_TITLE": "Order details"
   "ORDERS_INDEX_COUNT": "pc."
   "ORDERS_INDEX_CURRENCY": "zł"
   "ORDERS_INDEX_TOTAL_PRICE": "Total price"
@@ -129,3 +133,7 @@ en:
   "ORDERS_INDEX_STATE": "Order state"
 
   "ORDERS_HISTORY_TITLE": "Orders history"
+  "ORDERS_HISTORY_BARTENDER": "Bartender"
+  "ORDERS_HISTORY_UPDATED": "Created at"
+  "ORDERS_HISTORY_TOTAL_PRICE": "Total price"
+  "ORDERS_HISTORY_CURRENCY": "zł"

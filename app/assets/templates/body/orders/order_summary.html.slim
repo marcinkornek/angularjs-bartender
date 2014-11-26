@@ -10,9 +10,11 @@ div ng-show="data.orders.items"
   row
     li
       ' {{ "ORDERS_INDEX_TOTAL_PRICE" | translate }}:
-      ' {{ data.orders.total_price }}
-      ' {{ "ORDERS_INDEX_CURRENCY" | translate }}
+      b
+        ' {{ data.orders.total_price }}
+        ' {{ "ORDERS_INDEX_CURRENCY" | translate }}
   row
     li
       ' {{ "ORDERS_INDEX_STATE" | translate }}:
-      ' {{ data.orders.state }}
+      .red
+        ' {{ data.orders.state }}

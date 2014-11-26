@@ -74,12 +74,14 @@ pl:
 
   # NAVIGATION
   "NAV_HOME": "Strona główna"
+  "NAV_ORDERS_HISTORY": "Historia zamówień"
 
   # CATEGORIES
   "CATEGORIES_INDEX_TITLE": "Kategorie"
 
   # FOOD
   "FOOD_INDEX_TITLE": "Jedzenie"
+  "FOOD_INDEX_ADD_FOOD": "Dodaj jedzenie"
 
   "FOOD_NEW_TITLE": "Dodaj jedzenie"
   "FOOD_NEW_NAME": "Nazwa"
@@ -108,6 +110,7 @@ pl:
   "FOOD_SHOW_ORDER_FOOD": "Zamów jedzenie"
   "FOOD_SHOW_CLEAR_ORDER_FOOD": "Wyczyść zamówienie"
   "FOOD_SHOW_CURRENCY": "zł"
+  "FOOD_SHOW_EDIT_FOOD": "Edytuj jedzenie"
 
   "FOOD_EDIT_TITLE": "Edytuj jedzenie"
   "FOOD_EDIT_NAME": "Nazwa"
@@ -127,6 +130,7 @@ pl:
   "FOOD_EDIT_ERROR_IMAGE_REQUIRED": "Zdjęcie jest wymagane"
 
   # ORDERS
+  "ORDERS_INDEX_TITLE": "Szczegóły zamówienia"
   "ORDERS_INDEX_COUNT": "szt."
   "ORDERS_INDEX_CURRENCY": "zł"
   "ORDERS_INDEX_TOTAL_PRICE": "Łączna kwota"
@@ -136,3 +140,7 @@ pl:
   "ORDERS_INDEX_STATE": "Stan zamówienia"
 
   "ORDERS_HISTORY_TITLE": "Historia zamówień"
+  "ORDERS_HISTORY_BARTENDER": "Barman"
+  "ORDERS_HISTORY_UPDATED": "Utworzono"
+  "ORDERS_HISTORY_TOTAL_PRICE": "Łączna kwota"
+  "ORDERS_HISTORY_CURRENCY": "zł"

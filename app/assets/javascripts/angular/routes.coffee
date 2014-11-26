@@ -78,6 +78,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       },
       views: {
         "header": { controller: 'GlobalHeaderCtrl',   templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":   { templateUrl: 'body/about.html' }
       }
     })
@@ -133,6 +134,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'FoodNewCtrl',  templateUrl: 'body/categories/food/food_new.html' }
         "errors@food_new": { templateUrl: 'body/categories/food/food_new.errors.html' }
       }
@@ -158,6 +160,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'FoodEditCtrl',  templateUrl: 'body/categories/food/food_edit.html' }
         "errors@food_edit": { templateUrl: 'body/categories/food/food_edit.errors.html' }
       }
@@ -176,12 +179,13 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       }
     })
 
-    .state('order_history', {
+    .state('orders_history', {
       url: '/orders',
       data: {
         roles: ['User']
       },
       views: {
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
         "body":       { controller: 'OrderHistoryCtrl',  templateUrl: 'body/orders/orders_history.html' }
       }

@@ -1,4 +1,9 @@
+.boarder-bottom
+
 div ng-show="data.orders.items"
+
+  h2 translate="ORDERS_INDEX_TITLE"
+
   row(ng-repeat="item in data.orders.items")
     li
       ' {{ item.item.name }}
@@ -6,18 +11,20 @@ div ng-show="data.orders.items"
       ' {{ "ORDERS_INDEX_COUNT" | translate }}
       ' {{ item.price }}
       ' {{ "ORDERS_INDEX_CURRENCY" | translate }}
-      button(type="button" class="btn btn-default navbar-btn" ng-click="destroyOrderDetail(item.id)")
+      button(type="button" class="btn btn-default btn-xs" ng-click="destroyOrderDetail(item.id)")
         ' {{ "ORDERS_INDEX_DESTROY_ORDER_DETAIL" | translate }}
 
   row
     li
       ' {{ "ORDERS_INDEX_TOTAL_PRICE" | translate }}:
-      ' {{ data.orders.total_price }}
-      ' {{ "ORDERS_INDEX_CURRENCY" | translate }}
+      b
+        ' {{ data.orders.total_price }}
+        ' {{ "ORDERS_INDEX_CURRENCY" | translate }}
   row
     li
       ' {{ "ORDERS_INDEX_STATE" | translate }}:
-      ' {{ data.orders.state }}
+      .green
+        ' {{ data.orders.state }}
 
   button(type="button" class="btn btn-default navbar-btn" ng-click="closeOrder()")
     ' {{ "ORDERS_INDEX_CLOSE_ORDER" | translate }}

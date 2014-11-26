@@ -38,11 +38,9 @@
     $scope.formData.amount = ''
     $scope.foodOrder.$setPristine()
 
-
-
   # navigation
 
-  $scope.navEditFood = (foodId) ->
+  $scope.navFoodEdit = (foodId) ->
     $state.go('food_edit', {foodId: foodId})
 
 @FoodShowCtrl.$inject = ['$scope', '$stateParams', '$state', 'foodData', 'ordersData']
