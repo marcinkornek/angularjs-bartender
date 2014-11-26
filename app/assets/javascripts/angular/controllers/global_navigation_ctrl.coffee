@@ -6,6 +6,6 @@
     $state.go('home')
 
   $scope.navOrdersHistory = ->
-    $state.go('orders_history')
+    $state.go('orders_history', {pageNo: 1})
 
 @GlobalNavigationCtrl.$inject = ['$scope', '$state', 'sessionData', 'principal', '$translate', 'ordersData']

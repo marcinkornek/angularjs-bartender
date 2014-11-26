@@ -1,14 +1,14 @@
 class Api::OrdersController < ApplicationController
 
   def index
-    orders = Order.all.paginate(:page => params[:page], :per_page => 5).map do |o|
+    orders = Order.all.order(updated_at: :desc).paginate(:page => params[:page], :per_page => 10).map do |o|
       {
         bartender: o.bartender.username,
         updated: o.updated_at,
         total_price: o.total_price
       }
     end
-    render json: orders
+    render json: { orders: orders, number: Order.count}
   end
 
   def order_summary

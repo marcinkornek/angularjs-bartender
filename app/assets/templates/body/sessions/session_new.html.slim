@@ -1,24 +1,25 @@
 .container(style="margin-top: 40px")
-  h1.text-center Sign in
+  h1.text-center
+    ' {{ "SESSION_NEW_SIGN_IN" | translate }}
 
   .oauth-login.text-center
     a href='/auth/facebook' class="btn btn-facebook width342"
       i class="fa fa-facebook-square"
-      ' Sign in with Facebook
+      ' {{ "SESSION_NEW_SIGN_IN_WITH_FACEBOOK" | translate }}
 
   .oauth-login.text-center
     a href='/auth/google'  class="btn btn-google-plus width342"
       i class="fa fa-google-plus"
-      ' Sign in with Google
+      ' {{ "SESSION_NEW_SIGN_IN_WITH_GOOGLE" | translate }}
 
   .oauth-login.text-center
     a href='/auth/github' class="btn btn-github width342"
       i class="fa fa-github"
-      ' Sign in with GitHub
+      ' {{ "SESSION_NEW_SIGN_IN_WITH_GITHUB" | translate }}
 
   .oauth-login.text-center
     button class="btn login-button width342" ng-click="showMe()"
-      ' Sign in
+      ' {{ "SESSION_NEW_SIGN_IN" | translate }}
 
   .login ng-show="show"
     .errors.text-center
@@ -30,18 +31,22 @@
 
       .field
         label
-          strong Username/email
+          strong
+            ' {{ "SESSION_NEW_USERNAME" | translate }}
         input.span12(type="text" id="session_email" name="email" maxlength="60" ng-model="formData.email" required)
 
       .field
         label
-          strong Password
+          strong
+            ' {{ "SESSION_NEW_PASSWORD" | translate }}
         input.span12(type="password" id="session_password" name="password" maxlength="60" ng-model="formData.password" required)
 
       .field
         input.span12(type="checkbox" id="session_remember_me" name="remember_me" ng-model="formData.remember")
         label
-          strong Remember me
+          strong
+            ' {{ "SESSION_NEW_REMEMBER_PASSWORD" | translate }}
 
-      button.btn.btn-primary(style="width:100%" ng-click="createSession()") Sign in
+      button.btn.btn-primary(style="width:100%" ng-click="createSession()")
+        ' {{ "SESSION_NEW_SIGN_IN" | translate }}
 

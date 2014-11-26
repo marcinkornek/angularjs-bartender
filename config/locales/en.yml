@@ -137,3 +137,13 @@ en:
   "ORDERS_HISTORY_UPDATED": "Created at"
   "ORDERS_HISTORY_TOTAL_PRICE": "Total price"
   "ORDERS_HISTORY_CURRENCY": "zł"
+
+  # SESSION
+  "SESSION_NEW_SIGN_IN_WITH_FACEBOOK": "Sign in with Facebook"
+  "SESSION_NEW_SIGN_IN_WITH_GOOGLE": "Sign in with Google"
+  "SESSION_NEW_SIGN_IN_WITH_GITHUB": "Sign in with GitHub"
+  "SESSION_NEW_SIGN_IN": "Sign in"
+  "SESSION_NEW_USERNAME": "Username"
+  "SESSION_NEW_PASSWORD": "Password"
+  "SESSION_NEW_REMEMBER_PASSWORD": "Remember password"
+  "SESSION_NEW_SIGN_IN": "Sign in"

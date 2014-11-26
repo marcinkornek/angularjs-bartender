@@ -180,7 +180,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     })
 
     .state('orders_history', {
-      url: '/orders',
+      url: '/orders/page-:pageNo',
       data: {
         roles: ['User']
       },
