@@ -1,5 +1,9 @@
 class Api::OrdersController < ApplicationController
 
+  def index
+    render json: @orders = Order.all.paginate(:page => params[:page], :per_page => 5)
+  end
+
   def order_summary
     session_order = session[:order] || session[:closed_order]
     session_items(session_order)

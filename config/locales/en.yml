@@ -127,3 +127,5 @@ en:
   "ORDERS_INDEX_DESTROY_ORDER": "Destroy order"
   "ORDERS_INDEX_DESTROY_ORDER_DETAIL": "Delete item"
   "ORDERS_INDEX_STATE": "Order state"
+
+  "ORDERS_HISTORY_TITLE": "Orders history"

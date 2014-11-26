@@ -1,0 +1,9 @@
+.container(style="margin-top: 40px")
+
+  h1.text-center translate="ORDERS_HISTORY_TITLE"
+
+  div ng-show="data.orders"
+    row(ng-repeat="order in data.orders")
+      li
+        ' {{ order }}
+        / ' {{ order.updated_at }}

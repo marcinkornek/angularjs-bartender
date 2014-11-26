@@ -165,7 +165,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
 
     # Orders
     .state('order_summary', {
-      url: '/orders',
+      url: '/order_summary',
       data: {
         roles: ['User']
       },
@@ -173,5 +173,16 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/order_summary.html' }
+      }
+    })
+
+    .state('order_history', {
+      url: '/orders',
+      data: {
+        roles: ['User']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "body":       { controller: 'OrderHistoryCtrl',  templateUrl: 'body/orders/orders_history.html' }
       }
     })

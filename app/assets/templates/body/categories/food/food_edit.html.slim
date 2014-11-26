@@ -23,7 +23,7 @@
       label
         strong
           ' {{ "FOOD_EDIT_PRICE" | translate }}
-      input.span12(type="text" min="0" name="price" ng-model="formData.price" required)
+      input.span12(type="number" min="0.01" step="0.01" name="price" ng-model="formData.price" required)
 
     .field
       label

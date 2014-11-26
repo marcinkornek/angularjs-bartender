@@ -134,3 +134,5 @@ pl:
   "ORDERS_INDEX_DESTROY_ORDER": "Usuń zamówienie"
   "ORDERS_INDEX_DESTROY_ORDER_DETAIL": "Skasuj produkt"
   "ORDERS_INDEX_STATE": "Stan zamówienia"
+
+  "ORDERS_HISTORY_TITLE": "Historia zamówień"
