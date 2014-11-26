@@ -30,21 +30,19 @@ class Api::OrdersController < ApplicationController
     render json: session.delete(:order)
   end
 
-  # def update
-  #   render json: order.update_attributes(order_params)
-  # end
+  def order_destroy
+    render json: Order.all.order(:updated_at).last.destroy
+    session.delete(:closed_order)
+    session.delete(:order)
+  end
 
-  # def destroy
-  #   render json: order.destroy
-  # end
+  def order_detail_destroy
+    render json: Order.all.order(:updated_at).last.order_details.find(params[:orderId]).destroy
+  end
 
   ###################################################
 
   private
-
-  def order
-    @order ||= Order.find(params[:id])
-  end
 
   def orderable_type
     if Category.pluck(:name).include?(params[:type].downcase)
@@ -62,7 +60,8 @@ class Api::OrdersController < ApplicationController
         {
           item: od.orderable,
           price: od.price,
-          amount: od.amount
+          amount: od.amount,
+          id: od.id
         }
       end
       render json: { items: items, total_price: order.total_price, state: order.state }

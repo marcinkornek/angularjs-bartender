@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   post  '/api/food/upload'               => 'api/food#image_upload'
   post  '/api/orders/:id'                => 'api/orders#create'
   post  '/api/order_close'               => 'api/orders#order_close', as: :order_order_close
+  post  '/api/order_destroy'             => 'api/orders#order_destroy', as: :order_order_destroy
+  post  '/api/order_detail_destroy'      => 'api/orders#order_detail_destroy', as: :order_order_detail_destroy
   get   '/api/order_summary'             => 'api/orders#order_summary', as: :order_order_summary
 
 end

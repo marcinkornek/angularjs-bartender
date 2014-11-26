@@ -131,4 +131,6 @@ pl:
   "ORDERS_INDEX_CURRENCY": "zł"
   "ORDERS_INDEX_TOTAL_PRICE": "Łączna kwota"
   "ORDERS_INDEX_CLOSE_ORDER": "Zamknij zamówienie"
+  "ORDERS_INDEX_DESTROY_ORDER": "Usuń zamówienie"
+  "ORDERS_INDEX_DESTROY_ORDER_DETAIL": "Skasuj produkt"
   "ORDERS_INDEX_STATE": "Stan zamówienia"

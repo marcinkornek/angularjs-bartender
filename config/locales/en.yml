@@ -124,4 +124,6 @@ en:
   "ORDERS_INDEX_CURRENCY": "zł"
   "ORDERS_INDEX_TOTAL_PRICE": "Total price"
   "ORDERS_INDEX_CLOSE_ORDER": "Close order"
+  "ORDERS_INDEX_DESTROY_ORDER": "Destroy order"
+  "ORDERS_INDEX_DESTROY_ORDER_DETAIL": "Delete item"
   "ORDERS_INDEX_STATE": "Order state"
