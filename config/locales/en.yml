@@ -102,6 +102,23 @@ en:
   "FOOD_SHOW_CLEAR_ORDER_FOOD": "Clear order"
   "FOOD_SHOW_CURRENCY": "zł"
 
+  "FOOD_EDIT_TITLE": "Edit food"
+  "FOOD_EDIT_NAME": "Name"
+  "FOOD_EDIT_SIZE": "Size"
+  "FOOD_EDIT_PRICE": "Price"
+  "FOOD_EDIT_IMAGE": "Food image"
+  "FOOD_EDIT_CURRENT_IMAGE": "Current image"
+  "FOOD_EDIT_SIZE_IMAGE": "size"
+  "FOOD_EDIT_PREVIEW_IMAGE": 'preview'
+  "FOOD_EDIT_REMOVE_IMAGE": 'remove image'
+  "FOOD_EDIT_CREATE": "Edit food"
+  "FOOD_EDIT_ERROR_NAME_REQUIRED": "Name is required"
+  "FOOD_EDIT_ERROR_NAME_LONG": "Name is too long"
+  "FOOD_EDIT_ERROR_SIZE_REQUIRED": "Size is required"
+  "FOOD_EDIT_ERROR_PRICE_REQUIRED": "Price is required"
+  "FOOD_EDIT_ERROR_PRICE_MIN": "Price must be greater than 0"
+  "FOOD_EDIT_ERROR_IMAGE_REQUIRED": "Image is required"
+
   # ORDERS
   "ORDERS_INDEX_COUNT": "pc."
   "ORDERS_INDEX_CURRENCY": "zł"

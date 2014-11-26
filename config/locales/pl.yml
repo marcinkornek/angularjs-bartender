@@ -109,6 +109,23 @@ pl:
   "FOOD_SHOW_CLEAR_ORDER_FOOD": "Wyczyść zamówienie"
   "FOOD_SHOW_CURRENCY": "zł"
 
+  "FOOD_EDIT_TITLE": "Edytuj jedzenie"
+  "FOOD_EDIT_NAME": "Nazwa"
+  "FOOD_EDIT_SIZE": "Wielkość"
+  "FOOD_EDIT_PRICE": "Cena"
+  "FOOD_EDIT_IMAGE": "Zdjęcie jedzenia"
+  "FOOD_EDIT_CURRENT_IMAGE": "Obecne zdjęcie"
+  "FOOD_EDIT_SIZE_IMAGE": "rozmiar"
+  "FOOD_EDIT_PREVIEW_IMAGE": 'podgląd'
+  "FOOD_EDIT_REMOVE_IMAGE": 'usuń zdjęcie'
+  "FOOD_EDIT_CREATE": "Edytuj jedzenie"
+  "FOOD_EDIT_ERROR_NAME_REQUIRED": "Nazwa jest wymagana"
+  "FOOD_EDIT_ERROR_NAME_LONG": "Nazwa jest zbyt długa"
+  "FOOD_EDIT_ERROR_SIZE_REQUIRED": "Wielkość jest wymagana"
+  "FOOD_EDIT_ERROR_PRICE_REQUIRED": "Cena jest wymagana"
+  "FOOD_EDIT_ERROR_PRICE_MIN": "Cena musi być większa niż 0"
+  "FOOD_EDIT_ERROR_IMAGE_REQUIRED": "Zdjęcie jest wymagane"
+
   # ORDERS
   "ORDERS_INDEX_COUNT": "szt."
   "ORDERS_INDEX_CURRENCY": "zł"
