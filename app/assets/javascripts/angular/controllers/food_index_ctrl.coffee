@@ -16,7 +16,7 @@
 
   # # navigation
 
-  $scope.navFoodShow = (foodId) ->
-    $state.go('food_show', {foodId: foodId})
+  $scope.navFoodShow = (foodId, foodName) ->
+    $state.go('food_show', {foodId: foodId, foodName: foodName})
 
 @FoodIndexCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'foodData']

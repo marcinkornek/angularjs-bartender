@@ -139,7 +139,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     })
 
     .state('food_show', {
-      url: '/food/:foodId',
+      url: '/food/:foodId-:foodName',
       data: {
         roles: ['User']
       },

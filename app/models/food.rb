@@ -11,8 +11,4 @@ class Food < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  def to_param
-    [id, name.parameterize].join("-")
-  end
-
 end
