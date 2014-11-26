@@ -7,4 +7,12 @@ class Food < ActiveRecord::Base
   validates :price, presence: true,
                     numericality: { greater_than: 0 }
 
+  before_save { name.capitalize! }
+
+  mount_uploader :image, ImageUploader
+
+  def to_param
+    [id, name.parameterize].join("-")
+  end
+
 end

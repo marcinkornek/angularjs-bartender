@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get   '/api/check_if_unique_username'  => 'api/users#check_if_unique'
   get   '/auth/:provider/callback'       => 'api/sessions#oauth', as: :oauth
   post  '/api/users/upload'              => 'api/users#avatar_upload'
+  post  '/api/food/upload'               => 'api/food#image_upload'
   post  '/api/orders/:id'                => 'api/orders#create'
   post  '/api/order_close'               => 'api/orders#order_close', as: :order_order_close
   get   '/api/order_summary'             => 'api/orders#order_summary', as: :order_order_summary

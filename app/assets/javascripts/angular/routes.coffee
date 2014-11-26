@@ -126,6 +126,18 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       }
     })
 
+    .state('food_new', {
+      url: '/food/new',
+      data: {
+        roles: ['User']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "body":       { controller: 'FoodNewCtrl',  templateUrl: 'body/categories/food/food_new.html' }
+        "errors@food_new": { templateUrl: 'body/categories/food/food_new.errors.html' }
+      }
+    })
+
     .state('food_show', {
       url: '/food/:foodId',
       data: {
@@ -140,7 +152,6 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     })
 
     # Orders
-
     .state('order_summary', {
       url: '/orders',
       data: {

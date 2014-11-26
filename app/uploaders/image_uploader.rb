@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class AvatarUploader < CarrierWave::Uploader::Base
+class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -13,6 +13,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   else
     storage :file
   end
+
 
   include CarrierWave::MimeTypes
   process :set_content_type

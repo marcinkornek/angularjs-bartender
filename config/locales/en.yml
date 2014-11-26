@@ -74,6 +74,22 @@ en:
   # FOOD
   "FOOD_INDEX_TITLE": "Food"
 
+  "FOOD_NEW_TITLE": "Add food"
+  "FOOD_NEW_NAME": "Name"
+  "FOOD_NEW_SIZE": "Size"
+  "FOOD_NEW_PRICE": "Price"
+  "FOOD_NEW_IMAGE": "Food image"
+  "FOOD_NEW_SIZE_IMAGE": "size"
+  "FOOD_NEW_PREVIEW_IMAGE": 'preview'
+  "FOOD_NEW_REMOVE_IMAGE": 'remove image'
+  "FOOD_NEW_CREATE": "Add food"
+  "FOOD_NEW_ERROR_NAME_REQUIRED": "Name is required"
+  "FOOD_NEW_ERROR_NAME_LONG": "Name is too long"
+  "FOOD_NEW_ERROR_SIZE_REQUIRED": "Size is required"
+  "FOOD_NEW_ERROR_PRICE_REQUIRED": "Price is required"
+  "FOOD_NEW_ERROR_PRICE_MIN": "Price must be greater than or equal 0"
+  "FOOD_NEW_ERROR_IMAGE_REQUIRED": "Image is required"
+
   "FOOD_SHOW_NAME": "Name"
   "FOOD_SHOW_SIZE": "Size"
   "FOOD_SHOW_PRICE": "Price"

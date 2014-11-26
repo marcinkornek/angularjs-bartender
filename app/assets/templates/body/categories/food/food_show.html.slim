@@ -8,12 +8,11 @@ div ng-hide="data.food.error"
     h1.border-bottom
       ' {{ data.food.name }}
     .row
-      .col-md-2
-        div ng-show="data.food.image"
-          .food-image
-            img(ng-src="{{data.food.image}}")
+      .col-md-1
+        div ng-show="data.food.image.thumb.url"
+          img(ng-src="{{data.food.image.thumb.url}}")
 
-      .col-md-10
+      .col-md-11
         table
           tr
             th
@@ -30,7 +29,6 @@ div ng-hide="data.food.error"
               ' {{ "FOOD_SHOW_PRICE" | translate }}:
             td
               ' {{ data.food.price }}
-
 
 h1
   ' {{ "FOOD_SHOW_FOOD_ORDER" | translate }}

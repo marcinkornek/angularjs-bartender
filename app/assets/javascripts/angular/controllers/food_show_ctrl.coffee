@@ -8,7 +8,6 @@
       , (food) ->
         $scope.data.food = food
         console.log food
-        $scope.data.currentUser = window.currentUser  # it reads userId from head (see application.html.slim)
       , (error) ->
         console.log 'error'
         console.log error.status

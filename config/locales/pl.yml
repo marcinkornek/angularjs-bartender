@@ -81,6 +81,22 @@ pl:
   # FOOD
   "FOOD_INDEX_TITLE": "Jedzenie"
 
+  "FOOD_NEW_TITLE": "Dodaj jedzenie"
+  "FOOD_NEW_NAME": "Nazwa"
+  "FOOD_NEW_SIZE": "Wielkość"
+  "FOOD_NEW_PRICE": "Cena"
+  "FOOD_NEW_IMAGE": "Zdjęcie jedzenia"
+  "FOOD_NEW_SIZE_IMAGE": "rozmiar"
+  "FOOD_NEW_PREVIEW_IMAGE": 'podgląd'
+  "FOOD_NEW_REMOVE_IMAGE": 'usuń zdjęcie'
+  "FOOD_NEW_CREATE": "Dodaj jedzenie"
+  "FOOD_NEW_ERROR_NAME_REQUIRED": "Nazwa jest wymagana"
+  "FOOD_NEW_ERROR_NAME_LONG": "Nazwa jest zbyt długa"
+  "FOOD_NEW_ERROR_SIZE_REQUIRED": "Wielkość jest wymagana"
+  "FOOD_NEW_ERROR_PRICE_REQUIRED": "Cena jest wymagana"
+  "FOOD_NEW_ERROR_PRICE_MIN": "Cena musi być większa niż lub równa 0"
+  "FOOD_NEW_ERROR_IMAGE_REQUIRED": "Zdjęcie jest wymagane"
+
   "FOOD_SHOW_NAME": "Nazwa"
   "FOOD_SHOW_SIZE": "Rozmiar"
   "FOOD_SHOW_PRICE": "Cena"
