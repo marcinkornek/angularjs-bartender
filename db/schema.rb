@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125175818) do
+ActiveRecord::Schema.define(version: 20141127161030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,31 +23,11 @@ ActiveRecord::Schema.define(version: 20141125175818) do
     t.text     "image"
   end
 
-  create_table "drinks", force: true do |t|
-    t.string   "name"
-    t.string   "size"
-    t.decimal  "price"
-    t.integer  "category_id", default: 2
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "foods", force: true do |t|
-    t.string   "name"
-    t.string   "size"
-    t.decimal  "price"
-    t.integer  "category_id", default: 1
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image"
-  end
-
   create_table "order_details", force: true do |t|
     t.integer "amount"
     t.decimal "price"
     t.integer "order_id"
-    t.integer "orderable_id"
-    t.string  "orderable_type"
+    t.integer "product_id"
   end
 
   create_table "orders", force: true do |t|
@@ -58,13 +38,16 @@ ActiveRecord::Schema.define(version: 20141125175818) do
     t.decimal  "total_price"
   end
 
-  create_table "snacks", force: true do |t|
+  create_table "products", force: true do |t|
+    t.string   "product_type"
     t.string   "name"
     t.string   "size"
     t.decimal  "price"
-    t.integer  "category_id", default: 3
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
+    t.string   "category"
   end
 
   create_table "users", force: true do |t|
@@ -79,10 +62,10 @@ ActiveRecord::Schema.define(version: 20141125175818) do
     t.datetime "activation_token_expires_at"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
-    t.string   "avatar"
     t.string   "uid"
     t.string   "provider"
     t.boolean  "friendly_token",               default: false
+    t.string   "avatar"
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

@@ -1,19 +1,38 @@
-@FoodNewCtrl = ($scope, $state, foodData, FileUploader) ->
+@ProductNewCtrl = ($scope, $state, productData, FileUploader) ->
+
+  $scope.categories = [
+    'food',
+    'drinks',
+    'snacks'
+  ]
+
+  $scope.types = [
+    'milliliters',
+    'grams',
+    'size'
+  ]
+
+  $scope.sizes = [
+    'small',
+    'medium',
+    'large'
+  ]
 
   # functions
   $scope.data = {}
 
-  $scope.createFood = ->
-    if $scope.formData.name && $scope.formData.size && $scope.formData.price
-      foodData.save({}, $scope.formData
+  $scope.createProduct = ->
+    console.log $scope.formData.size
+    if $scope.formData.product_type && $scope.formData.name && $scope.formData.size && $scope.formData.price
+      productData.save({}, $scope.formData
         , (success) =>
           console.log 'success'
           console.log success
           if $scope.uploader.queue[0] == undefined
-            $state.go('food_index')
+            $state.go('home')
           else
             $scope.uploader.onCompleteAll = ->
-              $state.go('food_index')
+              $state.go('home')
             $('.btn-primary').text('Please wait - file is uploading')
             $('.btn-primary').addClass('disabled')
             $scope.uploader.uploadAll()
@@ -25,7 +44,7 @@
   csrf_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
 
   $scope.uploader = new FileUploader({
-    url: "api/food/upload"
+    url: "api/products/upload"
     headers : {
         'X-CSRF-TOKEN': csrf_token
     }
@@ -33,5 +52,5 @@
     queueLimit : '1'
   })
 
-@FoodNewCtrl.$inject = ['$scope', '$state', 'foodData', 'FileUploader']
+@ProductNewCtrl.$inject = ['$scope', '$state', 'productData', 'FileUploader']
 

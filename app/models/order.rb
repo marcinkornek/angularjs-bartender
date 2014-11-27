@@ -1,5 +1,6 @@
 class Order < ActiveRecord::Base
   has_many :order_details, dependent: :destroy
+  has_many :order_details, dependent: :destroy
   belongs_to :bartender, class_name: 'User'
 
   def set_total_price

@@ -1,45 +1,46 @@
-@FoodEditCtrl = ($scope, $stateParams, $state, foodData, FileUploader) ->
+@ProductEditCtrl = ($scope, $stateParams, $state, productData, FileUploader) ->
 
   # temporary data
 
-  $scope.loadTemporaryFood = ->
+  $scope.loadTemporaryProduct = ->
     $scope.formData =
-      title: 'Loading..'
-      contents: 'Loading..'
+      name: 'Loading..'
+      size: 'Loading..'
+      price: 'Loading..'
 
   # loading data
 
-  $scope.loadFood = ->
-    foodData.get({id: $stateParams.foodId}
-      , (food) ->
-        console.log food
-        $scope.formData.name = food.name
-        $scope.formData.size = food.size
-        $scope.formData.price = food.price
-        $scope.formData.image = food.image.thumb.url
-        $scope.formData.id = food.id
+  $scope.loadProduct = ->
+    productData.get({id: $stateParams.productId}
+      , (product) ->
+        console.log product
+        $scope.formData.name = product.name
+        $scope.formData.size = product.size
+        $scope.formData.price = product.price
+        $scope.formData.image = product.image.thumb.url
+        $scope.formData.id = product.id
       , (error) ->
         console.log 'error'
         console.log error.status
-        $scope.formData.error = 'There is no such food'
+        $scope.formData.error = 'There is no such product'
     )
 
-  $scope.loadTemporaryFood()
-  $scope.loadFood()
+  $scope.loadTemporaryProduct()
+  $scope.loadProduct()
 
   # functions
 
-  $scope.editFood = (foodId) ->
+  $scope.editProduct = (productId) ->
     if $scope.formData.name && $scope.formData.size && $scope.formData.price && $scope.formData.price > 0
-      foodData.update({}, $scope.formData
+      productData.update({}, $scope.formData
         , (success) =>
           console.log 'success'
           console.log success
           if $scope.uploader.queue[0] == undefined
-            $state.go('food_index')
+            $state.go('home')
           else
             $scope.uploader.onCompleteAll = ->
-              $state.go('food_index')
+              $state.go('home')
             $('.btn-primary').text('Please wait - file is uploading')
             $('.btn-primary').addClass('disabled')
             $scope.uploader.uploadAll()
@@ -51,7 +52,7 @@
   csrf_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
 
   $scope.uploader = new FileUploader({
-    url: "api/food/upload"
+    url: "api/products/upload"
     headers : {
         'X-CSRF-TOKEN': csrf_token
     }
@@ -59,4 +60,4 @@
     queueLimit : '1'
   })
 
-@FoodEditCtrl.$inject = ['$scope', '$stateParams', '$state', 'foodData', 'FileUploader']
+@ProductEditCtrl.$inject = ['$scope', '$stateParams', '$state', 'productData', 'FileUploader']

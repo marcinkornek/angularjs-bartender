@@ -69,7 +69,7 @@ class Api::OrdersController < ApplicationController
       order.set_total_price
       items = order.order_details.map do |od|
         {
-          item: od.orderable,
+          item: od.product,
           price: od.price,
           amount: od.amount,
           id: od.id

@@ -5,14 +5,8 @@
   $scope.navHome = ->
     $state.go('home')
 
-  $scope.navFood = ->
-    $state.go('food_index')
-
-  $scope.navDrinks = ->
-    $state.go('home')
-
-  $scope.navSnacks = ->
-    $state.go('home')
+  $scope.navProductIndex = (scope, category) ->
+    $state.go(scope, {category: category})
 
   $scope.navOrdersHistory = ->
     $state.go('orders_history', {pageNo: 1})

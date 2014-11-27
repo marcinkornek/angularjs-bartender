@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:create, :destroy]
     resources :categories
+    resources :products
     resources :food
     resources :drinks
     resources :snacks
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   get   '/api/check_if_unique_username'  => 'api/users#check_if_unique'
   get   '/auth/:provider/callback'       => 'api/sessions#oauth', as: :oauth
   post  '/api/users/upload'              => 'api/users#avatar_upload'
+  post  '/api/products/upload'           => 'api/products#image_upload'
   post  '/api/food/upload'               => 'api/food#image_upload'
   post  '/api/orders/:id'                => 'api/orders#create'
   post  '/api/order_close'               => 'api/orders#order_close', as: :order_order_close

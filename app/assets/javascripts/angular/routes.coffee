@@ -112,60 +112,6 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       }
     })
 
-
-    # Food
-    .state('food_index', {
-      url: '/food',
-      data: {
-        roles: ['User']
-      },
-      views: {
-        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
-        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
-        "body":       { controller: 'FoodIndexCtrl',  templateUrl: 'body/categories/food/food_index.html' }
-        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
-      }
-    })
-
-    .state('food_new', {
-      url: '/food/new',
-      data: {
-        roles: ['User']
-      },
-      views: {
-        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
-        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
-        "body":       { controller: 'FoodNewCtrl',  templateUrl: 'body/categories/food/food_new.html' }
-        "errors@food_new": { templateUrl: 'body/categories/food/food_new.errors.html' }
-      }
-    })
-
-    .state('food_show', {
-      url: '/food/:foodId-:foodName',
-      data: {
-        roles: ['User']
-      },
-      views: {
-        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
-        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
-        "body":       { controller: 'FoodShowCtrl',  templateUrl: 'body/categories/food/food_show.html' }
-        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
-      }
-    })
-
-    .state('food_edit', {
-      url: '/food/:foodId/edit',
-      data: {
-        roles: ['User']
-      },
-      views: {
-        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
-        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
-        "body":       { controller: 'FoodEditCtrl',  templateUrl: 'body/categories/food/food_edit.html' }
-        "errors@food_edit": { templateUrl: 'body/categories/food/food_edit.errors.html' }
-      }
-    })
-
     # Orders
     .state('order_summary', {
       url: '/order_summary',
@@ -188,5 +134,59 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
         "body":       { controller: 'OrderHistoryCtrl',  templateUrl: 'body/orders/orders_history.html' }
+      }
+    })
+
+
+    # Products
+    .state('product_new', {
+      url: '/products/new',
+      data: {
+        roles: ['User']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'ProductNewCtrl',  templateUrl: 'body/products/product_new.html' }
+        "errors@product_new": { templateUrl: 'body/products/product_new.errors.html' }
+      }
+    })
+
+    .state('products_index', {
+      url: '/products/:category',
+      data: {
+        roles: ['User']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'ProductsIndexCtrl',  templateUrl: 'body/products/products_index.html' }
+        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
+      }
+    })
+
+    .state('product_show', {
+      url: '/products/:category/:productId-:productName',
+      data: {
+        roles: ['User']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'ProductShowCtrl',  templateUrl: 'body/products/product_show.html' }
+        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
+      }
+    })
+
+    .state('product_edit', {
+      url: '/products/:category/:productId-:productName/edit',
+      data: {
+        roles: ['User']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'ProductEditCtrl',  templateUrl: 'body/products/product_edit.html' }
+        "errors@product_edit": { templateUrl: 'body/products/product_edit.errors.html' }
       }
     })

@@ -19,13 +19,7 @@
   $scope.navCategoryShow = (categoryId) ->
     $state.go('category_show', {categoryId: categoryId})
 
-  $scope.navFoodIndex = ->
-    $state.go('food_index')
-
-  $scope.navDrinksIndex = ->
-    $state.go('drinks_index')
-
-  $scope.navSnacksIndex = ->
-    $state.go('snacks_index')
+  $scope.navProductIndex = (scope, category) ->
+    $state.go(scope, {category: category})
 
 @CategoriesIndexCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'categoryData']

@@ -1,0 +1,59 @@
+div ng-show="data.product.error"
+  h1.text-center
+    ' {{ data.product.error }}
+
+
+div ng-hide="data.product.error"
+  .product-data
+    h1.border-bottom
+      ' {{ data.product.name }}
+    .row
+      .col-md-2
+        div ng-show="data.product.image.thumb.url"
+          img(ng-src="{{data.product.image.thumb.url}}")
+
+      .col-md-10
+        table
+          tr
+            td
+              ' {{ "PRODUCT_SHOW_NAME" | translate }}:
+            td
+              ' {{ data.product.name }}
+          tr
+            td
+              ' {{ "PRODUCT_SHOW_SIZE" | translate }}:
+            td
+              ' {{ data.product.size }}
+          tr
+            td
+              ' {{ "PRODUCT_SHOW_PRICE" | translate }}:
+            td
+              ' {{ data.product.price }}
+              ' {{ "PRODUCT_SHOW_CURRENCY" | translate }}:
+
+        button(type="button" class="btn btn-default navbar-btn" ng-click="navProductEdit(data.product.id, data.product.name)")
+          ' {{ "PRODUCT_SHOW_EDIT_PRODUCT" | translate }}
+
+h1
+  ' {{ "PRODUCT_SHOW_PRODUCT_ORDER" | translate }}
+
+.errors
+  div ng-show="productOrder.amount.$error.required && productOrder.amount.$dirty"
+    ' {{ "PRODUCT_SHOW_PRODUCT_AMOUNT_ERROR" | translate }}
+  div ng-show="productOrder.amount.$error.min && productOrder.amount.$dirty"
+    ' {{ "PRODUCT_SHOW_PRODUCT_MIN_ERROR" | translate }}
+
+form name="productOrder"
+  .field
+    label
+      strong
+        ' {{ "PRODUCT_SHOW_PRODUCT_AMOUNT" | translate }}
+    input.span12(name="amount" ng-model="formData.amount" min="0" required placeholder="{{ 'PRODUCT_SHOW_PRODUCT_AMOUNT_PLACEHOLDER' | translate }}" type="number")
+
+  .price ng-show="formData.amount"
+    ' {{ formData.amount * data.product.price }}
+    ' {{ "PRODUCT_SHOW_CURRENCY" | translate }}
+  button.btn.btn-primary(ng-click="createOrder()")
+    ' {{ "PRODUCT_SHOW_ORDER_PRODUCT" | translate }}
+  button.btn.btn-danger(ng-click="clearOrder()")
+    ' {{ "PRODUCT_SHOW_CLEAR_ORDER_PRODUCT" | translate }}

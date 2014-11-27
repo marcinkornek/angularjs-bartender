@@ -1,0 +1,13 @@
+.errors.text-center
+  div ng-show="ProductCreate.name.$error.required && ProductCreate.name.$dirty"
+    ' {{ "PRODUCT_NEW_ERROR_NAME_REQUIRED" | translate }}
+  div ng-show="ProductCreate.name.$error.maxlength"
+    ' {{ "PRODUCT_NEW_ERROR_NAME_LONG" | translate }}
+  div ng-show="ProductCreate.size.$error.required && ProductCreate.size.$dirty"
+    ' {{ "PRODUCT_NEW_ERROR_SIZE_REQUIRED" | translate }}
+  div ng-show="ProductCreate.price.$error.required && ProductCreate.price.$dirty"
+    ' {{ "PRODUCT_NEW_ERROR_PRICE_REQUIRED" | translate }}
+  div ng-show="ProductCreate.price.$error.min && ProductCreate.price.$dirty"
+    ' {{ "PRODUCT_NEW_ERROR_PRICE_MIN" | translate }}
+  div ng-show="ProductCreate.image.$error.required"
+    ' {{ "PRODUCT_NEW_ERROR_IMAGE_REQUIRED" | translate }}

@@ -1,10 +1,8 @@
 class OrderDetail < ActiveRecord::Base
   belongs_to :order
-  belongs_to :orderable, polymorphic: :true
+  belongs_to :product
 
-  validates :orderable_id,    presence: true
-  validates :orderable_type,  presence: true
-
+  validates :product, presence: true
   validates :order,   presence: true
   validates :amount,  presence: true,
                       numericality: { greater_than: 0 }

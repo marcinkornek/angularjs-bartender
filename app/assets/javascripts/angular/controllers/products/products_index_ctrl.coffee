@@ -1,0 +1,25 @@
+@ProductsIndexCtrl = ($scope, $state, $stateParams, $http, productData) ->
+
+  # # loading data
+
+  $scope.loadProducts = ->
+    $scope.data = {}
+    productData.query({category: $stateParams.category}
+      , (products) =>
+        $scope.data.products = products
+      , (error) ->
+        console.log 'error'
+        console.log error.status
+    )
+
+  $scope.loadProducts()
+
+  # # navigation
+
+  $scope.navProductShow = (productId, productName) ->
+    $state.go('product_show', {category: $stateParams.category, productId: productId, productName: productName})
+
+  $scope.navProductNew = ->
+    $state.go('product_new')
+
+@ProductsIndexCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'productData']

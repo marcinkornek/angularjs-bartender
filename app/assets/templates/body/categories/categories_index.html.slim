@@ -10,7 +10,6 @@
   /         img(ng-src="{{ category.image }}" ng-click="navCategoryShow(category.id)")
   /         / img(ng-src="{{ category.image }}" ng-click={{ genLink(category) }})
 
-
   .categories.align-center
     row
       .category
@@ -18,23 +17,23 @@
           ' {{ "CATEGORIES_INDEX_FOOD" | translate }}
           .category-image
             - if Rails.env.production?
-              img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/food.jpg" ng-click="navFoodIndex()")
+              img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/food.jpg" ng-click="navProductIndex('products_index','food')")
             - else
-              img(ng-src="uploads/categories/image/food.jpg" ng-click="navFoodIndex()")
+              img(ng-src="uploads/categories/image/food.jpg" ng-click="navProductIndex('products_index','food')")
       .category
         h3.align-center
           ' {{ "CATEGORIES_INDEX_DRINKS" | translate }}
           .category-image
             - if Rails.env.production?
-              img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/drink.jpg" ng-click="navDrinksIndex()")
+              img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/drink.jpg" ng-click="navProductIndex('products_index','drinks')")
             - else
-              img(ng-src="uploads/categories/image/drink.jpg" ng-click="navDrinksIndex()")
+              img(ng-src="uploads/categories/image/drink.jpg" ng-click="navProductIndex('products_index','drinks')")
       .category
         h3.align-center
           ' {{ "CATEGORIES_INDEX_SNACKS" | translate }}
           .category-image
             - if Rails.env.production?
-              img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/snack.jpg" ng-click="navSnacksIndex()")
+              img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/snack.jpg" ng-click="navProductIndex('products_index','snacks')")
             - else
-              img(ng-src="uploads/categories/image/snack.jpg" ng-click="navSnacksIndex()")
+              img(ng-src="uploads/categories/image/snack.jpg" ng-click="navProductIndex('products_index','snacks')")
 
