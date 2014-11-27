@@ -86,7 +86,9 @@ pl:
   "CATEGORIES_INDEX_SNACKS": "Przekąski"
 
   # PRODUCTS
-  "PRODUCTS_INDEX_TITLE": "Produkty"
+  "PRODUCTS_INDEX_TITLE_FOOD": "Jedzenie"
+  "PRODUCTS_INDEX_TITLE_DRINKS": "Picie"
+  "PRODUCTS_INDEX_TITLE_SNACKS": "Przekąski"
   "PRODUCTS_INDEX_ADD_PRODUCT": "Dodaj produkty"
   "PRODUCTS_INDEX_CURRENCY": "zł"
 
@@ -152,6 +154,7 @@ pl:
   "ORDERS_INDEX_STATE": "Stan zamówienia"
 
   "ORDERS_HISTORY_TITLE": "Historia zamówień"
+  "ORDERS_HISTORY_EMPTY": "Historia zamówień jest pusta"
   "ORDERS_HISTORY_BARTENDER": "Barman"
   "ORDERS_HISTORY_UPDATED": "Utworzono"
   "ORDERS_HISTORY_TOTAL_PRICE": "Łączna kwota"

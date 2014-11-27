@@ -22,17 +22,16 @@
   $scope.data = {}
 
   $scope.createProduct = ->
-    console.log $scope.formData.size
-    if $scope.formData.product_type && $scope.formData.name && $scope.formData.size && $scope.formData.price
+    if $scope.formData.category && $scope.formData.product_type && $scope.formData.name && $scope.formData.size && $scope.formData.price
       productData.save({}, $scope.formData
         , (success) =>
           console.log 'success'
           console.log success
           if $scope.uploader.queue[0] == undefined
-            $state.go('home')
+            $state.go('products_index', {category: success.category})
           else
             $scope.uploader.onCompleteAll = ->
-              $state.go('home')
+              $state.go('products_index', {category: success.category})
             $('.btn-primary').text('Please wait - file is uploading')
             $('.btn-primary').addClass('disabled')
             $scope.uploader.uploadAll()

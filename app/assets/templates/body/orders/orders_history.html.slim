@@ -1,15 +1,19 @@
 h1.text-center translate="ORDERS_HISTORY_TITLE"
 
-div ng-show="data.orders"
+div ng-hide="data.orders.orders"
+  h3.align-center
+    ' {{ "ORDERS_HISTORY_EMPTY" | translate }}
+
+div ng-show="data.orders.orders"
   .col-md-offset-4.orders-history
     table(border="1")
       tr
         td.bold
-          ' {{ "ORDERS_HISTORY_BARTENDER" | translate }}:
+          ' {{ "ORDERS_HISTORY_BARTENDER" | translate }}
         td.bold
-          ' {{ "ORDERS_HISTORY_UPDATED" | translate }}:
+          ' {{ "ORDERS_HISTORY_UPDATED" | translate }}
         td.bold
-          ' {{ "ORDERS_HISTORY_TOTAL_PRICE" | translate }}:
+          ' {{ "ORDERS_HISTORY_TOTAL_PRICE" | translate }}
 
       tr(ng-repeat="order in data.orders.orders")
         td
@@ -18,7 +22,7 @@ div ng-show="data.orders"
           ' {{ order.updated | date:"dd/MM/yyyy - HH:mm" }}
         td
           ' {{ order.total_price }}
-          ' {{ "ORDERS_HISTORY_CURRENCY" | translate }}:
+          ' {{ "ORDERS_HISTORY_CURRENCY" | translate }}
 
   .align-center
     .pagination ng-show="totalItems > 10"

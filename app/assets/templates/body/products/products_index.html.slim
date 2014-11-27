@@ -1,4 +1,10 @@
-h1.text-center translate="PRODUCTS_INDEX_TITLE"
+div ng-show="data.category == 'food'"
+  h1.text-center translate="PRODUCTS_INDEX_TITLE_FOOD"
+div ng-show="data.category == 'drinks'"
+  h1.text-center translate="PRODUCTS_INDEX_TITLE_DRINKS"
+div ng-show="data.category == 'snacks'"
+  h1.text-center translate="PRODUCTS_INDEX_TITLE_SNACKS"
+
 .categories.align-center
   row(ng-repeat="product in data.products")
     .inline-block

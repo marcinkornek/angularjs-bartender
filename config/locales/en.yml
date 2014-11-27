@@ -79,7 +79,9 @@ en:
   "CATEGORIES_INDEX_SNACKS": "Snacks"
 
   # PRODUCTS
-  "PRODUCTS_INDEX_TITLE": "Products"
+  "PRODUCTS_INDEX_TITLE_FOOD": "Food"
+  "PRODUCTS_INDEX_TITLE_DRINKS": "Drinks"
+  "PRODUCTS_INDEX_TITLE_SNACKS": "Snacks"
   "PRODUCTS_INDEX_ADD_PRODUCT": "Add product"
   "PRODUCTS_INDEX_CURRENCY": "zł"
 
@@ -145,6 +147,7 @@ en:
   "ORDERS_INDEX_STATE": "Order state"
 
   "ORDERS_HISTORY_TITLE": "Orders history"
+  "ORDERS_HISTORY_EMPTY": "Orders history is empty"
   "ORDERS_HISTORY_BARTENDER": "Bartender"
   "ORDERS_HISTORY_UPDATED": "Created at"
   "ORDERS_HISTORY_TOTAL_PRICE": "Total price"

@@ -26,8 +26,8 @@ class Api::OrdersController < ApplicationController
       @order
     end
     price = params[:price].to_f * params[:amount].to_i
-    item = orderable_type.find(params[:id])
-    order_detail = OrderDetail.new(order: @order, orderable: item, amount: params[:amount], price: price)
+    item = Product.find(params[:id])
+    order_detail = OrderDetail.new(order: @order, product: item, amount: params[:amount], price: price)
     if order_detail.save
       render json: order_detail
     else

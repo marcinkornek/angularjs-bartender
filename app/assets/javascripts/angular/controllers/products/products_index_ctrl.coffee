@@ -1,9 +1,11 @@
 @ProductsIndexCtrl = ($scope, $state, $stateParams, $http, productData) ->
 
+
   # # loading data
 
   $scope.loadProducts = ->
     $scope.data = {}
+    $scope.data.category = $stateParams.category
     productData.query({category: $stateParams.category}
       , (products) =>
         $scope.data.products = products
