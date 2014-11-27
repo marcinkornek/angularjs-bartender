@@ -15,7 +15,7 @@
     row
       .category
         h3.align-center
-          ' food
+          ' {{ "CATEGORIES_INDEX_FOOD" | translate }}
           .category-image
             - if Rails.env.production?
               img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/food.jpg" ng-click="navFoodIndex()")
@@ -23,7 +23,7 @@
               img(ng-src="uploads/categories/image/food.jpg" ng-click="navFoodIndex()")
       .category
         h3.align-center
-          ' drinks
+          ' {{ "CATEGORIES_INDEX_DRINKS" | translate }}
           .category-image
             - if Rails.env.production?
               img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/drink.jpg" ng-click="navDrinksIndex()")
@@ -31,7 +31,7 @@
               img(ng-src="uploads/categories/image/drink.jpg" ng-click="navDrinksIndex()")
       .category
         h3.align-center
-          ' snacks
+          ' {{ "CATEGORIES_INDEX_SNACKS" | translate }}
           .category-image
             - if Rails.env.production?
               img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/snack.jpg" ng-click="navSnacksIndex()")

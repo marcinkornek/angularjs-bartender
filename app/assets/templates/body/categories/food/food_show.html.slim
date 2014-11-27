@@ -8,24 +8,24 @@ div ng-hide="data.food.error"
     h1.border-bottom
       ' {{ data.food.name }}
     .row
-      .col-md-1
+      .col-md-2
         div ng-show="data.food.image.thumb.url"
           img(ng-src="{{data.food.image.thumb.url}}")
 
-      .col-md-11
+      .col-md-10
         table
           tr
-            th
+            td
               ' {{ "FOOD_SHOW_NAME" | translate }}:
             td
               ' {{ data.food.name }}
           tr
-            th
+            td
               ' {{ "FOOD_SHOW_SIZE" | translate }}:
             td
               ' {{ data.food.size }}
           tr
-            th
+            td
               ' {{ "FOOD_SHOW_PRICE" | translate }}:
             td
               ' {{ data.food.price }}

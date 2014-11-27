@@ -68,9 +68,15 @@ en:
   # NAVIGATION
   "NAV_HOME": "Home"
   "NAV_ORDERS_HISTORY": "Orders history"
+  "NAV_FOOD": "Food"
+  "NAV_DRINKS": "Drinks"
+  "NAV_SNACKS": "Snacks"
 
   # CATEGORIES
   "CATEGORIES_INDEX_TITLE": "Categories"
+  "CATEGORIES_INDEX_FOOD": "Food"
+  "CATEGORIES_INDEX_DRINKS": "Drinks"
+  "CATEGORIES_INDEX_SNACKS": "Snacks"
 
   # FOOD
   "FOOD_INDEX_TITLE": "Food"

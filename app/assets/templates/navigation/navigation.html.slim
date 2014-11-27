@@ -3,6 +3,15 @@ div(style="margin-top: 50px")
     span.glyphicon.glyphicon-home aria-hidden="true"
     ' {{ "NAV_HOME" | translate }}
 
+  button.btn.btn-default.btn-lg(ng-click="navFood()")
+    ' {{ "NAV_FOOD" | translate }}
+
+  button.btn.btn-default.btn-lg(ng-click="navDrinks()")
+    ' {{ "NAV_DRINKS" | translate }}
+
+  button.btn.btn-default.btn-lg(ng-click="navSnacks()")
+    ' {{ "NAV_SNACKS" | translate }}
+
   button.btn.btn-default.btn-lg.navbar-right(ng-click="navOrdersHistory()")
     span.glyphicon.glyphicon-book aria-hidden="true"
     ' {{ "NAV_ORDERS_HISTORY" | translate }}

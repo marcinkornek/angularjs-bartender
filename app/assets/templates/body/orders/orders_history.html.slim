@@ -1,18 +1,25 @@
 h1.text-center translate="ORDERS_HISTORY_TITLE"
 
 div ng-show="data.orders"
-  row(ng-repeat="order in data.orders.orders")
-    li
-      .col-md-3
-        ' {{ "ORDERS_HISTORY_BARTENDER" | translate }}:
-        ' {{ order.bartender }}
-      .col-md-3
-        ' {{ "ORDERS_HISTORY_UPDATED" | translate }}:
-        ' {{ order.updated | date:"dd/MM/yyyy - HH:mm" }}
-      .col-md-3
-        ' {{ "ORDERS_HISTORY_TOTAL_PRICE" | translate }}:
-        ' {{ order.total_price }}
-        ' {{ "ORDERS_HISTORY_CURRENCY" | translate }}:
+  .col-md-offset-4.orders-history
+    table(border="1")
+      tr
+        td.bold
+          ' {{ "ORDERS_HISTORY_BARTENDER" | translate }}:
+        td.bold
+          ' {{ "ORDERS_HISTORY_UPDATED" | translate }}:
+        td.bold
+          ' {{ "ORDERS_HISTORY_TOTAL_PRICE" | translate }}:
 
-  .pagination ng-show="totalItems > 10"
-    pagination total-items="totalItems" ng-model="data.currentPage" ng-change="pageChanged()" max-size="10" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"
+      tr(ng-repeat="order in data.orders.orders")
+        td
+          ' {{ order.bartender }}
+        td
+          ' {{ order.updated | date:"dd/MM/yyyy - HH:mm" }}
+        td
+          ' {{ order.total_price }}
+          ' {{ "ORDERS_HISTORY_CURRENCY" | translate }}:
+
+  .align-center
+    .pagination ng-show="totalItems > 10"
+      pagination total-items="totalItems" ng-model="data.currentPage" ng-change="pageChanged()" max-size="10" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"

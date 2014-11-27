@@ -75,9 +75,15 @@ pl:
   # NAVIGATION
   "NAV_HOME": "Strona główna"
   "NAV_ORDERS_HISTORY": "Historia zamówień"
+  "NAV_FOOD": "Jedzenie"
+  "NAV_DRINKS": "Napoje"
+  "NAV_SNACKS": "Przekąski"
 
   # CATEGORIES
   "CATEGORIES_INDEX_TITLE": "Kategorie"
+  "CATEGORIES_INDEX_FOOD": "Jedzenie"
+  "CATEGORIES_INDEX_DRINKS": "Napoje"
+  "CATEGORIES_INDEX_SNACKS": "Przekąski"
 
   # FOOD
   "FOOD_INDEX_TITLE": "Jedzenie"

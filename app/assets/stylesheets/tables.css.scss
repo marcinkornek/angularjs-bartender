@@ -1,0 +1,13 @@
+.orders-history {
+  table {
+    width: 50%;
+    tr {
+      td {
+        text-align: center;
+        &.bold {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
