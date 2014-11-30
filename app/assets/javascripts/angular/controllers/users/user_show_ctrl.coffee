@@ -9,6 +9,7 @@
         email: 'Loading..'
         id: 'Loading..'
         created_at: 'Loading..'
+        role: 'Loading..'
 
   # loading data
 

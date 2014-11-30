@@ -21,8 +21,8 @@ class Api::SessionsController < ApplicationController
   end
 
   def oauth
-    @user = User.find_for_oauth(request.env["omniauth.auth"])
-    auto_login(@user)
+    user = User.find_for_oauth(request.env["omniauth.auth"])
+    auto_login(user)
     redirect_to root_path
   end
 

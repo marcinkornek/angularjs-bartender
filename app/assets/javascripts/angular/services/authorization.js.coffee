@@ -9,7 +9,7 @@ angular.module('Bartender').factory "authorization", [ "$rootScope", "$state", "
         isAuthenticated = principal.isAuthenticated()
         if $rootScope.toState.data.roles && $rootScope.toState.data.roles.length > 0 && !principal.isInAnyRole($rootScope.toState.data.roles)
           if isAuthenticated # user is signed in but not authorized for desired state
-            $state.go('accessdenied')
+            $state.go('home')
           else
             # user is not authenticated. stow the state they wanted before you
             # send them to the signin state, so you can return them when you're done

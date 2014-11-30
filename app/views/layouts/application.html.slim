@@ -9,11 +9,10 @@ html ng-app="Bartender"
 
     - if logged_in?
       javascript:
-        window.currentUser = #{ raw current_user.extend(ListUserRepresenter).to_json}
+        window.currentUser = #{ raw current_user.extend(HeaderUserRepresenter).to_json}
     - else
       javascript:
         window.currentUser = {}
-
 
   body
     .container

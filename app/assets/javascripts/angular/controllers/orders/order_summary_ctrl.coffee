@@ -7,8 +7,8 @@
     ordersData.order_summary({}
       , (orders) ->
         $scope.data.orders = orders
-        console.log 'order'
-        console.log orders
+        # console.log 'order'
+        # console.log orders
         $scope.data.currentUser = window.currentUser  # it reads userId from head (see application.html.slim)
       , (error) ->
         console.log 'error'

@@ -38,6 +38,11 @@ div ng-hide="data.user.error"
               ' {{ "USER_SHOW_CREATED_AT" | translate }}:
             td
               ' {{ data.user.created_at | date }}
+          tr
+            th
+              ' {{ "USER_SHOW_ROLE" | translate }}:
+            td
+              ' {{ data.user.role }}
 
     div ng-show="data.user.id==data.user.currentUser.id"
       button.btn.btn-default(ng-click="navEditUser(data.user.id)")

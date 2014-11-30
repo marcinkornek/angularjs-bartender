@@ -56,7 +56,7 @@ angular.module('Bartender').run([ "$rootScope", "$state", "$stateParams", "autho
       # console.log 'true'
       principal.authenticate
         username: window.currentUser.username
-        roles: [ "User" ]
+        roles: [ window.currentUser.role ]
     else
       principal.authenticate(null)
       # console.log 'false'

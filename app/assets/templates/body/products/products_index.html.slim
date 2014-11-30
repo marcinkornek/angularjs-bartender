@@ -17,5 +17,5 @@ div ng-show="data.category == 'snacks'"
         ' {{ product.price }}
         ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
 
-button(type="button" class="btn btn-default navbar-btn" ng-click="navProductNew()")
+button(type="button" class="btn btn-default navbar-btn" ng-click="navProductNew()" ng-show="data.current_user.role == 'Admin'")
   ' {{ "PRODUCTS_INDEX_ADD_PRODUCT" | translate }}

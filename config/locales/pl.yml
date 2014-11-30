@@ -50,6 +50,7 @@ pl:
   "USER_SHOW_EMAIL": "Email"
   "USER_SHOW_ID": "ID:"
   "USER_SHOW_CREATED_AT": "Utworzono"
+  "USER_SHOW_ROLE": "Rola"
   "USER_SHOW_EDIT": "Edytuj"
   "USER_SHOW_DELETE": "Usuń"
 

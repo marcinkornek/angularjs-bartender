@@ -1,4 +1,6 @@
 class Api::ProductsController < ApplicationController
+  before_action :require_login
+  before_action :check_if_admin, except: [:index, :show]
 
   def index
     @product = if !params[:category].empty?

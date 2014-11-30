@@ -19,9 +19,10 @@
           console.log success.user
           window.currentUser = success.user
           # user authorization
-          principal.authenticate
-            username: success.user.username
-            roles: [ "User" ]
+          console.log 'role = ', success.user.role
+          principal.authenticate(success.user.role)
+            # username: success.user.username
+            # roles: [ "User" ]
           # friendly forwarding
           if ($scope.returnToState)
             $state.go($scope.returnToState.name, $scope.returnToStateParams)

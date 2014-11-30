@@ -12,7 +12,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "body":       { controller: 'SessionNewCtrl',  templateUrl: 'body/sessions/session_new.html' }
       }
       data: {
-        roles: ['User']
+        roles: ['User', 'Admin']
       }
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
@@ -49,7 +49,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     .state('user_show', {
       url: '/user/:userId',
       data: {
-        roles: ['User']
+        roles: ['User', 'Admin']
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
@@ -60,7 +60,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     .state('user_edit', {
       url: '/user/:userId/edit',
       data: {
-        roles: ['User']
+        roles: ['User', 'Admin']
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
@@ -89,7 +89,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     .state('categories_index', {
       url: '/categories',
       data: {
-        roles: ['User']
+        roles: ['User', 'Admin']
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
@@ -102,7 +102,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     .state('category_show', {
       url: '/categories/:categoryId',
       data: {
-        roles: ['User']
+        roles: ['User', 'Admin']
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
@@ -116,7 +116,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     .state('order_summary', {
       url: '/order_summary',
       data: {
-        roles: ['User']
+        roles: ['User', 'Admin']
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
@@ -128,7 +128,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     .state('orders_history', {
       url: '/orders/page-:pageNo',
       data: {
-        roles: ['User']
+        roles: ['User', 'Admin']
       },
       views: {
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
@@ -142,7 +142,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     .state('product_new', {
       url: '/products/new',
       data: {
-        roles: ['User']
+        roles: ['Admin']
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
@@ -155,7 +155,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     .state('products_index', {
       url: '/products/:category',
       data: {
-        roles: ['User']
+        roles: ['User', 'Admin']
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
@@ -168,7 +168,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     .state('product_show', {
       url: '/products/:category/:productId-:productName',
       data: {
-        roles: ['User']
+        roles: ['User', 'Admin']
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
@@ -181,7 +181,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     .state('product_edit', {
       url: '/products/:category/:productId-:productName/edit',
       data: {
-        roles: ['User']
+        roles: ['Admin']
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }

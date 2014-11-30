@@ -31,7 +31,7 @@ div ng-hide="data.product.error"
               ' {{ data.product.price }}
               ' {{ "PRODUCT_SHOW_CURRENCY" | translate }}:
 
-        button(type="button" class="btn btn-default navbar-btn" ng-click="navProductEdit(data.product.id, data.product.name)")
+        button(type="button" class="btn btn-default navbar-btn" ng-click="navProductEdit(data.product.id, data.product.name)" ng-show="data.current_user.role == 'Admin'")
           ' {{ "PRODUCT_SHOW_EDIT_PRODUCT" | translate }}
 
 h1

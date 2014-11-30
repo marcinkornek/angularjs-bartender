@@ -7,8 +7,8 @@
     ordersData.query({page: pageNo}
       , (orders) ->
         $scope.data.orders = orders
-        console.log 'order'
-        console.log orders
+        # console.log 'order'
+        # console.log orders
         $scope.totalItems = orders.number
         $scope.data.currentPage = pageNo
         $scope.data.currentUser = window.currentUser  # it reads userId from head (see application.html.slim)

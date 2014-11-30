@@ -6,6 +6,7 @@ module UserRepresenter
   property :email
   property :created_at
   property :avatar
+  property :role
 end
 
 

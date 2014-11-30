@@ -4,6 +4,8 @@
 
   $scope.loadProduct = ->
     $scope.data = {}
+    $scope.data.current_user = window.currentUser
+    console.log window.currentUser
     productData.get({id: $stateParams.productId}
       , (product) ->
         $scope.data.product = product

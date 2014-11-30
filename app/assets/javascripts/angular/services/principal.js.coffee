@@ -7,13 +7,14 @@ angular.module('Bartender').factory "principal", [ "$q", "$http", "$timeout", ($
   _authenticated = false
 
   isIdentityResolved: ->
-    console.log 'id',_identity
+    # console.log 'id',_identity
     angular.isDefined _identity
 
   isAuthenticated: ->
     _authenticated
 
   isInRole: (role) ->
+    # console.log _identity.roles
     return false  if not _authenticated or not _identity.roles
     _identity.roles.indexOf(role) isnt -1
 
@@ -27,6 +28,7 @@ angular.module('Bartender').factory "principal", [ "$q", "$http", "$timeout", ($
     false
 
   authenticate: (identity) ->
+    # console.log 'identity =', identity
     _identity = identity
     _authenticated = identity?
     # console.log _authenticated
