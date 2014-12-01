@@ -177,3 +177,11 @@ en:
   session_controller:
     "activate_email": 'Please check your email and activate account'
     "wrong_email_password": 'Wrong email/username or password'
+
+  mailer:
+    welcome_email:
+      "first_line": "Welcome to Bartender,"
+      "second_line": "You have successfully signed up to Bartender"
+      "third_line": "your username is:"
+      "fourth_line": "To confirm registration and login to the site, just follow this link:"
+      "fifth_line": "Thanks for joining and have a great day!"

@@ -185,3 +185,11 @@ pl:
   session_controller:
     "activate_email": 'Proszę sprawdzić email i aktywować konto'
     "wrong_email_password": 'Nieprawidłowy email/nick lub hasło'
+
+  mailer:
+    welcome_email:
+      "first_line": "Witamy na stronie Bar,"
+      "second_line": "Zarejestrowałeś się na stronie Bar"
+      "third_line": "Twój nick to:"
+      "fourth_line": "Żeby potwierdzić rejestrację i zalogować się na stronie kliknij w link:"
+      "fifth_line": "Dziękujemy za dołączenie i życzymy miłego dnia!"

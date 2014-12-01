@@ -1,9 +1,8 @@
-Welcome to example.com, <%= @user.username %>
+<%= I18n.t('mailer.welcome_email.first_line') %> <%= @user.username %>
 ===============================================
+<%= I18n.t('mailer.welcome_email.second_line') %>
+<%= I18n.t('mailer.welcome_email.third_line') %> <%= @user.username %>.
 
-You have successfully signed up to example.com,
-your username is: <%= @user.username %>.
+<%= I18n.t('mailer.welcome_email.fourth_line') %> <%= @url %>
 
-To login to the site, just follow this link: <%= @url %> .
-
-Thanks for joining and have a great day!
+<%= I18n.t('mailer.welcome_email.fifth_line') %>
