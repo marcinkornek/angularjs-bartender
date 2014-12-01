@@ -1,6 +1,7 @@
 angular.module('Bartender').factory "ordersData", ($resource) ->
   $resource("/api/orders/:id", {id: "@id"},
     {
+      get:   {isArray: true},
       query: {isArray: false},
       update:        {method: "PUT"},
       order_summary: {method: "GET", isArray: false, url: '/api/order_summary'},

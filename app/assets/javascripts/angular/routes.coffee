@@ -137,6 +137,18 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       }
     })
 
+    .state('orders_history_show', {
+      url: '/orders/:orderId',
+      data: {
+        roles: ['User', 'Admin']
+      },
+      views: {
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "body":       { controller: 'OrderHistoryShowCtrl',  templateUrl: 'body/orders/orders_history_show.html' }
+      }
+    })
+
 
     # Products
     .state('product_new', {

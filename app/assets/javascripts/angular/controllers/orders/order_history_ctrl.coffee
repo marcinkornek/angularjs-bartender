@@ -27,4 +27,9 @@
     console.log "Page changed to: " + $scope.data.currentPage
     $scope.loadOrder($scope.data.currentPage)
 
+  # navigation
+
+  $scope.navOrderDetail = (orderId) ->
+    $state.go('orders_history_show', {orderId: orderId})
+
 @OrderHistoryCtrl.$inject = ['$scope', '$state', 'principal', '$stateParams', '$translate', 'ordersData']

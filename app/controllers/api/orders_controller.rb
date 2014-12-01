@@ -5,10 +5,21 @@ class Api::OrdersController < ApplicationController
       {
         bartender: o.bartender.username,
         updated: o.updated_at,
-        total_price: o.total_price
+        total_price: o.total_price,
+        id: o.id
       }
     end
     render json: { orders: orders, number: Order.count}
+  end
+
+  def show
+    order_details = Order.find(params[:id]).order_details.map do |o|
+      {
+        order_details: o,
+        product_details: o.product
+      }
+    end
+    render json: order_details
   end
 
   def order_summary

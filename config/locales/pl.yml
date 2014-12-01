@@ -161,6 +161,12 @@ pl:
   "ORDERS_HISTORY_TOTAL_PRICE": "Łączna kwota"
   "ORDERS_HISTORY_CURRENCY": "zł"
 
+  "ORDERS_HISTORY_SHOW_TITLE": "Szczegóły zamówienia"
+  "ORDERS_HISTORY_SHOW_AMOUNT": "Ilość"
+  "ORDERS_HISTORY_SHOW_PRICE": "Cena"
+  "ORDERS_HISTORY_SHOW_NAME": "Nazwa"
+  "ORDERS_HISTORY_SHOW_SIZE": "Rozmiar"
+
   # SESSION
   "SESSION_NEW_SIGN_IN_WITH_FACEBOOK": "Zaloguj się z Facebookiem"
   "SESSION_NEW_SIGN_IN_WITH_GOOGLE": "Zaloguj się z Google"

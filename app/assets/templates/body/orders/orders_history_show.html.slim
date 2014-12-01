@@ -1,0 +1,20 @@
+h1.text-center translate="ORDERS_HISTORY_SHOW_TITLE"
+
+/ ' {{ data.orders }}
+
+div ng-show="data.orders"
+
+  ul(ng-repeat="order in data.orders")
+    li
+      a(ng-click="navProductShow(order.product_details.category, order.product_details.id, order.product_details.name)")
+        ' {{ "ORDERS_HISTORY_SHOW_NAME" | translate }}:
+        ' {{ order.product_details.name }}
+    li
+      ' {{ "ORDERS_HISTORY_SHOW_SIZE" | translate }}:
+      ' {{ order.product_details.size }}
+    li
+      ' {{ "ORDERS_HISTORY_SHOW_AMOUNT" | translate }}:
+      ' {{ order.order_details.amount }}
+    li
+      ' {{ "ORDERS_HISTORY_SHOW_PRICE" | translate }}:
+      ' {{ order.order_details.price }}

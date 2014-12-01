@@ -14,6 +14,7 @@ div ng-show="data.orders.orders"
           ' {{ "ORDERS_HISTORY_UPDATED" | translate }}
         td.bold
           ' {{ "ORDERS_HISTORY_TOTAL_PRICE" | translate }}
+        td
 
       tr(ng-repeat="order in data.orders.orders")
         td
@@ -23,6 +24,9 @@ div ng-show="data.orders.orders"
         td
           ' {{ order.total_price }}
           ' {{ "ORDERS_HISTORY_CURRENCY" | translate }}
+        td
+          a(ng-click="navOrderDetail(order.id)")
+            ' details
 
   .align-center
     .pagination ng-show="totalItems > 10"
