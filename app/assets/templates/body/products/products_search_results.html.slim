@@ -1,52 +1,24 @@
-h1.text-center(translate="PRODUCTS_INDEX_TITLE_FOOD" ng-show="data.products.food")
+div ng-show="data.products.results > 0"
+  row(ng-repeat="category in data.products")
+    h1.text-center(translate="PRODUCTS_INDEX_TITLE_FOOD"   ng-show="category.products.length > 0 && category.category == 'food'")
+    h1.text-center(translate="PRODUCTS_INDEX_TITLE_DRINKS" ng-show="category.products.length > 0 && category.category == 'drinks'")
+    h1.text-center(translate="PRODUCTS_INDEX_TITLE_SNACKS" ng-show="category.products.length > 0 && category.category == 'snacks'")
 
-row(ng-repeat="product in data.products.food")
-  .inline-block
-    a.align-center(ng-click="navProductShow(product.category, product.id, product.name)")
-      ' {{ product.name }}
-      ' -
-      ' {{ product.size }}
-      .product-image
-        img(ng-src="{{product.image.thumb.url}}")
-      ' {{ product.price }}
-      ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
+    row(ng-repeat="product in category.products")
+      .inline-block
+        a.align-center(ng-click="navProductShow(product.category, product.id, product.name)")
+          ' {{ product.name }}
+          ' -
+          ' {{ product.size }}
+          .inline-block ng-show="product.product_type == 'grams'"
+            ' g
+          .inline-block ng-show="product.product_type == 'milliliters'"
+            ' ml
+          .product-image
+            img(ng-src="{{product.image.thumb.url}}")
+          ' {{ product.price }}
+          ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
 
-h1.text-center(translate="PRODUCTS_INDEX_TITLE_DRINKS" ng-show="data.products.drinks")
-
-row(ng-repeat="product in data.products.drinks")
-  .inline-block
-    a.align-center(ng-click="navProductShow(product.category, product.id, product.name)")
-      ' {{ product.name }}
-      ' -
-      ' {{ product.size }}
-      .product-image
-        img(ng-src="{{product.image.thumb.url}}")
-      ' {{ product.price }}
-      ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
-
-h1.text-center(translate="PRODUCTS_INDEX_TITLE_SNACKS" ng-show="data.products.snacks")
-
-row(ng-repeat="product in data.products.snacks")
-  .inline-block
-    a.align-center(ng-click="navProductShow(product.category, product.id, product.name)")
-      ' {{ product.name }}
-      ' -
-      ' {{ product.size }}
-      .product-image
-        img(ng-src="{{product.image.thumb.url}}")
-      ' {{ product.price }}
-      ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
-
-
-/ row(ng-repeat="category in data.products")
-/   row(ng-repeat="product in category")
-/     .inline-block
-/       a.align-center(ng-click="navProductShow(product.category, product.id, product.name)")
-/         ' {{ product.name }}
-/         ' -
-/         ' {{ product.size }}
-/         .product-image
-/           img(ng-src="{{product.image.thumb.url}}")
-/         ' {{ product.price }}
-/         ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
-/     br
+div ng-hide="data.products.results > 0"
+  h3
+    ' there are no matching results

@@ -12,18 +12,16 @@ class Api::ProductsController < ApplicationController
   end
 
   def search_product_names
-    # p '-----------------'
-    # p params
-    # p '-----------------'
     product_names = Product.search(params[:query]).map(&:name).uniq
     render json: product_names
   end
 
   def search_results
-    food = Product.food.search(params[:query])
-    drinks = Product.drinks.search(params[:query])
-    snacks = Product.snacks.search(params[:query])
-    render json: { food: food, drinks: drinks, snacks: snacks }
+    food =   { products: Product.food.search(params[:query]), category: 'food' }
+    drinks = { products: Product.drinks.search(params[:query]), category: 'drinks' }
+    snacks = { products: Product.snacks.search(params[:query]), category: 'snacks' }
+    results = Product.all.search(params[:query]).size
+    render json: { food: food, drinks: drinks, snacks: snacks, results: results }
   end
 
   def show

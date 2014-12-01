@@ -1,6 +1,12 @@
-@GlobalHeaderCtrl = ($scope, $state, sessionData, productData, principal, $translate) ->
+@GlobalHeaderCtrl = ($scope, $state, sessionData, productData, principal, $translate, $stateParams) ->
 
-  $scope.names = ["john", "bill", "charlie", "robert", "alban", "oscar", "marie", "celine", "brad", "drew", "rebecca", "michel", "francis", "jean", "paul", "pierre", "nicolas", "alfred", "gerard", "louis", "albert", "edouard", "benoit", "guillaume", "nicolas", "joseph"]
+  # loading data
+
+  $scope.loadSearchQuery = ->
+    $scope.formData = {}
+    $scope.formData.search_query = $stateParams.searchQuery
+
+  $scope.loadSearchQuery()
 
   # functions
 
@@ -60,4 +66,4 @@
     $state.go('user_edit', {userId: userId})
 
 
-@GlobalHeaderCtrl.$inject = ['$scope', '$state', 'sessionData', 'productData', 'principal', '$translate']
+@GlobalHeaderCtrl.$inject = ['$scope', '$state', 'sessionData', 'productData', 'principal', '$translate', '$stateParams']
