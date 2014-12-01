@@ -12,6 +12,11 @@ div ng-show="data.category == 'snacks'"
         ' {{ product.name }}
         ' -
         ' {{ product.size }}
+        .inline-block ng-show="product.product_type == 'grams'"
+          ' g
+        .inline-block ng-show="product.product_type == 'milliliters'"
+          ' ml
+
         .product-image
           img(ng-src="{{product.image.thumb.url}}")
         ' {{ product.price }}

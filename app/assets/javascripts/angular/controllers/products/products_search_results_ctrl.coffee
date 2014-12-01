@@ -18,7 +18,7 @@
 
   # # navigation
 
-  $scope.navProductShow = (productId, productName) ->
-    $state.go('product_show', {category: $stateParams.category, productId: productId, productName: productName})
+  $scope.navProductShow = (category, productId, productName) ->
+    $state.go('product_show', {category: category, productId: productId, productName: productName})
 
 @ProductsSearchCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'productData']

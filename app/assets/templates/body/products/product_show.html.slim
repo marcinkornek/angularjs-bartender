@@ -24,6 +24,10 @@ div ng-hide="data.product.error"
               ' {{ "PRODUCT_SHOW_SIZE" | translate }}:
             td
               ' {{ data.product.size }}
+              .inline-block ng-show="data.product.product_type == 'grams'"
+                ' g
+              .inline-block ng-show="data.product.product_type == 'milliliters'"
+                ' ml
           tr
             td
               ' {{ "PRODUCT_SHOW_PRICE" | translate }}:
