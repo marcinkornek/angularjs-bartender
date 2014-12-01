@@ -54,6 +54,7 @@ end
 
 # frontend
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'underscore-rails'
 gem 'will_paginate', '~> 3.0'
 

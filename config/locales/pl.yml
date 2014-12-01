@@ -8,6 +8,8 @@ pl:
   "HEADER_DROPDOWN_LOGOUT": "Wyloguj się"
   "HEADER_SIGN_IN": "Zaloguj się"
   "HEADER_SIGN_UP": "Zarejestruj się"
+  "HEADER_SEARCH_PRODUCTS_PLACEHOLDER": "Szukaj produkty"
+  "HEADER_SEARCH_PRODUCTS_SUBMIT": "Wyszukaj"
 
   # FOOTER
   "FOOTER_AUTHOR": "Marcin Kornek"
@@ -143,6 +145,8 @@ pl:
   "PRODUCT_EDIT_ERROR_PRICE_REQUIRED": "Cena jest wymagana"
   "PRODUCT_EDIT_ERROR_PRICE_MIN": "Cena musi być większa niż 0"
   "PRODUCT_EDIT_ERROR_IMAGE_REQUIRED": "Zdjęcie jest wymagane"
+
+  "PRODUCTS_SEARCH_RESULTS_TITLE": "Wyniki wyszukiwania"
 
   # ORDERS
   "ORDERS_INDEX_TITLE": "Szczegóły zamówienia"

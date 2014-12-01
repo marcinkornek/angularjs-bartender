@@ -1,0 +1,13 @@
+h1.text-center translate="PRODUCTS_SEARCH_RESULTS_TITLE"
+
+.categories.align-center
+  row(ng-repeat="product in data.products")
+    .inline-block
+      a.align-center(ng-click="navProductShow(product.id, product.name)")
+        ' {{ product.name }}
+        ' -
+        ' {{ product.size }}
+        .product-image
+          img(ng-src="{{product.image.thumb.url}}")
+        ' {{ product.price }}
+        ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}

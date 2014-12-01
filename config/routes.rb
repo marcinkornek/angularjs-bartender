@@ -28,5 +28,7 @@ Rails.application.routes.draw do
   post  '/api/order_destroy'             => 'api/orders#order_destroy', as: :order_order_destroy
   post  '/api/order_detail_destroy'      => 'api/orders#order_detail_destroy', as: :order_order_detail_destroy
   get   '/api/order_summary'             => 'api/orders#order_summary', as: :order_order_summary
+  get   '/api/product_search'            => 'api/products#search_results', as: :products_search_results
+  get   '/api/product_names'             => 'api/products#search_product_names'
 
 end

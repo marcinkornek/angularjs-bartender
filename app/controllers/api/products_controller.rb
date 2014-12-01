@@ -1,6 +1,6 @@
 class Api::ProductsController < ApplicationController
   before_action :require_login
-  before_action :check_if_admin, except: [:index, :show]
+  before_action :check_if_admin, except: [:index, :show, :search_results, :search_product_names]
 
   def index
     @product = if !params[:category].empty?
@@ -9,6 +9,19 @@ class Api::ProductsController < ApplicationController
       Product.all
     end
     render json: @product
+  end
+
+  def search_product_names
+    p '-----------------'
+    p params
+    p '-----------------'
+    product_names = Product.search(params[:query]).map(&:name).uniq
+    render json: product_names
+  end
+
+  def search_results
+    product = Product.search(params[:query])
+    render json: product
   end
 
   def show

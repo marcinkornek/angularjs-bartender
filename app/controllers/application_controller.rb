@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def check_if_admin
-    if current_user.role != 'admin'
+    if current_user.role != 'Admin'
       render json: {error: 'admin: false'}, status: :not_acceptable
     end
   end

@@ -202,3 +202,15 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "errors@product_edit": { templateUrl: 'body/products/product_edit.errors.html' }
       }
     })
+
+    .state('products_search', {
+      url: '/products/search/:searchQuery',
+      data: {
+        roles: ['User', 'Admin']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'ProductsSearchCtrl',  templateUrl: 'body/products/products_search_results.html' }
+      }
+    })

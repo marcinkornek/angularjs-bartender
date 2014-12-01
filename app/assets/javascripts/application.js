@@ -1,6 +1,7 @@
 //= require lodash
 //
 //= require jquery
+//= require jquery-ui/autocomplete
 //= require bootstrap
 //= require angular
 //= require angular-cache

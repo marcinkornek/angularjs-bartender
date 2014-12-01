@@ -18,4 +18,9 @@ class Product < ActiveRecord::Base
   scope :food, -> { where('category = ?', 'food') }
   scope :drinks, -> { where('category = ?', 'drinks') }
   scope :snacks, -> { where('category = ?', 'snacks') }
+
+  def self.search(query)
+    where("name ilike ?", "%#{query}%")
+  end
+
 end

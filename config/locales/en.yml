@@ -8,6 +8,8 @@ en:
   "HEADER_DROPDOWN_LOGOUT": "Logout"
   "HEADER_SIGN_IN": "Sign in"
   "HEADER_SIGN_UP": "Sign up"
+  "HEADER_SEARCH_PRODUCTS_PLACEHOLDER": "Search product"
+  "HEADER_SEARCH_PRODUCTS_SUBMIT": "Search"
 
   # FOOTER
   "FOOTER_AUTHOR": "by Marcin Kornek"
@@ -136,6 +138,8 @@ en:
   "PRODUCT_EDIT_ERROR_PRICE_REQUIRED": "Price is required"
   "PRODUCT_EDIT_ERROR_PRICE_MIN": "Price must be greater than 0"
   "PRODUCT_EDIT_ERROR_IMAGE_REQUIRED": "Image is required"
+
+  "PRODUCTS_SEARCH_RESULTS_TITLE": "Search results"
 
   # ORDERS
   "ORDERS_INDEX_TITLE": "Order details"

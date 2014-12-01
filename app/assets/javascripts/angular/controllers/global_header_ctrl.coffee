@@ -1,4 +1,6 @@
-@GlobalHeaderCtrl = ($scope, $state, sessionData, principal, $translate) ->
+@GlobalHeaderCtrl = ($scope, $state, sessionData, productData, principal, $translate) ->
+
+  $scope.names = ["john", "bill", "charlie", "robert", "alban", "oscar", "marie", "celine", "brad", "drew", "rebecca", "michel", "francis", "jean", "paul", "pierre", "nicolas", "alfred", "gerard", "louis", "albert", "edouard", "benoit", "guillaume", "nicolas", "joseph"]
 
   # functions
 
@@ -11,6 +13,11 @@
       principal.authenticate(null)
       $state.go('home', {}, {reload: true})
     )
+
+  $scope.searchProducts = ->
+    if $scope.formData.search_query
+      $state.go('products_search', {searchQuery: $scope.formData.search_query})
+
 
   $scope.changeLanguage = (key) ->
      $translate.use key
@@ -53,4 +60,4 @@
     $state.go('user_edit', {userId: userId})
 
 
-@GlobalHeaderCtrl.$inject = ['$scope', '$state', 'sessionData', 'principal', '$translate']
+@GlobalHeaderCtrl.$inject = ['$scope', '$state', 'sessionData', 'productData', 'principal', '$translate']

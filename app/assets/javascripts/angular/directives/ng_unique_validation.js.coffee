@@ -8,12 +8,14 @@ angular.module("Bartender").directive "ngUnique",[ "$http", ($http) ->
   require: "ngModel"
   link: (scope, elem, attrs, ctrl) ->
 
-    # object = username/email
-    key = attrs.ngUnique
+    elem.one 'input', ->
 
-    # function uses 'underscore.js' function 'debounce' -> function inside debounce is invoked after time in parameter (in miliseconds)
+      # object = username/email
+      key = attrs.ngUnique
 
-    debouncedRequest = _.debounce((value) ->
+      # function uses 'underscore.js' function 'debounce' -> function inside debounce is invoked after time in parameter (in miliseconds)
+
+      debouncedRequest = _.debounce((value) ->
         params = {}
         params['key'] = key
         params['value'] = value
@@ -28,6 +30,6 @@ angular.module("Bartender").directive "ngUnique",[ "$http", ($http) ->
           console.log 'error'
           ctrl.$setValidity "unique", false
         )
-    , 500)
-    scope.$watch attrs.ngModel, debouncedRequest
+      , 500)
+      scope.$watch attrs.ngModel, debouncedRequest
  ]

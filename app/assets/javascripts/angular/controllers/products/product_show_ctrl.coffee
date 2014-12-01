@@ -5,11 +5,11 @@
   $scope.loadProduct = ->
     $scope.data = {}
     $scope.data.current_user = window.currentUser
-    console.log window.currentUser
+    # console.log window.currentUser
     productData.get({id: $stateParams.productId}
       , (product) ->
         $scope.data.product = product
-        console.log product
+        # console.log product
       , (error) ->
         console.log 'error'
         console.log error.status
@@ -28,8 +28,8 @@
   $scope.createOrder = ->
     ordersData.save({}, {amount: $scope.formData.amount, type: 'Product', id: $scope.data.product.id, price: $scope.data.product.price}
       , (success) =>
-        console.log 'success'
-        console.log success
+        # console.log 'success'
+        # console.log success
         $state.go('home')
       , (error) ->
         console.log 'error'
