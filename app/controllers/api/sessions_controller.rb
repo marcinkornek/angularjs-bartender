@@ -8,9 +8,9 @@ class Api::SessionsController < ApplicationController
     else
       @user = find_user(params[:email])
       if @user && @user.activation_state != 'active'
-        render json: {error: 'Please check your email and activate account'}, status: :not_acceptable
+        render json: {error: t('session_controller.activate_email')}, status: :not_acceptable
       else
-        render json: {error: 'Wrong email/username or password'}, status: :not_acceptable
+        render json: {error: t('session_controller.wrong_email_password')}, status: :not_acceptable
       end
     end
   end

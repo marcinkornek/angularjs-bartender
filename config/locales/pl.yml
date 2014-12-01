@@ -181,3 +181,7 @@ pl:
   "SESSION_NEW_PASSWORD": "Hasło"
   "SESSION_NEW_REMEMBER_PASSWORD": "Zapamiętaj hasło"
   "SESSION_NEW_SIGN_IN": "Zaloguj się"
+
+  session_controller:
+    "activate_email": 'Proszę sprawdzić email i aktywować konto'
+    "wrong_email_password": 'Nieprawidłowy email/nick lub hasło'

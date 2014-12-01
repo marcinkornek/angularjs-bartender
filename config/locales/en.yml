@@ -173,3 +173,7 @@ en:
   "SESSION_NEW_PASSWORD": "Password"
   "SESSION_NEW_REMEMBER_PASSWORD": "Remember password"
   "SESSION_NEW_SIGN_IN": "Sign in"
+
+  session_controller:
+    "activate_email": 'Please check your email and activate account'
+    "wrong_email_password": 'Wrong email/username or password'
