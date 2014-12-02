@@ -4,9 +4,9 @@ class Api::ProductsController < ApplicationController
 
   def index
     @product = if !params[:category].empty?
-      Product.send(params[:category])
+      Product.send(params[:category]).order(:name)
     else
-      Product.all
+      Product.all.order(:name)
     end
     render json: @product
   end

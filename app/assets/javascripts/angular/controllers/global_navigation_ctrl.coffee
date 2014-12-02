@@ -1,4 +1,4 @@
-@GlobalNavigationCtrl = ($scope, $state, sessionData, principal, $translate, ordersData) ->
+@GlobalNavigationCtrl = ($scope, $state, sessionData, principal, $translate) ->
 
   # navigation
 
@@ -11,4 +11,4 @@
   $scope.navOrdersHistory = ->
     $state.go('orders_history', {pageNo: 1})
 
-@GlobalNavigationCtrl.$inject = ['$scope', '$state', 'sessionData', 'principal', '$translate', 'ordersData']
+@GlobalNavigationCtrl.$inject = ['$scope', '$state', 'sessionData', 'principal', '$translate']

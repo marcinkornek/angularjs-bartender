@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   has_many :order_details
 
-  CATEGORIES = %w(food drinks snacks)
+  CATEGORIES = %w(food drinks alcohol snacks)
   KINDS = %w(milliliters grams size)
 
   validates :category,  inclusion: { in: CATEGORIES }
@@ -18,6 +18,7 @@ class Product < ActiveRecord::Base
   scope :food, -> { where('category = ?', 'food') }
   scope :drinks, -> { where('category = ?', 'drinks') }
   scope :snacks, -> { where('category = ?', 'snacks') }
+  scope :alcohol, -> { where('category = ?', 'alcohol') }
 
   def self.search(query)
     where("name ilike ?", "%#{query}%")

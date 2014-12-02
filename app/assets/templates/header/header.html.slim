@@ -1,5 +1,5 @@
 nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
-  .container
+  .container-fluid
     .navbar-header
       a.navbar-brand(ng-click="navHome()")
         ' {{ "HEADER_LOGO" | translate }}
@@ -10,12 +10,17 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
           ' {{ data.user.username }}
 
     form.navbar-form.navbar-left role="search"
-      .form-group
+      .form-group(style='position:relative;')
         input.form-control(id="search" placeholder="{{ 'HEADER_SEARCH_PRODUCTS_PLACEHOLDER' | translate }}" type="text" ng-model="formData.search_query" auto-complete)
+        / div(style='position:absolute;background-color:green;width:100%') 'asdasdasd'
       button.btn.btn-default(type="submit" ng-click="searchProducts()")
         ' {{ "HEADER_SEARCH_PRODUCTS_SUBMIT" | translate }}
 
+
     ul.nav.navbar-nav.navbar-right
+      li
+        a
+          ' {{ formData.search_query }}
       li(ng-show="data.locale=='en'")
         a ng-click="changeLanguage('pl')" PL
       li(ng-show="data.locale=='pl'")

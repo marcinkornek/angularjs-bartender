@@ -1,32 +1,62 @@
 div ng-show="data.orders.items"
-  .boarder-bottom
+  h3.text-center
+    .inline-block ng-show="data.orders.items"
+      ' {{ "ORDERS_INDEX_ORDER_ID" | translate }}
+      ' {{ data.orders.id }}
+      ' -
+    ' {{ "ORDERS_INDEX_TITLE" | translate }}
 
-  h2 translate="ORDERS_INDEX_TITLE"
+  .orders-index
+    table(border="1")
+      tr
+        td.bold
+          ' {{ "ORDERS_INDEX_NAME" | translate }}
+        td.bold
+          ' {{ "ORDERS_INDEX_SIZE" | translate }}
+        td.bold
+          ' {{ "ORDERS_INDEX_PRICE" | translate }}
+        td.bold
+          ' {{ "ORDERS_INDEX_AMOUNT" | translate }}
+        td.bold
+          ' {{ "ORDERS_INDEX_TOTAL_PRICE" | translate }}
+        td
 
-  row(ng-repeat="item in data.orders.items")
-    li
-      ' {{ item.item.name }}
-      ' {{ item.amount }}
-      ' {{ "ORDERS_INDEX_COUNT" | translate }}
-      ' {{ item.price }}
-      ' {{ "ORDERS_INDEX_CURRENCY" | translate }}
-      button(type="button" class="btn btn-default btn-xs" ng-click="destroyOrderDetail(item.id)")
-        ' {{ "ORDERS_INDEX_DESTROY_ORDER_DETAIL" | translate }}
+      tr(ng-repeat="item in data.orders.items")
+        td
+          ' {{ item.item.name }}
+        td
+          ' {{ item.item.size }}
+          .inline-block ng-show="item.item.product_type == 'grams'"
+            ' g
+          .inline-block ng-show="item.item.product_type == 'milliliters'"
+            ' ml
+        td
+          ' {{ item.item.price }}
+          ' {{ "ORDERS_INDEX_CURRENCY" | translate }}
+        td
+          ' {{ item.amount }}
+        td
+          ' {{ item.price }}
+          ' {{ "ORDERS_INDEX_CURRENCY" | translate }}
+        td
+          a(ng-click="destroyOrderDetail(item.id)")
+            ' {{ "ORDERS_INDEX_DESTROY_ORDER_DETAIL" | translate }}
 
-  row
-    li
-      ' {{ "ORDERS_INDEX_TOTAL_PRICE" | translate }}:
-      b
-        ' {{ data.orders.total_price }}
-        ' {{ "ORDERS_INDEX_CURRENCY" | translate }}
-  row
-    li
-      ' {{ "ORDERS_INDEX_STATE" | translate }}:
-      .green
-        ' {{ data.orders.state }}
 
-  button(type="button" class="btn btn-default navbar-btn" ng-click="closeOrder()")
-    ' {{ "ORDERS_INDEX_CLOSE_ORDER" | translate }}
+    row
+      li
+        ' {{ "ORDERS_INDEX_TOTAL_PRICE" | translate }}:
+        b
+          ' {{ data.orders.total_price }}
+          ' {{ "ORDERS_INDEX_CURRENCY" | translate }}
+    row
+      li
+        ' {{ "ORDERS_INDEX_STATE" | translate }}:
+        .green
+          ' {{ data.orders.state }}
 
-  button(type="button" class="btn btn-default navbar-btn" ng-click="destroyOrder()")
-    ' {{ "ORDERS_INDEX_DESTROY_ORDER" | translate }}
+    button(type="button" class="btn btn-default navbar-btn" ng-click="closeOrder()")
+      ' {{ "ORDERS_INDEX_CLOSE_ORDER" | translate }}
+
+    button(type="button" class="btn btn-default navbar-btn" ng-click="destroyOrder()")
+      ' {{ "ORDERS_INDEX_DESTROY_ORDER" | translate }}

@@ -2,7 +2,6 @@
 
   # # loading data
 
-
   $scope.loadProducts = ->
     $scope.data = {}
     $scope.data.category = $stateParams.category

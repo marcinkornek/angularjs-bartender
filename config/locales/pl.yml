@@ -87,10 +87,12 @@ pl:
   "CATEGORIES_INDEX_FOOD": "Jedzenie"
   "CATEGORIES_INDEX_DRINKS": "Napoje"
   "CATEGORIES_INDEX_SNACKS": "Przekąski"
+  "CATEGORIES_INDEX_ALCOHOL": "Alkohol"
 
   # PRODUCTS
   "PRODUCTS_INDEX_TITLE_FOOD": "Jedzenie"
   "PRODUCTS_INDEX_TITLE_DRINKS": "Picie"
+  "PRODUCTS_INDEX_TITLE_ALCOHOL": "Alkohol"
   "PRODUCTS_INDEX_TITLE_SNACKS": "Przekąski"
   "PRODUCTS_INDEX_ADD_PRODUCT": "Dodaj produkty"
   "PRODUCTS_INDEX_CURRENCY": "zł"
@@ -149,13 +151,18 @@ pl:
   "PRODUCTS_SEARCH_RESULTS_TITLE": "Wyniki wyszukiwania"
 
   # ORDERS
-  "ORDERS_INDEX_TITLE": "Szczegóły zamówienia"
+  "ORDERS_INDEX_ORDER_ID": "Zamówienie nr"
+  "ORDERS_INDEX_TITLE": " szczegóły"
+  "ORDERS_INDEX_NAME": "Nazwa"
+  "ORDERS_INDEX_SIZE": "Rozmiar"
+  "ORDERS_INDEX_PRICE": "Cena"
+  "ORDERS_INDEX_AMOUNT": "Ilość"
   "ORDERS_INDEX_COUNT": "szt."
   "ORDERS_INDEX_CURRENCY": "zł"
   "ORDERS_INDEX_TOTAL_PRICE": "Łączna kwota"
   "ORDERS_INDEX_CLOSE_ORDER": "Zamknij zamówienie"
   "ORDERS_INDEX_DESTROY_ORDER": "Usuń zamówienie"
-  "ORDERS_INDEX_DESTROY_ORDER_DETAIL": "Skasuj produkt"
+  "ORDERS_INDEX_DESTROY_ORDER_DETAIL": "skasuj"
   "ORDERS_INDEX_STATE": "Stan zamówienia"
 
   "ORDERS_SUMMARY_ORDER_ID": "Zamówienie nr "

@@ -8,8 +8,10 @@
 
 .category-image {
   img {
-    max-width: 350px;
-    max-height: 350px;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    border: 1px solid;
   }
 }
 

@@ -1,11 +1,11 @@
 div ng-show="data.product.error"
-  h1.text-center
+  h3.text-center
     ' {{ data.product.error }}
 
 
 div ng-hide="data.product.error"
   .product-data
-    h1.border-bottom
+    h3.border-bottom
       ' {{ data.product.name }}
     .row
       .col-md-2
@@ -38,7 +38,7 @@ div ng-hide="data.product.error"
         button(type="button" class="btn btn-default navbar-btn" ng-click="navProductEdit(data.product.id, data.product.name)" ng-show="data.current_user.role == 'Admin'")
           ' {{ "PRODUCT_SHOW_EDIT_PRODUCT" | translate }}
 
-h1
+h3
   ' {{ "PRODUCT_SHOW_PRODUCT_ORDER" | translate }}
 
 .errors

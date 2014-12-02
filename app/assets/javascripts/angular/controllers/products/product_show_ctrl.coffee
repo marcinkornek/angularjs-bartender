@@ -30,7 +30,8 @@
       , (success) =>
         # console.log 'success'
         # console.log success
-        $state.go('home')
+        # $state.go('home')
+        $state.go('products_index', {category: $scope.data.product.category})
       , (error) ->
         console.log 'error'
         console.log error

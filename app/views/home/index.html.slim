@@ -1,9 +1,12 @@
-/ = render 'header'
+div(style="margin-top: 60px")
+  div ui-view="header"
+  .col-md-2
+    div ui-view="navigation"
+  .col-md-7
+    .column ui-view="body"
+  .col-md-3
+    div ui-view="order"
 
-div ui-view="header"
-div ui-view="navigation"
-div ui-view="body"
-div ui-view="order"
-
-= render 'footer'
+  .col-md-12
+    = render 'footer'
 
