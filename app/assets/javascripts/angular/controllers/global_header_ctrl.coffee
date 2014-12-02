@@ -47,7 +47,6 @@
   $scope.changeLanguage = (key) ->
     $translate.use key
     document.cookie = 'locale='+key+'; path=/'
-    # console.log $scope.data.locale
 
   # dropdown
 
@@ -85,6 +84,5 @@
 
   $scope.navEditUser = (userId) ->
     $state.go('user_edit', {userId: userId})
-
 
 @GlobalHeaderCtrl.$inject = ['$scope', '$state', 'sessionData', 'productData', 'principal', '$translate', '$stateParams']
