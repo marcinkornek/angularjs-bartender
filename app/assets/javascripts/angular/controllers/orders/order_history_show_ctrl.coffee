@@ -4,7 +4,7 @@
 
   $scope.loadOrder = ->
     $scope.data = {}
-    ordersData.get({id: $stateParams.orderId}
+    ordersData.order_summary({id: $stateParams.orderId}
       , (orders) ->
         $scope.data.orders = orders
         # console.log 'order'

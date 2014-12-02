@@ -12,18 +12,8 @@ class Api::OrdersController < ApplicationController
     render json: { orders: orders, number: Order.count}
   end
 
-  def show
-    order_details = Order.find(params[:id]).order_details.map do |o|
-      {
-        order_details: o,
-        product_details: o.product
-      }
-    end
-    render json: order_details
-  end
-
   def order_summary
-    session_order = session[:order] || session[:closed_order]
+    session_order = session[:order] || session[:closed_order] || params[:id]
     session_items(session_order)
     session.delete(:closed_order)
   end
@@ -86,7 +76,7 @@ class Api::OrdersController < ApplicationController
           id: od.id
         }
       end
-      render json: { items: items, total_price: order.total_price, state: order.state }
+      render json: { items: items, total_price: order.total_price, state: order.state, id: order.id }
     else
       render json: {}
     end

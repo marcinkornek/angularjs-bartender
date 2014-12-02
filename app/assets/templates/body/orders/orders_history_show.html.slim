@@ -1,20 +1,62 @@
-h1.text-center translate="ORDERS_HISTORY_SHOW_TITLE"
+.clearfix
+  h1.text-center
+    .inline-block ng-show="data.orders.items"
+      ' {{ "ORDERS_HISTORY_SHOW_ORDER_ID" | translate }}
+      ' {{ data.orders.id }}
+      ' -
+    ' {{ "ORDERS_HISTORY_SHOW_TITLE" | translate }}
 
-/ ' {{ data.orders }}
+  div ng-hide="data.orders.items"
+    h3.align-center
+      ' {{ "ORDERS_HISTORY_SHOW_EMPTY" | translate }}
+    .align-center
+      button.btn.btn-default.btn-lg(ng-click="navHome()")
+        span.glyphicon.glyphicon-home aria-hidden="true"
+        ' {{ "ORDERS_HISTORY_SHOW_HOME" | translate }}
 
-div ng-show="data.orders"
+  div ng-show="data.orders.items"
+    .col-md-6.col-md-offset-3.orders-history
+      table(border="1")
+        tr
+          td.bold
+            ' {{ "ORDERS_HISTORY_SHOW_NAME" | translate }}
+          td.bold
+            ' {{ "ORDERS_HISTORY_SHOW_SIZE" | translate }}
+          td.bold
+            ' {{ "ORDERS_HISTORY_SHOW_PRICE" | translate }}
+          td.bold
+            ' {{ "ORDERS_HISTORY_SHOW_AMOUNT" | translate }}
+          td.bold
+            ' {{ "ORDERS_HISTORY_SHOW_TOTAL_PRICE" | translate }}
+          td
 
-  ul(ng-repeat="order in data.orders")
-    li
-      a(ng-click="navProductShow(order.product_details.category, order.product_details.id, order.product_details.name)")
-        ' {{ "ORDERS_HISTORY_SHOW_NAME" | translate }}:
-        ' {{ order.product_details.name }}
-    li
-      ' {{ "ORDERS_HISTORY_SHOW_SIZE" | translate }}:
-      ' {{ order.product_details.size }}
-    li
-      ' {{ "ORDERS_HISTORY_SHOW_AMOUNT" | translate }}:
-      ' {{ order.order_details.amount }}
-    li
-      ' {{ "ORDERS_HISTORY_SHOW_PRICE" | translate }}:
-      ' {{ order.order_details.price }}
+        tr(ng-repeat="item in data.orders.items")
+          td
+            ' {{ item.item.name }}
+          td
+            ' {{ item.item.size }}
+            .inline-block ng-show="item.item.product_type == 'grams'"
+              ' g
+            .inline-block ng-show="item.item.product_type == 'milliliters'"
+              ' ml
+          td
+            ' {{ item.item.price }}
+            ' {{ "ORDERS_HISTORY_SHOW_CURRENCY" | translate }}
+          td
+            ' {{ item.amount }}
+          td
+            ' {{ item.price }}
+            ' {{ "ORDERS_HISTORY_SHOW_CURRENCY" | translate }}
+          td
+            a(ng-click="navProductShow(item.item.category, item.item.id, item.item.name)")
+              ' {{ "ORDERS_HISTORY_SHOW_DETAILS" | translate }}
+
+      li
+        ' {{ "ORDERS_HISTORY_SHOW_TOTAL_PRICE" | translate }}:
+        b
+          ' {{ data.orders.total_price }}
+          ' {{ "ORDERS_HISTORY_SHOW_CURRENCY" | translate }}
+      li
+        ' {{ "ORDERS_HISTORY_SHOW_STATE" | translate }}:
+        .red
+          ' {{ data.orders.state }}

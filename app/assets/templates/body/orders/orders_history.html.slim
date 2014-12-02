@@ -5,9 +5,11 @@ div ng-hide="data.orders.orders"
     ' {{ "ORDERS_HISTORY_EMPTY" | translate }}
 
 div ng-show="data.orders.orders"
-  .col-md-offset-4.orders-history
+  .col-md-6.col-md-offset-3.orders-history
     table(border="1")
       tr
+        td.bold
+          ' {{ "ORDERS_HISTORY_ORDER_ID" | translate }}
         td.bold
           ' {{ "ORDERS_HISTORY_BARTENDER" | translate }}
         td.bold
@@ -18,6 +20,8 @@ div ng-show="data.orders.orders"
 
       tr(ng-repeat="order in data.orders.orders")
         td
+          ' {{ order.id }}
+        td
           ' {{ order.bartender }}
         td
           ' {{ order.updated | date:"dd/MM/yyyy - HH:mm" }}
@@ -26,7 +30,7 @@ div ng-show="data.orders.orders"
           ' {{ "ORDERS_HISTORY_CURRENCY" | translate }}
         td
           a(ng-click="navOrderDetail(order.id)")
-            ' details
+            ' {{ "ORDERS_HISTORY_DETAILS" | translate }}
 
   .align-center
     .pagination ng-show="totalItems > 10"

@@ -52,4 +52,9 @@
         console.log error.status
     )
 
+  # navigation
+
+  $scope.navHome = ->
+    $state.go('home')
+
 @OrderSummaryCtrl.$inject = ['$scope', '$state', 'principal', '$translate', 'ordersData']
