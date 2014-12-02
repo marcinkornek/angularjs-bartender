@@ -39,7 +39,6 @@
   $scope.setLanguage = ->
     $scope.data = {}
     $scope.data.locale = $scope.readCookie('locale')
-    console.log $scope.data.locale
     $translate.use $scope.data.locale
 
   $scope.setLanguage()
@@ -47,6 +46,7 @@
   $scope.changeLanguage = (key) ->
     $translate.use key
     document.cookie = 'locale='+key+'; path=/'
+    $scope.data.locale = $scope.readCookie('locale')
 
   # dropdown
 
@@ -65,6 +65,7 @@
   $scope.loadData = ->
     $scope.data = {}
     $scope.data.user =  window.currentUser
+    $scope.data.locale = $scope.readCookie('locale')
 
   $scope.loadData()
 
