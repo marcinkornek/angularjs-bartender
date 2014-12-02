@@ -6,6 +6,18 @@
     $scope.formData = {}
     $scope.formData.search_query = $stateParams.searchQuery
 
+  $scope.readCookie = (name) ->
+    nameEQ = name + "="
+    ca = document.cookie.split(";")
+    i = 0
+
+    while i < ca.length
+      c = ca[i]
+      c = c.substring(1, c.length)  while c.charAt(0) is " "
+      return c.substring(nameEQ.length, c.length)  if c.indexOf(nameEQ) is 0
+      i++
+    null
+
   $scope.loadSearchQuery()
 
   # functions
@@ -24,9 +36,18 @@
     if $scope.formData.search_query
       $state.go('products_search', {searchQuery: $scope.formData.search_query})
 
+  $scope.setLanguage = ->
+    $scope.data = {}
+    $scope.data.locale = $scope.readCookie('locale')
+    console.log $scope.data.locale
+    $translate.use $scope.data.locale
+
+  $scope.setLanguage()
 
   $scope.changeLanguage = (key) ->
-     $translate.use key
+    $translate.use key
+    document.cookie = 'locale='+key+'; path=/'
+    # console.log $scope.data.locale
 
   # dropdown
 
