@@ -1,0 +1,18 @@
+h3.text-center
+  translate="PRODUCTS_INDEX_LAST_PRODUCTS"
+
+row(ng-repeat="product in data.products.recent_products")
+  .inline-block
+    .align-center(ng-click="navProductShow(product.category, product.id, product.name)")
+      ' {{ product.name }}
+      br
+      ' {{ product.size }}
+      .inline-block ng-show="product.product_type == 'grams'"
+        ' g
+      .inline-block ng-show="product.product_type == 'milliliters'"
+        ' ml
+
+      .product-image
+        img(ng-src="{{product.image.thumb.url}}")
+      ' {{ product.price }}
+      ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}

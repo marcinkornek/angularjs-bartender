@@ -135,6 +135,19 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       }
     })
 
+    .state('recent_products_index', {
+      url: '/products/recent',
+      data: {
+        roles: ['User', 'Admin']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'ProductsIndexCtrl',  templateUrl: 'body/products/recent_products_index.html' }
+        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
+      }
+    })
+
     .state('products_index', {
       url: '/products/:category',
       data: {

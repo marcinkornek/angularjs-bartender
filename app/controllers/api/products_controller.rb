@@ -3,12 +3,14 @@ class Api::ProductsController < ApplicationController
   before_action :check_if_admin, except: [:index, :show, :search_results, :search_product_names]
 
   def index
+    orders = OrderDetail.all.order(created_at: :desc)
+    recent_products = orders.map(&:product).uniq
     products = if !params[:category].blank?
       Product.send(params[:category]).order(:name)
     else
       Product.all.order(:name)
     end
-    render json: {products: products, results: products.size, category: params[:category]}
+    render json: {products: products, results: products.size, category: params[:category], recent_products: recent_products}
   end
 
   def show

@@ -1,8 +1,8 @@
-h3.text-center(ng-show="data.products.category")
-  translate="{{data.products.category}}"
+h3.text-center ng-show="data.products.category"
+  .inline-block translate="{{data.products.category}}"
   ' ({{ data.products.results }})
 h3.text-center(ng-hide="data.products.category")
-  translate="PRODUCTS_INDEX_ALL_PRODUCTS"
+  .inline-block translate="PRODUCTS_INDEX_ALL_PRODUCTS"
   ' ({{ data.products.results }})
 
 row(ng-repeat="product in data.products.products")
