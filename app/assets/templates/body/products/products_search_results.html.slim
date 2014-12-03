@@ -1,25 +1,26 @@
 div ng-show="data.products.results > 0"
-  row(ng-repeat="category in data.products")
-    h3.text-center(translate="PRODUCTS_INDEX_TITLE_FOOD"   ng-show="category.products.length > 0 && category.category == 'food'")
-    h3.text-center(translate="PRODUCTS_INDEX_TITLE_DRINKS" ng-show="category.products.length > 0 && category.category == 'drinks'")
-    h3.text-center(translate="PRODUCTS_INDEX_TITLE_SNACKS" ng-show="category.products.length > 0 && category.category == 'snacks'")
+  div ng-repeat="category in data.products.search_results"
+    h3.text-center
+      translate="{{category.category}}"
+      ' ({{ category.results }})
 
-    .categories.align-center
+    .products.pointer
       row(ng-repeat="product in category.products")
         .inline-block
-          a.align-center(ng-click="navProductShow(product.category, product.id, product.name)")
+          .align-center(ng-click="navProductShow(product.id, product.name)")
             ' {{ product.name }}
-            ' -
+            br
             ' {{ product.size }}
             .inline-block ng-show="product.product_type == 'grams'"
               ' g
             .inline-block ng-show="product.product_type == 'milliliters'"
               ' ml
+
             .product-image
               img(ng-src="{{product.image.thumb.url}}")
             ' {{ product.price }}
             ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
 
 div ng-hide="data.products.results > 0"
-  h3
+  h4
     ' there are no matching results

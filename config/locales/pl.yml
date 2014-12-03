@@ -154,6 +154,7 @@ pl:
   "PRODUCT_EDIT_ERROR_IMAGE_REQUIRED": "Zdjęcie jest wymagane"
 
   "PRODUCTS_SEARCH_RESULTS_TITLE": "Wyniki wyszukiwania"
+  "PRODUCTS_SEARCH_CURRENCY": "zł"
 
   # ORDERS
   "ORDERS_INDEX_ORDER_ID": "Zamówienie nr"

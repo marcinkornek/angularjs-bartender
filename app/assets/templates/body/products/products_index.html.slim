@@ -1,22 +1,26 @@
-h3.text-center translate="{{data.category}}" ng-show="data.category"
-h3.text-center translate="PRODUCTS_INDEX_ALL_PRODUCTS" ng-hide="data.category"
+h3.text-center(ng-show="data.products.category")
+  translate="{{data.products.category}}"
+  ' ({{ data.products.results }})
+h3.text-center(ng-hide="data.products.category")
+  translate="PRODUCTS_INDEX_ALL_PRODUCTS"
+  ' ({{ data.products.results }})
 
-.products.pointer
-  row(ng-repeat="product in data.products")
-    .inline-block
-      .align-center(ng-click="navProductShow(product.id, product.name)")
-        ' {{ product.name }}
-        br
-        ' {{ product.size }}
-        .inline-block ng-show="product.product_type == 'grams'"
-          ' g
-        .inline-block ng-show="product.product_type == 'milliliters'"
-          ' ml
+row(ng-repeat="product in data.products.products")
+  .inline-block
+    .align-center(ng-click="navProductShow(product.id, product.name)")
+      ' {{ product.name }}
+      br
+      ' {{ product.size }}
+      .inline-block ng-show="product.product_type == 'grams'"
+        ' g
+      .inline-block ng-show="product.product_type == 'milliliters'"
+        ' ml
 
-        .product-image
-          img(ng-src="{{product.image.thumb.url}}")
-        ' {{ product.price }}
-        ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
+      .product-image
+        img(ng-src="{{product.image.thumb.url}}")
+      ' {{ product.price }}
+      ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
 
+br
 button(type="button" class="btn btn-default navbar-btn" ng-click="navProductNew()" ng-show="data.current_user.role == 'Admin'")
   ' {{ "PRODUCTS_INDEX_ADD_PRODUCT" | translate }}

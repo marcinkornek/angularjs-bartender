@@ -147,6 +147,7 @@ en:
   "PRODUCT_EDIT_ERROR_IMAGE_REQUIRED": "Image is required"
 
   "PRODUCTS_SEARCH_RESULTS_TITLE": "Search results"
+  "PRODUCTS_SEARCH_CURRENCY": "zł"
 
   # ORDERS
   "ORDERS_INDEX_ORDER_ID": "Order nr"

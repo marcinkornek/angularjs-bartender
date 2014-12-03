@@ -3,15 +3,12 @@ class Api::ProductsController < ApplicationController
   before_action :check_if_admin, except: [:index, :show, :search_results, :search_product_names]
 
   def index
-    p '-----------------'
-    p params
-    p '-----------------'
-    @product = if !params[:category].blank?
+    products = if !params[:category].blank?
       Product.send(params[:category]).order(:name)
     else
       Product.all.order(:name)
     end
-    render json: @product
+    render json: {products: products, results: products.size, category: params[:category]}
   end
 
   def show
@@ -41,12 +38,16 @@ class Api::ProductsController < ApplicationController
   end
 
   def search_results
-    food =   { products: Product.food.search(params[:query]), category: 'food' }
-    drinks = { products: Product.drinks.search(params[:query]), category: 'drinks' }
-    alcohol = { products: Product.alcohol.search(params[:query]), category: 'alcohol' }
-    snacks = { products: Product.snacks.search(params[:query]), category: 'snacks' }
     results = Product.all.search(params[:query]).size
-    render json: { food: food, drinks: drinks, snacks: snacks, alcohol: alcohol, results: results }
+    search_results = Product.all.search(params[:query])
+    sr = search_results.map(&:category).uniq.map do |category|
+      {
+        products: Product.send(category).search(params[:query]),
+        results: Product.send(category).search(params[:query]).size,
+        category: category
+      }
+    end
+    render json: { search_results: sr, results: results }
   end
 
   def image_upload
