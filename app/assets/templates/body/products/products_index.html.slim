@@ -1,11 +1,4 @@
-div ng-show="data.category == 'food'"
-  h3.text-center translate="PRODUCTS_INDEX_TITLE_FOOD"
-div ng-show="data.category == 'drinks'"
-  h3.text-center translate="PRODUCTS_INDEX_TITLE_DRINKS"
-div ng-show="data.category == 'alcohol'"
-  h3.text-center translate="PRODUCTS_INDEX_TITLE_ALCOHOL"
-div ng-show="data.category == 'snacks'"
-  h3.text-center translate="PRODUCTS_INDEX_TITLE_SNACKS"
+h3.text-center translate="{{data.category}}"
 
 .products.pointer
   row(ng-repeat="product in data.products")

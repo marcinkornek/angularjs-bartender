@@ -1,21 +1,3 @@
-/ div(style="margin-top: 50px")
-/   button.btn.btn-default.btn-lg(ng-click="navHome()")
-/     span.glyphicon.glyphicon-home aria-hidden="true"
-/     ' {{ "NAV_HOME" | translate }}
-
-/   button.btn.btn-default.btn-lg(ng-click="navProductIndex('products_index','food')")
-/     ' {{ "NAV_FOOD" | translate }}
-
-/   button.btn.btn-default.btn-lg(ng-click="navProductIndex('products_index','drinks')")
-/     ' {{ "NAV_DRINKS" | translate }}
-
-/   button.btn.btn-default.btn-lg(ng-click="navProductIndex('products_index','snacks')")
-/     ' {{ "NAV_SNACKS" | translate }}
-
-/   button.btn.btn-default.btn-lg.navbar-right(ng-click="navOrdersHistory()")
-/     span.glyphicon.glyphicon-book aria-hidden="true"
-/     ' {{ "NAV_ORDERS_HISTORY" | translate }}
-
 .category.pointer(ng-click="navProductIndex('products_index','food')")
   h3.align-center
     ' {{ "CATEGORIES_INDEX_FOOD" | translate }}

@@ -83,10 +83,14 @@ en:
   "CATEGORIES_INDEX_ALCOHOL": "Alcohol"
 
   # PRODUCTS
-  "PRODUCTS_INDEX_TITLE_FOOD": "Food"
-  "PRODUCTS_INDEX_TITLE_DRINKS": "Drinks"
-  "PRODUCTS_INDEX_TITLE_ALCOHOL": "Alcohol"
-  "PRODUCTS_INDEX_TITLE_SNACKS": "Snacks"
+  "food": "Food"
+  "drinks": "Drinks"
+  "alcohol": "Alcohol"
+  "snacks": "Snacks"
+  # "PRODUCTS_INDEX_TITLE_FOOD": "Food"
+  # "PRODUCTS_INDEX_TITLE_DRINKS": "Drinks"
+  # "PRODUCTS_INDEX_TITLE_ALCOHOL": "Alcohol"
+  # "PRODUCTS_INDEX_TITLE_SNACKS": "Snacks"
   "PRODUCTS_INDEX_ADD_PRODUCT": "Add product"
   "PRODUCTS_INDEX_CURRENCY": "zł"
 
