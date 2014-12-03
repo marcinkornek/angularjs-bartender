@@ -5,6 +5,7 @@ pl:
   "HEADER_DROPDOWN_ACCOUNT": "Konto"
   "HEADER_DROPDOWN_VIEW": "Zobacz konto"
   "HEADER_DROPDOWN_EDIT": "Edytuj konto"
+  "HEADER_DROPDOWN_HISTORY": "Historia zamówień"
   "HEADER_DROPDOWN_LOGOUT": "Wyloguj się"
   "HEADER_SIGN_IN": "Zaloguj się"
   "HEADER_SIGN_UP": "Zarejestruj się"
@@ -77,7 +78,6 @@ pl:
 
   # NAVIGATION
   "NAV_HOME": "Strona główna"
-  "NAV_ORDERS_HISTORY": "Historia zamówień"
   "NAV_FOOD": "Jedzenie"
   "NAV_DRINKS": "Napoje"
   "NAV_SNACKS": "Przekąski"

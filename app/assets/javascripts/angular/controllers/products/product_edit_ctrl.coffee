@@ -1,5 +1,26 @@
 @ProductEditCtrl = ($scope, $stateParams, $state, productData, FileUploader) ->
 
+  # select fields data
+
+  $scope.categories = [
+    'food',
+    'drinks',
+    'alcohol'
+    'snacks'
+  ]
+
+  $scope.types = [
+    'milliliters',
+    'grams',
+    'size'
+  ]
+
+  $scope.sizes = [
+    'small',
+    'medium',
+    'large'
+  ]
+
   # temporary data
 
   $scope.loadTemporaryProduct = ->
@@ -15,6 +36,8 @@
       , (product) ->
         console.log product
         $scope.formData.name = product.name
+        $scope.formData.category = product.category
+        $scope.formData.product_type = product.product_type
         $scope.formData.size = product.size
         $scope.formData.price = product.price
         $scope.formData.image = product.image.thumb.url

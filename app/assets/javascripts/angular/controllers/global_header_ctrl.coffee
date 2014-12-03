@@ -86,4 +86,7 @@
   $scope.navEditUser = (userId) ->
     $state.go('user_edit', {userId: userId})
 
+  $scope.navOrdersHistory = ->
+    $state.go('orders_history', {pageNo: 1})
+
 @GlobalHeaderCtrl.$inject = ['$scope', '$state', 'sessionData', 'productData', 'principal', '$translate', '$stateParams']

@@ -40,7 +40,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
               li.text-center
                 a(ng-click="navEditUser(data.user.id)")
                   ' {{ "HEADER_DROPDOWN_EDIT" | translate }}
-              li.divider
+              li.text-center
+                a(ng-click="navOrdersHistory()")
+                  ' {{ "HEADER_DROPDOWN_HISTORY" | translate }}
+              .border-bottom
               li.text-center
                 a(ng-click="destroySession()")
                   ' {{ "HEADER_DROPDOWN_LOGOUT" | translate }}

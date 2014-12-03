@@ -5,6 +5,7 @@ en:
   "HEADER_DROPDOWN_ACCOUNT": "Account"
   "HEADER_DROPDOWN_VIEW": "View profile"
   "HEADER_DROPDOWN_EDIT": "Edit profile"
+  "HEADER_DROPDOWN_ORDERS_HISTORY": "Orders history"
   "HEADER_DROPDOWN_LOGOUT": "Logout"
   "HEADER_SIGN_IN": "Sign in"
   "HEADER_SIGN_UP": "Sign up"
@@ -70,7 +71,6 @@ en:
 
   # NAVIGATION
   "NAV_HOME": "Home"
-  "NAV_ORDERS_HISTORY": "Orders history"
   "NAV_FOOD": "Food"
   "NAV_DRINKS": "Drinks"
   "NAV_SNACKS": "Snacks"
