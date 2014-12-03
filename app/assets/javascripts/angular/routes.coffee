@@ -17,7 +17,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
-        "body":       { controller: 'CategoriesIndexCtrl',  templateUrl: 'body/categories/categories_index.html' }
+        "body":       { controller: 'ProductsIndexCtrl',  templateUrl: 'body/products/products_index.html' }
         "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
       }
     })

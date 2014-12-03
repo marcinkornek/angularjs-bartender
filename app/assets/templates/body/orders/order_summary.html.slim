@@ -4,15 +4,11 @@
       ' {{ "ORDERS_SUMMARY_ORDER_ID" | translate }}
       ' {{ data.orders.id }}
       ' -
-    ' {{ "ORDERS_SUMMARY_TITLE" | translate }}
+      ' {{ "ORDERS_SUMMARY_TITLE" | translate }}
 
   div ng-hide="data.orders.items"
     h3.align-center
       ' {{ "ORDERS_SUMMARY_EMPTY" | translate }}
-    .align-center
-      button.btn.btn-default.btn-lg(ng-click="navHome()")
-        span.glyphicon.glyphicon-home aria-hidden="true"
-        ' {{ "ORDERS_SUMMARY_HOME" | translate }}
 
   div ng-show="data.orders.items"
     .col-md-6.col-md-offset-3.orders-history
@@ -57,3 +53,8 @@
           ' {{ "ORDERS_SUMMARY_STATE" | translate }}:
           .red
             ' {{ data.orders.state }}
+
+  .align-center
+    button.btn.btn-default.btn-lg(ng-click="navHome()")
+      span.glyphicon.glyphicon-home aria-hidden="true"
+      ' {{ "ORDERS_SUMMARY_HOME" | translate }}

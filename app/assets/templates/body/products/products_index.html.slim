@@ -1,4 +1,5 @@
-h3.text-center translate="{{data.category}}"
+h3.text-center translate="{{data.category}}" ng-show="data.category"
+h3.text-center translate="PRODUCTS_INDEX_ALL_PRODUCTS" ng-hide="data.category"
 
 .products.pointer
   row(ng-repeat="product in data.products")

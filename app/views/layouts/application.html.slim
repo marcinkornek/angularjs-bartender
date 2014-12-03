@@ -10,6 +10,7 @@ html ng-app="Bartender"
     - if logged_in?
       javascript:
         window.currentUser = #{ raw current_user.extend(HeaderUserRepresenter).to_json}
+        window.categories = #{ raw Product.all.map(&:category).uniq }
     - else
       javascript:
         window.currentUser = {}

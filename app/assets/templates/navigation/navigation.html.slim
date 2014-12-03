@@ -1,39 +1,8 @@
-.category.pointer(ng-click="navProductIndex('products_index','food')")
-  h3.align-center
-    ' {{ "CATEGORIES_INDEX_FOOD" | translate }}
-  .category-image
-    - if Rails.env.production?
-      img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/food.jpg")
-    - else
-      img(ng-src="uploads/categories/image/food.jpg")
-
-.category.pointer(ng-click="navProductIndex('products_index','drinks')")
-  h3.align-center
-    ' {{ "CATEGORIES_INDEX_DRINKS" | translate }}
-  .category-image
-    - if Rails.env.production?
-      img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/drink.jpg")
-    - else
-      img(ng-src="uploads/categories/image/drink.jpg")
-
-.category.pointer(ng-click="navProductIndex('products_index','alcohol')")
-  h3.align-center
-    ' {{ "CATEGORIES_INDEX_ALCOHOL" | translate }}
-  .category-image
-    - if Rails.env.production?
-      img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/alcohol.jpg")
-    - else
-      img(ng-src="uploads/categories/image/alcohol.jpg")
-
-.category.pointer(ng-click="navProductIndex('products_index','snacks')")
-  h3.align-center
-    ' {{ "CATEGORIES_INDEX_SNACKS" | translate }}
-  .category-image
-    - if Rails.env.production?
-      img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/snack.jpg")
-    - else
-      img(ng-src="uploads/categories/image/snack.jpg")
-
-
-
-
+div ng-repeat="category in data.categories"
+  .category.pointer(ng-click="navProductIndex(category)")
+    h3.text-center translate="{{category}}"
+    .category-image
+      - if Rails.env.production?
+        img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/{{category}}.jpg")
+      - else
+        img(ng-src="uploads/categories/image/{{category}}.jpg")

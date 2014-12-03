@@ -3,6 +3,7 @@
   $scope.categories = [
     'food',
     'drinks',
+    'alcohol'
     'snacks'
   ]
 
