@@ -83,35 +83,6 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       }
     })
 
-
-    # Categories
-
-    .state('categories_index', {
-      url: '/categories',
-      data: {
-        roles: ['User', 'Admin']
-      },
-      views: {
-        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
-        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
-        "body":       { controller: 'CategoriesIndexCtrl',  templateUrl: 'body/categories/categories_index.html' }
-        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
-      }
-    })
-
-    .state('category_show', {
-      url: '/categories/:categoryId',
-      data: {
-        roles: ['User', 'Admin']
-      },
-      views: {
-        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
-        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
-        "body":       { controller: 'CategoryShowCtrl',  templateUrl: 'body/categories/category_show.html' }
-        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
-      }
-    })
-
     # Orders
     .state('order_summary', {
       url: '/order_summary',

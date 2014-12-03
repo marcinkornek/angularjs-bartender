@@ -7,7 +7,7 @@ h3.text-center(ng-hide="data.products.category")
 
 row(ng-repeat="product in data.products.products")
   .inline-block
-    .align-center(ng-click="navProductShow(product.id, product.name)")
+    .align-center(ng-click="navProductShow(product.category, product.id, product.name)")
       ' {{ product.name }}
       br
       ' {{ product.size }}

@@ -31,7 +31,7 @@
         # console.log 'success'
         # console.log success
         # $state.go('home')
-        $state.go('products_index', {category: $scope.data.product.category})
+        $state.go('home')
       , (error) ->
         console.log 'error'
         console.log error

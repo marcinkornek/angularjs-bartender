@@ -12,12 +12,6 @@ class Api::OrdersController < ApplicationController
     render json: { orders: orders, number: Order.count}
   end
 
-  def order_summary
-    session_order = session[:order] || session[:closed_order] || params[:id]
-    session_items(session_order)
-    session.delete(:closed_order)
-  end
-
   def create
     if session[:order]
       @order = Order.find(session[:order])
@@ -34,6 +28,12 @@ class Api::OrdersController < ApplicationController
     else
       render json: order_detail, status: :not_acceptable
     end
+  end
+
+  def order_summary
+    session_order = session[:order] || session[:closed_order] || params[:id]
+    session_items(session_order)
+    session.delete(:closed_order)
   end
 
   def order_close

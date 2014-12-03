@@ -35,7 +35,7 @@
       , (orders) ->
         console.log 'order'
         console.log orders
-        $state.go('products_index', {category: "food"}, {reload: true})
+        $state.go('home', {}, {reload: true})
       , (error) ->
         console.log 'error'
         console.log error.status
@@ -46,7 +46,7 @@
       , (orders) ->
         console.log 'order'
         console.log orders
-        $state.go('products_index', {category: "food"}, {reload: true})
+        $state.go('home', {}, {reload: true})
       , (error) ->
         console.log 'error'
         console.log error.status
