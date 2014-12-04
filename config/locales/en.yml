@@ -89,33 +89,33 @@ en:
   "snacks": "Snacks"
   "PRODUCTS_INDEX_ALL_PRODUCTS": "All products"
   "PRODUCTS_INDEX_LAST_PRODUCTS": "Recent bought products"
-  # "PRODUCTS_INDEX_TITLE_FOOD": "Food"
-  # "PRODUCTS_INDEX_TITLE_DRINKS": "Drinks"
-  # "PRODUCTS_INDEX_TITLE_ALCOHOL": "Alcohol"
-  # "PRODUCTS_INDEX_TITLE_SNACKS": "Snacks"
   "PRODUCTS_INDEX_ADD_PRODUCT": "Add product"
   "PRODUCTS_INDEX_CURRENCY": "zł"
 
-  "PRODUCT_NEW_TITLE": "Add product"
-  "PRODUCT_NEW_CATEGORY": "Category"
-  "PRODUCT_NEW_TYPE": "Type"
-  "PRODUCT_NEW_NAME": "Name"
-  "PRODUCT_NEW_SIZE": "Size"
-  "PRODUCT_NEW_SIZE_ML": "Size (ml)"
-  "PRODUCT_NEW_SIZE_G": "Size (g)"
-  "PRODUCT_NEW_PRICE": "Price"
-  "PRODUCT_NEW_DESCRIPTION": "Description"
-  "PRODUCT_NEW_IMAGE": "Product image"
-  "PRODUCT_NEW_SIZE_IMAGE": "size"
-  "PRODUCT_NEW_PREVIEW_IMAGE": 'preview'
-  "PRODUCT_NEW_REMOVE_IMAGE": 'remove image'
-  "PRODUCT_NEW_CREATE": "Add product"
-  "PRODUCT_NEW_ERROR_NAME_REQUIRED": "Name is required"
-  "PRODUCT_NEW_ERROR_NAME_LONG": "Name is too long"
-  "PRODUCT_NEW_ERROR_SIZE_REQUIRED": "Size is required"
-  "PRODUCT_NEW_ERROR_PRICE_REQUIRED": "Price is required"
-  "PRODUCT_NEW_ERROR_PRICE_MIN": "Price must be greater than or equal 0"
-  "PRODUCT_NEW_ERROR_IMAGE_REQUIRED": "Image is required"
+  "PRODUCT_FORM_NEW_TITLE": "Add product"
+  "PRODUCT_FORM_EDIT_TITLE": "Edit product"
+  "PRODUCT_FORM_CATEGORY": "Category"
+  "PRODUCT_FORM_TYPE": "Type"
+  "PRODUCT_FORM_NAME": "Name"
+  "PRODUCT_FORM_SIZE": "Size"
+  "PRODUCT_FORM_SIZE_ML": "Size (ml)"
+  "PRODUCT_FORM_SIZE_G": "Size (g)"
+  "PRODUCT_FORM_PRICE": "Price"
+  "PRODUCT_FORM_CURRENCY": "zł"
+  "PRODUCT_FORM_DESCRIPTION": "Description"
+  "PRODUCT_FORM_IMAGE": "Product image"
+  "PRODUCT_FORM_SIZE_IMAGE": "size"
+  "PRODUCT_FORM_PREVIEW_IMAGE": "preview"
+  "PRODUCT_FORM_REMOVE_IMAGE": "remove image"
+  "PRODUCT_FORM_CREATE": "Add product"
+  "PRODUCT_FORM_EDIT": "Add product"
+
+  "PRODUCT_FORM_ERROR_NAME_REQUIRED": "Name is required"
+  "PRODUCT_FORM_ERROR_NAME_LONG": "Name is too long"
+  "PRODUCT_FORM_ERROR_SIZE_REQUIRED": "Size is required"
+  "PRODUCT_FORM_ERROR_PRICE_REQUIRED": "Price is required"
+  "PRODUCT_FORM_ERROR_PRICE_MIN": "Price must be greater than or equal 0"
+  "PRODUCT_FORM_ERROR_IMAGE_REQUIRED": "Image is required"
 
   "PRODUCT_SHOW_NAME": "Name"
   "PRODUCT_SHOW_SIZE": "Size"
@@ -129,23 +129,6 @@ en:
   "PRODUCT_SHOW_CLEAR_ORDER_PRODUCT": "Clear order"
   "PRODUCT_SHOW_CURRENCY": "zł"
   "PRODUCT_SHOW_EDIT_PRODUCT": "Edit product"
-
-  "PRODUCT_EDIT_TITLE": "Edit product"
-  "PRODUCT_EDIT_NAME": "Name"
-  "PRODUCT_EDIT_SIZE": "Size"
-  "PRODUCT_EDIT_PRICE": "Price"
-  "PRODUCT_EDIT_IMAGE": "Product image"
-  "PRODUCT_EDIT_CURRENT_IMAGE": "Current image"
-  "PRODUCT_EDIT_SIZE_IMAGE": "size"
-  "PRODUCT_EDIT_PREVIEW_IMAGE": 'preview'
-  "PRODUCT_EDIT_REMOVE_IMAGE": 'remove image'
-  "PRODUCT_EDIT_CREATE": "Edit product"
-  "PRODUCT_EDIT_ERROR_NAME_REQUIRED": "Name is required"
-  "PRODUCT_EDIT_ERROR_NAME_LONG": "Name is too long"
-  "PRODUCT_EDIT_ERROR_SIZE_REQUIRED": "Size is required"
-  "PRODUCT_EDIT_ERROR_PRICE_REQUIRED": "Price is required"
-  "PRODUCT_EDIT_ERROR_PRICE_MIN": "Price must be greater than 0"
-  "PRODUCT_EDIT_ERROR_IMAGE_REQUIRED": "Image is required"
 
   "PRODUCTS_SEARCH_RESULTS_TITLE": "Search results"
   "PRODUCTS_SEARCH_CURRENCY": "zł"
@@ -210,8 +193,8 @@ en:
   "SESSION_NEW_SIGN_IN": "Sign in"
 
   session_controller:
-    "activate_email": 'Please check your email and activate account'
-    "wrong_email_password": 'Wrong email/username or password'
+    "activate_email": "Please check your email and activate account"
+    "wrong_email_password": "Wrong email/username or password"
 
   mailer:
     welcome_email:

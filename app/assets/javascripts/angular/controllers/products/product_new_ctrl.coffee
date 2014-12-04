@@ -1,5 +1,7 @@
 @ProductNewCtrl = ($scope, $state, productData, FileUploader) ->
 
+  # select fields options
+
   $scope.categories = [
     'food',
     'drinks',

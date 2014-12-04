@@ -1,124 +1,66 @@
-/ .container
-/   div ng-hide="formData.error"
-/     h1.text-center
-/       ' {{ "PRODUCT_EDIT_TITLE" | translate }}
-
-/   div ui-view="errors"
-
-/   form(style='width:30%;margin-left:auto;margin-right:auto' name="ProductEdit" enctype="multipart/form-data")
-/     .field
-/       label
-/         strong
-/           ' {{ "PRODUCT_EDIT_NAME" | translate }}
-/       input.span12(type="text" maxlength="20" name="name" ng-model="formData.name" required)
-
-/     .field
-/       label
-/         strong
-/           ' {{ "PRODUCT_EDIT_SIZE" | translate }}
-/       input.span12(type="text" name="size" ng-model="formData.size" required)
-
-/     .field
-/       label
-/         strong
-/           ' {{ "PRODUCT_EDIT_PRICE" | translate }}
-/       input.span12(type="text" min="0.01" step="0.01" name="price" ng-model="formData.price" required)
-
-/     .field
-/       label
-/         strong
-/           ' {{ "PRODUCT_EDIT_IMAGE" | translate }}
-
-/       div ng-show="formData.image"
-/         ' {{ "PRODUCT_EDIT_CURRENT_IMAGE" | translate }}
-/         .image
-/           img(ng-src="{{formData.image}}")
-
-/       input.span12(type="file" name="image" nv-file-select uploader="uploader")
-/       br
-
-/       div ng-repeat=("item in uploader.queue")
-/         p
-/           ' {{ "PRODUCT_EDIT_SIZE_IMAGE" | translate }}: {{ item.file.size/1024/1024|number:2 }}  MB
-/         p
-/           ' {{ "PRODUCT_EDIT_PREVIEW_IMAGE" | translate }}:
-/           br
-/           p ng-thumb="{ file: item._file, height: 100 }"
-/         p
-/           .progress style=("margin-bottom: 0;")
-/             .progress-bar ng-style=("{ 'width': item.progress + '%' }") role="progressbar"
-/         p
-
-/           button.btn.btn-danger.btn-xs ng-click="item.remove()" type="button"
-/             span.glyphicon.glyphicon-trash
-/             ' {{ "PRODUCT_EDIT_REMOVE_IMAGE" | translate }}
-
-/     button.btn.btn-primary(style='width:100%' ng-click="editProduct(formData.id)")
-/       ' {{ "PRODUCT_EDIT_CREATE" | translate }}
-
 .container
   div ng-hide="formData.error"
     h1.text-center
-      ' {{ "PRODUCT_EDIT_TITLE" | translate }}
+      ' {{ "PRODUCT_FORM_EDIT_TITLE" | translate }}
 
   div ui-view="errors"
 
-  form(style='width:30%;margin-left:auto;margin-right:auto' name="ProductCreate" enctype="multipart/form-data")
+  form(style='width:30%;margin-left:auto;margin-right:auto' name="ProductEdit" enctype="multipart/form-data")
     .field
       label
         strong
-          ' {{ "PRODUCT_NEW_CATEGORY" | translate }}
+          ' {{ "PRODUCT_FORM_CATEGORY" | translate }}
       select(ng-model="formData.category" ng-options="category for category in categories" required)
 
     .field
       label
         strong
-          ' {{ "PRODUCT_NEW_NAME" | translate }}
+          ' {{ "PRODUCT_FORM_NAME" | translate }}
       input.span12(type="text" maxlength="20" name="name" ng-model="formData.name" required)
 
     .field
       label
         strong
-          ' {{ "PRODUCT_NEW_TYPE" | translate }}
+          ' {{ "PRODUCT_FORM_TYPE" | translate }}
       select(ng-model="formData.product_type" ng-options="type for type in types" required)
 
     .field ng-show="formData.product_type == 'milliliters'"
       label
         strong
-          ' {{ "PRODUCT_NEW_SIZE_ML" | translate }}
+          ' {{ "PRODUCT_FORM_SIZE_ML" | translate }}
       input.span12(type="text" name="size" ng-model="formData.size" required)
 
     .field ng-show="formData.product_type == 'grams'"
       label
         strong
-          ' {{ "PRODUCT_NEW_SIZE_G" | translate }}
+          ' {{ "PRODUCT_FORM_SIZE_G" | translate }}
       input.span12(type="text" name="size" ng-model="formData.size" required)
 
     .field ng-show="formData.product_type == 'size'"
       label
         strong
-          ' {{ "PRODUCT_NEW_SIZE" | translate }}
+          ' {{ "PRODUCT_FORM_SIZE" | translate }}
       select(ng-model="formData.size" ng-options="size for size in sizes" required)
 
     .field
       label
         strong
-          ' {{ "PRODUCT_NEW_PRICE" | translate }}
+          ' {{ "PRODUCT_FORM_PRICE" | translate }}
       input.span12(type="text" name="price" ng-model="formData.price" required)
 
     .field
       label
         strong
-          ' {{ "PRODUCT_NEW_DESCRIPTION" | translate }}
+          ' {{ "PRODUCT_FORM_DESCRIPTION" | translate }}
       input.span12(type="text" name="description" ng-model="formData.description")
 
     .field
       label
         strong
-          ' {{ "PRODUCT_EDIT_IMAGE" | translate }}
+          ' {{ "PRODUCT_FORM_IMAGE" | translate }}
 
       div ng-show="formData.image"
-        ' {{ "PRODUCT_EDIT_CURRENT_IMAGE" | translate }}
+        ' {{ "PRODUCT_FORM_CURRENT_IMAGE" | translate }}
         .image
           img(ng-src="{{formData.image}}")
 
@@ -127,9 +69,9 @@
 
       div ng-repeat=("item in uploader.queue")
         p
-          ' {{ "PRODUCT_EDIT_SIZE_IMAGE" | translate }}: {{ item.file.size/1024/1024|number:2 }}  MB
+          ' {{ "PRODUCT_FORM_SIZE_IMAGE" | translate }}: {{ item.file.size/1024/1024|number:2 }}  MB
         p
-          ' {{ "PRODUCT_EDIT_PREVIEW_IMAGE" | translate }}:
+          ' {{ "PRODUCT_FORM_PREVIEW_IMAGE" | translate }}:
           br
           p ng-thumb="{ file: item._file, height: 100 }"
         p
@@ -139,7 +81,7 @@
 
           button.btn.btn-danger.btn-xs ng-click="item.remove()" type="button"
             span.glyphicon.glyphicon-trash
-            ' {{ "PRODUCT_EDIT_REMOVE_IMAGE" | translate }}
+            ' {{ "PRODUCT_FORM_REMOVE_IMAGE" | translate }}
 
     button.btn.btn-primary(style='width:100%' ng-click="editProduct(formData.id)")
-      ' {{ "PRODUCT_EDIT_CREATE" | translate }}
+      ' {{ "PRODUCT_FORM_EDIT" | translate }}
