@@ -1,63 +1,58 @@
-div ng-show="data.product.error"
+div ng-show="data.product.product.error"
   h3.text-center
-    ' {{ data.product.error }}
+    ' {{ data.product.product.error }}
 
 
-div ng-hide="data.product.error"
+div ng-hide="data.product.product.error"
   .product-data
     h3.border-bottom
-      ' {{ data.product.name }}
+      ' {{ data.product.product.name }}
     .row
       .col-md-2
-        div ng-show="data.product.image.thumb.url"
-          img(ng-src="{{data.product.image.thumb.url}}")
+        div ng-show="data.product.product.image.thumb.url"
+          img(ng-src="{{data.product.product.image.thumb.url}}")
 
-      .col-md-10
-        table
-          tr
-            td
-              ' {{ "PRODUCT_SHOW_NAME" | translate }}:
-            td
-              ' {{ data.product.name }}
-          tr
-            td
-              ' {{ "PRODUCT_SHOW_SIZE" | translate }}:
-            td
-              ' {{ data.product.size }}
-              .inline-block ng-show="data.product.product_type == 'grams'"
-                ' g
-              .inline-block ng-show="data.product.product_type == 'milliliters'"
-                ' ml
-          tr
-            td
-              ' {{ "PRODUCT_SHOW_PRICE" | translate }}:
-            td
-              ' {{ data.product.price }}
-              ' {{ "PRODUCT_SHOW_CURRENCY" | translate }}:
+    button(type="button" class="btn btn-default navbar-btn" ng-click="navProductEdit(data.product.product.category, data.product.product.id, data.product.product.name)" ng-show="data.current_user.role == 'Admin'")
+      ' {{ "PRODUCT_SHOW_EDIT_PRODUCT" | translate }}
 
-        button(type="button" class="btn btn-default navbar-btn" ng-click="navProductEdit(data.product.id, data.product.name)" ng-show="data.current_user.role == 'Admin'")
-          ' {{ "PRODUCT_SHOW_EDIT_PRODUCT" | translate }}
+  .order-details
+    h3.border-bottom
+      ' {{ "PRODUCT_SHOW_PRODUCT_ORDER" | translate }}
 
-h3
-  ' {{ "PRODUCT_SHOW_PRODUCT_ORDER" | translate }}
+    .errors
+      div ng-show="productOrder.amount.$error.required && productOrder.amount.$dirty"
+        ' {{ "PRODUCT_SHOW_PRODUCT_AMOUNT_ERROR" | translate }}
+      div ng-show="productOrder.amount.$error.min && productOrder.amount.$dirty"
+        ' {{ "PRODUCT_SHOW_PRODUCT_MIN_ERROR" | translate }}
 
-.errors
-  div ng-show="productOrder.amount.$error.required && productOrder.amount.$dirty"
-    ' {{ "PRODUCT_SHOW_PRODUCT_AMOUNT_ERROR" | translate }}
-  div ng-show="productOrder.amount.$error.min && productOrder.amount.$dirty"
-    ' {{ "PRODUCT_SHOW_PRODUCT_MIN_ERROR" | translate }}
+    form name="productOrder"
+      .field
+        label
+          strong
+            ' {{ "PRODUCT_SHOW_SIZE" | translate }}
+        select(ng-model="formData.product_detail" ng-options="label(data.product.product.size_type, product.size, product.price, 'zł') for product in data.product.product_details" required )
 
-form name="productOrder"
-  .field
-    label
-      strong
-        ' {{ "PRODUCT_SHOW_PRODUCT_AMOUNT" | translate }}
-    input.span12(name="amount" ng-model="formData.amount" min="0" required placeholder="{{ 'PRODUCT_SHOW_PRODUCT_AMOUNT_PLACEHOLDER' | translate }}" type="number")
 
-  .price ng-show="formData.amount"
-    ' {{ formData.amount * data.product.price }}
-    ' {{ "PRODUCT_SHOW_CURRENCY" | translate }}
-  button.btn.btn-primary(ng-click="createOrder()")
-    ' {{ "PRODUCT_SHOW_ORDER_PRODUCT" | translate }}
-  button.btn.btn-danger(ng-click="clearOrder()")
-    ' {{ "PRODUCT_SHOW_CLEAR_ORDER_PRODUCT" | translate }}
+      .field ng-show="formData.product_detail" style="margin-bottom:10px;"
+        strong
+          ' {{ "PRODUCT_SHOW_PRICE" | translate }}
+        br
+        ' {{ formData.product_detail.price }}
+        ' {{ "PRODUCT_SHOW_CURRENCY" | translate }}
+
+      .field
+        label
+          strong
+            ' {{ "PRODUCT_SHOW_PRODUCT_AMOUNT" | translate }}
+        input.span12(name="amount" ng-model="formData.amount" min="0" required placeholder="{{ 'PRODUCT_SHOW_PRODUCT_AMOUNT_PLACEHOLDER' | translate }}" type="number")
+
+      .field ng-show="formData.amount && formData.product_detail" style="margin-bottom:10px;"
+        strong
+          ' {{ "PRODUCT_SHOW_TOTAL_PRICE" | translate }}
+        br
+        ' {{ formData.amount * formData.product_detail.price }}
+        ' {{ "PRODUCT_SHOW_CURRENCY" | translate }}
+      button.btn.btn-primary(ng-click="createOrder()")
+        ' {{ "PRODUCT_SHOW_ORDER_PRODUCT" | translate }}
+      button.btn.btn-danger(ng-click="clearOrder()")
+        ' {{ "PRODUCT_SHOW_CLEAR_ORDER_PRODUCT" | translate }}

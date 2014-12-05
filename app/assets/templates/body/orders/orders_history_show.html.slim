@@ -15,7 +15,7 @@
         ' {{ "ORDERS_HISTORY_SHOW_HOME" | translate }}
 
   div ng-show="data.orders.items"
-    .col-md-6.col-md-offset-3.orders-history
+    .col-md-8.col-md-offset-2.orders-history
       table(border="1")
         tr
           td.bold
@@ -34,13 +34,13 @@
           td
             ' {{ item.item.name }}
           td
-            ' {{ item.item.size }}
-            .inline-block ng-show="item.item.product_type == 'grams'"
+            ' {{ item.size }}
+            .inline-block ng-show="item.size_type == 'grams'"
               ' g
-            .inline-block ng-show="item.item.product_type == 'milliliters'"
+            .inline-block ng-show="item.size_type == 'milliliters'"
               ' ml
           td
-            ' {{ item.item.price }}
+            ' {{ item.price / item.amount }}
             ' {{ "ORDERS_HISTORY_SHOW_CURRENCY" | translate }}
           td
             ' {{ item.amount }}

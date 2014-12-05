@@ -5,7 +5,7 @@
   $scope.categories = [
     'food',
     'drinks',
-    'alcohol'
+    'alcohol',
     'snacks'
   ]
 
@@ -21,13 +21,22 @@
     'large'
   ]
 
+  # product details dynamic fields
+
+  $scope.removeDetail = (index) ->
+    $scope.formData.details.splice index, 1
+
+  $scope.addDetail = ->
+    $scope.formData.details.push {
+      size: '',
+      price: ''
+    }
+
   # temporary data
 
   $scope.loadTemporaryProduct = ->
     $scope.formData =
       name: 'Loading..'
-      size: 'Loading..'
-      price: 'Loading..'
 
   # loading data
 
@@ -35,13 +44,14 @@
     productData.get({id: $stateParams.productId}
       , (product) ->
         console.log product
-        $scope.formData.name = product.name
-        $scope.formData.category = product.category
-        $scope.formData.product_type = product.product_type
-        $scope.formData.size = product.size
-        $scope.formData.price = product.price
-        $scope.formData.image = product.image.thumb.url
-        $scope.formData.id = product.id
+        $scope.formData.product = product
+        $scope.formData.name = product.product.name
+        $scope.formData.size_type = product.product.size_type
+        $scope.formData.category = product.product.category
+        $scope.formData.description = product.product.description
+        $scope.formData.image = product.product.image.thumb.url
+        $scope.formData.id = product.product.id
+        $scope.formData.details = product.product_details
       , (error) ->
         console.log 'error'
         console.log error.status
@@ -54,7 +64,8 @@
   # functions
 
   $scope.editProduct = (productId) ->
-    if $scope.formData.name && $scope.formData.size && $scope.formData.price && $scope.formData.price > 0
+    console.log $scope.formData.details
+    if $scope.formData.category && $scope.formData.size_type && $scope.formData.name && $scope.formData.details
       productData.update({}, $scope.formData
         , (success) =>
           console.log 'success'

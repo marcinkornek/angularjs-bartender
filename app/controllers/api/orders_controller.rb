@@ -13,16 +13,21 @@ class Api::OrdersController < ApplicationController
   end
 
   def create
+    p '-----------------'
+    p params
+    p '-----------------'
     if session[:order]
-      @order = Order.find(session[:order])
+      order = Order.find(session[:order])
     else
-      @order = Order.create(bartender: current_user)
-      session[:order] = @order.id
-      @order
+      order = Order.create(bartender: current_user)
+      session[:order] = order.id
+      order
     end
-    price = params[:price].to_f * params[:amount].to_i
-    item = Product.find(params[:id])
-    order_detail = OrderDetail.new(order: @order, product: item, amount: params[:amount], price: price)
+    product = Product.find(params[:id])
+    p '-----------------'
+    p product
+    p '-----------------'
+    order_detail = OrderDetail.new(order: order, product: product, amount: params[:amount], price: params[:price], size_type: product.size_type, size: params[:size])
     if order_detail.save
       render json: order_detail
     else
@@ -77,6 +82,8 @@ class Api::OrdersController < ApplicationController
         {
           item: od.product,
           price: od.price,
+          size_type: od.size_type,
+          size: od.size,
           amount: od.amount,
           id: od.id
         }

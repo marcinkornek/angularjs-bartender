@@ -5,7 +5,7 @@
   $scope.categories = [
     'food',
     'drinks',
-    'alcohol'
+    'alcohol',
     'snacks'
   ]
 
@@ -21,11 +21,29 @@
     'large'
   ]
 
+  # product details dynamic fields
+
+  $scope.formData = {}
+  $scope.formData.details = [{
+      size: '',
+      price: ''
+    }]
+
+  $scope.removeDetail = (index) ->
+    $scope.formData.details.splice index, 1
+
+  $scope.addDetail = ->
+    $scope.formData.details.push {
+      size: '',
+      price: ''
+    }
+
   # functions
   $scope.data = {}
 
   $scope.createProduct = ->
-    if $scope.formData.category && $scope.formData.product_type && $scope.formData.name && $scope.formData.size && $scope.formData.price
+    console.log $scope.formData.details
+    if $scope.formData.category && $scope.formData.size_type && $scope.formData.name && $scope.formData.details
       productData.save({}, $scope.formData
         , (success) =>
           console.log 'success'

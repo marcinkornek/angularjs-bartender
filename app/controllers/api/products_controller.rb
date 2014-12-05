@@ -6,18 +6,28 @@ class Api::ProductsController < ApplicationController
     orders = OrderDetail.all.order(created_at: :desc)
     recent_products = orders.map(&:product).uniq
     products = if !params[:category].blank?
-      Product.send(params[:category]).order(:name)
+      Product.send(params[:category]).order(:name).extend(ProductsRepresenter)
     else
-      Product.all.order(:name)
+      Product.all.order(:name).extend(ProductsRepresenter)
     end
-    render json: {products: products, results: products.size, category: params[:category], recent_products: recent_products}
+    render json: {products: products.to_hash, results: products.size, category: params[:category], recent_products: recent_products}
   end
 
   def show
-    render json: product
+    product_details = product.product_details.map do |pd|
+      {
+        id: pd.id,
+        size: pd.size,
+        price: pd.price.to_f,
+      }
+    end
+    render json: { product: product, product_details: product_details  }
   end
 
   def create
+    p '-----------------'
+    p product_params
+    p '-----------------'
     @product = Product.new(product_params)
     if @product.save
       render json: @product
@@ -27,6 +37,9 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
+    # pp1 = product_params[:product_details_attributes].map {|pda| pda[:id]}
+    # pp2 = product.product_details.map(&:id)
+    # deleted = pp2-pp1
     render json: product.update_attributes(product_params)
   end
 
@@ -69,8 +82,16 @@ class Api::ProductsController < ApplicationController
   end
 
   def product_params
-    params.permit(:product_type, :category, :name, :size, :price, :description, :image)
+    params.permit(:category, :name, :description, :image, :size_type, details: [:id, :size, :price]).tap do |hash|
+      hash[:product_details_attributes] = hash.delete(:details)
+    end
   end
 
 end
 
+
+  # def product_params
+  #   params.permit(:category, :name, :description, :image, :size_type).tap do |hash|
+  #     hash[:product_detail_attributes] = params[:details][:size, :price]
+  #   end
+  # end

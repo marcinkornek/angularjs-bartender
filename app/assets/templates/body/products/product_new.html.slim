@@ -10,7 +10,7 @@
       label
         strong
           ' {{ "PRODUCT_FORM_CATEGORY" | translate }}
-      select(ng-model="formData.category" ng-options="category for category in categories" required)
+      select(ng-model="formData.category" ng-options="category for category in categories" required style='width:100%')
 
     .field
       label
@@ -22,32 +22,52 @@
       label
         strong
           ' {{ "PRODUCT_FORM_TYPE" | translate }}
-      select(ng-model="formData.product_type" ng-options="type for type in types" required)
+      select(ng-model="formData.size_type" ng-options="type for type in types" required style='width:100%')
 
-    .field ng-show="formData.product_type == 'milliliters'"
-      label
-        strong
-          ' {{ "PRODUCT_FORM_SIZE_ML" | translate }}
-      input.span12(type="text" name="size" ng-model="formData.size" required)
+    .product_details
+      table(ng-show="formData.size_type")
+        tr
+          td(style='width:40%')
+            .field ng-show="formData.size_type == 'milliliters'"
+              label
+                strong
+                  ' {{ "PRODUCT_FORM_SIZE_ML" | translate }}
 
-    .field ng-show="formData.product_type == 'grams'"
-      label
-        strong
-          ' {{ "PRODUCT_FORM_SIZE_G" | translate }}
-      input.span12(type="text" name="size" ng-model="formData.size" required)
+            .field ng-show="formData.size_type == 'grams'"
+              label
+                strong
+                  ' {{ "PRODUCT_FORM_SIZE_G" | translate }}
 
-    .field ng-show="formData.product_type == 'size'"
-      label
-        strong
-          ' {{ "PRODUCT_FORM_SIZE" | translate }}
-      select(ng-model="formData.size" ng-options="size for size in sizes" required)
+            .field ng-show="formData.size_type == 'size'"
+              label
+                strong
+                  ' {{ "PRODUCT_FORM_SIZE" | translate }}
 
-    .field
-      label
-        strong
-          ' {{ "PRODUCT_FORM_PRICE" | translate }}
-          ' ({{ "PRODUCT_FORM_CURRENCY" | translate }})
-      input.span12(type="number" min="0.01" step="0.01" name="price" ng-model="formData.price" required)
+          td(style='width:40%')
+            .field
+              label
+                strong
+                  ' {{ "PRODUCT_FORM_PRICE" | translate }}
+                  ' ({{ "PRODUCT_FORM_CURRENCY" | translate }})
+
+          td(style='width:20%')
+
+        tr(ng-repeat="detail in formData.details")
+          td(style='width:40%')
+            .field ng-show="formData.size_type == 'milliliters'"
+              input.span12(type="text" name="size" ng-model="detail.size" required style='width:100%;margin-bottom:0px')
+            .field ng-show="formData.size_type == 'grams'"
+              input.span12(type="text" name="size" ng-model="detail.size" required style='width:100%;margin-bottom:0px')
+            .field ng-show="formData.size_type == 'size'"
+              select(ng-model="detail.size" ng-options="size for size in sizes" required style='width:100%;margin-bottom:0px')
+          td(style='width:40%')
+            input.span12(type="number" min="0.01" step="0.01" name="price" ng-model="detail.price" required style='width:100%')
+          td(style='width:20%')
+            button.btn.btn-default.btn-xs(style='width:100%' ng-click="removeDetail($index)")
+              ' {{ "PRODUCT_FORM_REMOVE_FIELD" | translate }}
+
+      a ng-click="addDetail()" ng-show="formData.size_type"
+        ' {{ "PRODUCT_FORM_ADD_FIELD" | translate }}
 
     .field
       label

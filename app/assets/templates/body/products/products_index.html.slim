@@ -9,18 +9,24 @@ row(ng-repeat="product in data.products.products")
   .inline-block
     .align-center(ng-click="navProductShow(product.category, product.id, product.name)")
       ' {{ product.name }}
-      br
-      ' {{ product.size }}
-      .inline-block ng-show="product.product_type == 'grams'"
-        ' g
-      .inline-block ng-show="product.product_type == 'milliliters'"
-        ' ml
 
       .product-image
-        img(ng-src="{{product.image.thumb.url}}")
-      ' {{ product.price }}
-      ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
+        img(ng-src="{{product.image.image.thumb.url}}")
+/       .inline-block ng-repeat="pd in product.product_details"
+/         ' {{ pd.size }} |
+
+/       .inline-block ng-show="product.product_type == 'grams'"
+/         ' g
+/       .inline-block ng-show="product.product_type == 'milliliters'"
+/         ' ml
+
+/       br
+
+/       .inline-block ng-repeat="pd in product.product_details"
+/         ' {{ pd.price }} |
+/       ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
 
 br
 button(type="button" class="btn btn-default navbar-btn" ng-click="navProductNew()" ng-show="data.current_user.role == 'Admin'")
   ' {{ "PRODUCTS_INDEX_ADD_PRODUCT" | translate }}
+
