@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
   before_save { name.capitalize! }
   mount_uploader :image, ImageUploader
 
-  accepts_nested_attributes_for :product_details, :reject_if => :reject_tour, allow_destroy: true
+  accepts_nested_attributes_for :product_details
 
   scope :food, -> { where('category = ?', 'food') }
   scope :drinks, -> { where('category = ?', 'drinks') }
@@ -23,11 +23,12 @@ class Product < ActiveRecord::Base
     where("name ilike ?", "%#{query}%")
   end
 
-  def reject_tour(attributes)
-    exists = attributes['id'].present?
-    empty = attributes[:when].blank? || attributes[:where].blank?
-    attributes.merge!({_destroy: 1}) if exists and empty
-    return (!exists and empty)
+  def delete_nested_attr(product_details_ids_new)
+    product_details_ids_old = product_details.map(&:id)
+    ids =  product_details_ids_old - product_details_ids_new
+    ids.each do |id|
+      product_details.find(id).destroy
+    end
   end
 
 end

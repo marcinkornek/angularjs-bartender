@@ -25,9 +25,9 @@ class Api::ProductsController < ApplicationController
   end
 
   def create
-    p '-----------------'
-    p product_params
-    p '-----------------'
+    # p '-----------------'
+    # p product_params
+    # p '-----------------'
     @product = Product.new(product_params)
     if @product.save
       render json: @product
@@ -40,6 +40,8 @@ class Api::ProductsController < ApplicationController
     # pp1 = product_params[:product_details_attributes].map {|pda| pda[:id]}
     # pp2 = product.product_details.map(&:id)
     # deleted = pp2-pp1
+    product_details_ids = product_params[:product_details_attributes].map {|pda| pda[:id]}
+    product.delete_nested_attr(product_details_ids)
     render json: product.update_attributes(product_params)
   end
 

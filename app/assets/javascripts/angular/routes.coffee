@@ -102,8 +102,8 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         roles: ['User', 'Admin']
       },
       views: {
-        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'OrderHistoryCtrl',  templateUrl: 'body/orders/orders_history.html' }
       }
     })
@@ -114,8 +114,8 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         roles: ['User', 'Admin']
       },
       views: {
-        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'OrderHistoryShowCtrl',  templateUrl: 'body/orders/orders_history_show.html' }
       }
     })
