@@ -8,7 +8,6 @@ class Product < ActiveRecord::Base
   validates :size_type,   inclusion: { in: KINDS }
   validates :category,    inclusion: { in: CATEGORIES }
   validates :name,        presence: true
-  validates :image,       presence: true
 
   before_save { name.capitalize! }
   mount_uploader :image, ImageUploader
