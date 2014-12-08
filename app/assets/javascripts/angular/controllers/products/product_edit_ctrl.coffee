@@ -43,7 +43,7 @@
   $scope.loadProduct = ->
     productData.get({id: $stateParams.productId}
       , (product) ->
-        console.log product
+        # console.log product
         $scope.formData.product = product
         $scope.formData.name = product.product.name
         $scope.formData.size_type = product.product.size_type
@@ -69,7 +69,7 @@
       productData.update({}, $scope.formData
         , (success) =>
           console.log 'success'
-          console.log success
+          # console.log success
           if $scope.uploader.queue[0] == undefined
             $state.go('home')
           else

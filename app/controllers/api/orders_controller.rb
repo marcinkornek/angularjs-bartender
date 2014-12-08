@@ -13,9 +13,9 @@ class Api::OrdersController < ApplicationController
   end
 
   def create
-    p '-----------------'
-    p params
-    p '-----------------'
+    # p '-----------------'
+    # p params
+    # p '-----------------'
     if session[:order]
       order = Order.find(session[:order])
     else
@@ -24,9 +24,6 @@ class Api::OrdersController < ApplicationController
       order
     end
     product = Product.find(params[:id])
-    p '-----------------'
-    p product
-    p '-----------------'
     order_detail = OrderDetail.new(order: order, product: product, amount: params[:amount], price: params[:price], size_type: product.size_type, size: params[:size])
     if order_detail.save
       render json: order_detail
