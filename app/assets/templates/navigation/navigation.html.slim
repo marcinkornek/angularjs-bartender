@@ -1,3 +1,7 @@
+div
+  button.btn.btn-default.btn-lg(ng-click="navProductRecent()" style="width:100%")
+    ' {{ "NAV_RECENT" | translate }}
+
 div ng-repeat="category in data.categories"
   .category.pointer(ng-click="navProductIndex(category)")
     h3.text-center translate="{{category}}"

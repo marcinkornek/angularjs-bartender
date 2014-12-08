@@ -16,4 +16,7 @@
   $scope.navProductIndex = (category) ->
     $state.go('products_index', {category: category})
 
+  $scope.navProductRecent = ->
+    $state.go('recent_products_index')
+
 @GlobalNavigationCtrl.$inject = ['$scope', '$state', 'principal', '$translate']

@@ -81,6 +81,7 @@ pl:
   "NAV_FOOD": "Jedzenie"
   "NAV_DRINKS": "Napoje"
   "NAV_SNACKS": "Przekąski"
+  "NAV_RECENT": "Ostatnio kupione"
 
   # CATEGORIES
   "CATEGORIES_INDEX_TITLE": "Kategorie"
