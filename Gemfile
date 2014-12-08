@@ -49,7 +49,7 @@ group :development, :test do
   gem 'guard-jasmine', git: 'git@github.com:guard/guard-jasmine.git', branch: 'jasmine-2'
   gem 'quiet_assets' #dont show assets in 'rails s' log (it's much more cleaner)
   gem 'rspec-rails', '~> 2.14.0.rc1'
-  gem 'faker', '1.1.2'
+  gem 'faker'
 end
 
 # frontend
