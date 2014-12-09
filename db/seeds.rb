@@ -7,6 +7,12 @@ sizes = %w(small medium large)
 sizes_ml = %w(250 500 1000)
 sizes_gr = %w(100 200 400)
 
+p '-------make admin---------'
+admin = User.new(username: "admin", email: 'admin@admin.pl', password: 'asdasd', password_confirmation: 'asdasd')
+admin.role = 'Admin'
+admin.save
+admin.activate!
+
 if Rails.env.production?
   p '-------make food---------'
   food.each do |n|
