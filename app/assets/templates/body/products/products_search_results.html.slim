@@ -9,17 +9,9 @@ div ng-show="data.products.results > 0"
         .inline-block
           .align-center(ng-click="navProductShow(product.category, product.id, product.name)")
             ' {{ product.name }}
-            br
-            ' {{ product.size }}
-            .inline-block ng-show="product.product_type == 'grams'"
-              ' g
-            .inline-block ng-show="product.product_type == 'milliliters'"
-              ' ml
 
             .product-image
               img(ng-src="{{product.image.thumb.url}}")
-            ' {{ product.price }}
-            ' {{ "PRODUCTS_INDEX_CURRENCY" | translate }}
 
 div ng-hide="data.products.results > 0"
   h4

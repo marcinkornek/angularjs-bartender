@@ -160,19 +160,27 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
       }
     })
+      .state('products_index.product_details', {
+        url: '/:productId-:productName',
+        data: {
+          roles: ['User', 'Admin']
+        },
+        templateUrl: 'body/products/products_index.product_details.html'
+        controller: 'ProductsIndexCtrl'
+      })
 
-    .state('product_show', {
-      url: '/products/:category/:productId-:productName',
-      data: {
-        roles: ['User', 'Admin']
-      },
-      views: {
-        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
-        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
-        "body":       { controller: 'ProductShowCtrl',  templateUrl: 'body/products/product_show.html' }
-        "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
-      }
-    })
+    # .state('product_show', {
+    #   url: '/products/:category/:productId-:productName',
+    #   data: {
+    #     roles: ['User', 'Admin']
+    #   },
+    #   views: {
+    #     "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+    #     "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+    #     "body":       { controller: 'ProductShowCtrl',  templateUrl: 'body/products/product_show.html' }
+    #     "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
+    #   }
+    # })
 
     .state('product_edit', {
       url: '/products/:category/:productId-:productName/edit',
