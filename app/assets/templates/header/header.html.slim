@@ -9,7 +9,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
         a(ng-click="navViewUser(data.user.id)")
           ' {{ data.user.username }}
 
-    form.navbar-form.navbar-left role="search"
+    form.navbar-form.navbar-left role="search" ng-show="data.user.id"
       .form-group(style='position:relative;')
         input.form-control(id="search" placeholder="{{ 'HEADER_SEARCH_PRODUCTS_PLACEHOLDER' | translate }}" type="text" ng-model="formData.search_query" auto-complete)
         / div(style='position:absolute;background-color:green;width:100%') 'asdasdasd'
