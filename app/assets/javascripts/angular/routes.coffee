@@ -147,6 +147,14 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
       }
     })
+      .state('recent_products_index.product_details', {
+        url: '/:productId-:productName',
+        data: {
+          roles: ['User', 'Admin']
+        },
+        templateUrl: 'body/products/products_index.product_details.html'
+        controller: 'ProductsIndexCtrl'
+      })
 
     .state('products_index', {
       url: '/products/:category',
@@ -206,3 +214,11 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "body":       { controller: 'ProductsSearchCtrl',  templateUrl: 'body/products/products_search_results.html' }
       }
     })
+      .state('products_search.product_details', {
+        url: '/:productId-:productName',
+        data: {
+          roles: ['User', 'Admin']
+        },
+        templateUrl: 'body/products/products_index.product_details.html'
+        controller: 'ProductsSearchCtrl'
+      })

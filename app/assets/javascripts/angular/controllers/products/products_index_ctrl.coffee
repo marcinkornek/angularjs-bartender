@@ -2,8 +2,6 @@
 
   # # loading data
 
-
-
   $scope.loadProducts = ->
     $scope.data = {}
     $scope.data.category = $stateParams.category
@@ -25,6 +23,7 @@
     productData.get({id: $stateParams.productId}
       , (product) ->
         $scope.data.product = product
+        $scope.formData.product_detail = product.product_details[1] || product.product_details[0]
         # console.log product
       , (error) ->
         console.log 'error'
@@ -33,7 +32,9 @@
     )
 
   $scope.loadProducts()
-  $scope.loadProduct()
+
+  if $stateParams.productId
+    $scope.loadProduct()
 
   # # functions
 
@@ -58,9 +59,12 @@
       )
 
   $scope.clearOrder = ->
+    productData.get({id: $stateParams.productId}
+      , (product) ->
+        console.log product.product_details[1] || product.product_details[0]
+        $scope.formData.product_detail = product.product_details[1] || product.product_details[0])
     $scope.formData.amount = 1
-    $scope.formData.product_detail = ''
-    $scope.productOrder.$setPristine()
+    # $scope.productOrder.$setPristine()
 
   $scope.label = (size_type, size, price, currency) ->
     switch size_type

@@ -4,15 +4,19 @@ div ng-show="data.products.results > 0"
       translate="{{category.category}}"
       ' ({{ category.results }})
 
-    .products.pointer
-      row(ng-repeat="product in category.products")
-        .inline-block
-          .align-center(ng-click="navProductShow(product.category, product.id, product.name)")
-            ' {{ product.name }}
+    row(ng-repeat="product in category.products" class="products")
+      .pointer class="product-{{product.id}} inline-block" ui-sref=".product_details({productId: product.id, productName: product.name })"
+        .align-center(ng-click="navProductOrder(product.category, product.id, product.name)")
+          ' {{ product.name }}
 
-            .product-image
-              img(ng-src="{{product.image.thumb.url}}")
+          .product-image
+            img(ng-src="{{product.image.thumb.url}}")
+
+    div ui-view="" ng-show="category.category == data.product_category"
 
 div ng-hide="data.products.results > 0"
   h4
     ' there are no matching results
+
+
+

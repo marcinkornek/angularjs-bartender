@@ -4,7 +4,7 @@
     ' ({{ data.products.results }})
 
   row(ng-repeat="product in data.products.products" class="products")
-    div class="product-{{product.id}} inline-block" ui-sref=".product_details({productId: product.id, productName: product.name })"
+    .pointer class="product-{{product.id}} inline-block" ui-sref=".product_details({productId: product.id, productName: product.name })"
       .align-center(ng-click="navProductOrder(product.category, product.id, product.name)")
         ' {{ product.name }}
 
@@ -17,7 +17,7 @@
     ' ({{ data.products.results }})
 
   row(ng-repeat="product in data.products.products" class="products")
-    div class="product-{{product.id}} inline-block" ui-sref="products_index.product_details({category: product.category, productId: product.id, productName: product.name })"
+    .pointer class="product-{{product.id}} inline-block" ui-sref="products_index.product_details({category: product.category, productId: product.id, productName: product.name })"
       .align-center
         ' {{ product.name }}
 

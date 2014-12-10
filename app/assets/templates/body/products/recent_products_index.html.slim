@@ -1,10 +1,12 @@
 h3.text-center
   translate="PRODUCTS_INDEX_LAST_PRODUCTS"
 
-row(ng-repeat="product in data.products.recent_products")
-  .inline-block
-    .align-center(ng-click="navProductShow(product.category, product.id, product.name)")
+row(ng-repeat="product in data.products.recent_products" class="products")
+  .pointer class="product-{{product.id}} inline-block" ui-sref=".product_details({productId: product.id, productName: product.name })"
+    .align-center(ng-click="navProductOrder(product.category, product.id, product.name)")
       ' {{ product.name }}
 
       .product-image
         img(ng-src="{{product.image.thumb.url}}")
+
+div(ui-view="")
