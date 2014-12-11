@@ -15,6 +15,7 @@ gem 'omniauth-github', '~> 1.1.2'
 gem 'carrierwave'
 gem 'rmagick', '2.13.2'
 gem 'fog', '~> 1.23.0' # Ruby cloud services library
+gem 'newrelic_rpm'
 
 # assets processors
 gem 'sass-rails',               '~> 4.0.3'
