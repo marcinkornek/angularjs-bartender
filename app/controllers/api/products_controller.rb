@@ -4,13 +4,13 @@ class Api::ProductsController < ApplicationController
 
   def index
     orders = OrderDetail.all.order(created_at: :desc)
-    recent_products = orders.map(&:product).uniq
+    recent_products = orders.map(&:product).uniq.extend(ProductsRepresenter)
     products = if !params[:category].blank?
       Product.send(params[:category]).order(:name).extend(ProductsRepresenter)
     else
       Product.all.order(:name).extend(ProductsRepresenter)
     end
-    render json: {products: products.to_hash, results: products.size, category: params[:category], recent_products: recent_products}
+    render json: {products: products.to_hash, results: products.size, category: params[:category], recent_products: recent_products.to_hash}
   end
 
   def show
@@ -21,7 +21,7 @@ class Api::ProductsController < ApplicationController
         price: pd.price.to_f,
       }
     end
-    render json: { product: product, product_details: product_details  }
+    render json: { product: product.extend(ProductRepresenter).to_hash, product_details: product_details  }
   end
 
   def create
@@ -37,9 +37,6 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
-    # pp1 = product_params[:product_details_attributes].map {|pda| pda[:id]}
-    # pp2 = product.product_details.map(&:id)
-    # deleted = pp2-pp1
     product_details_ids = product_params[:product_details_attributes].map {|pda| pda[:id]}
     product.delete_nested_attr(product_details_ids)
     render json: product.update_attributes(product_params)
@@ -59,7 +56,7 @@ class Api::ProductsController < ApplicationController
     search_results = Product.all.search(params[:query])
     sr = search_results.map(&:category).uniq.map do |category|
       {
-        products: Product.send(category).search(params[:query]),
+        products: Product.send(category).search(params[:query]).extend(ProductsRepresenter).to_hash,
         results: Product.send(category).search(params[:query]).size,
         category: category
       }

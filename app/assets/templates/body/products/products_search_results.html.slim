@@ -5,12 +5,12 @@ div ng-show="data.products.results > 0"
       ' ({{ category.results }})
 
     row(ng-repeat="product in category.products" class="products")
-      .pointer class="product-{{product.id}} inline-block" ui-sref=".product_details({productId: product.id, productName: product.name })"
+      .pointer class="product-{{product.id}} inline-block" ui-sref=".product_details({productId: product.id, productName: product.parameterize })"
         .align-center(ng-click="navProductOrder(product.category, product.id, product.name)")
           ' {{ product.name }}
 
           .product-image
-            img(ng-src="{{product.image.thumb.url}}")
+            img(ng-src="{{product.image.image.thumb.url}}")
 
     div ui-view="" ng-show="category.category == data.product_category"
 

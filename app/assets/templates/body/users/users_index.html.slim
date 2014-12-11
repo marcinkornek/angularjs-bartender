@@ -3,25 +3,28 @@ h1.text-center translate="USERS_INDEX_TITLE"
 .posts
   ul.padding-left15
     li.row(ng-repeat="user in data.users")
-
-      .col-md-10
-        table
-          tr
-            td
-              .avatar-gravatar
-                div ng-show="user.avatar.avatar.mini.url"
-                  img(ng-src="{{user.avatar.avatar.mini.url}}")
-                div ng-hide="user.avatar.avatar.mini.url"
-                  img gravatar-src="'{{user.email}}'" gravatar-size="40"
-            td
-              h2
-                a(ng-click="navViewUser(user.id)")
+      .pointer class="user-{{user.id}}" ng-click="navViewUser(user.id)"
+        .col-md-9
+          table
+            tr
+              td
+                .avatar-gravatar
+                  div ng-show="user.avatar.avatar.mini.url"
+                    img(ng-src="{{user.avatar.avatar.mini.url}}")
+                  div ng-hide="user.avatar.avatar.mini.url"
+                    img gravatar-src="'{{user.email}}'" gravatar-size="40"
+              td
+                h2
                   ' {{ user.username }}
+        .col-md-1
+          .details
+            p
+              ' {{ user.role }}
 
-      .col-md-2
-        .details
-          p
-            ' {{ user.created_at | date }}
+        .col-md-2
+          .details
+            p
+              ' {{ user.created_at | date }}
 
   .pagination ng-show="totalItems > 10"
     pagination total-items="totalItems" ng-model="data.currentPage" ng-change="pageChanged()" max-size="10" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"

@@ -89,4 +89,7 @@
   $scope.navOrdersHistory = ->
     $state.go('orders_history', {pageNo: 1})
 
+  $scope.navUsersIndex = ->
+    $state.go('users_index')
+
 @GlobalHeaderCtrl.$inject = ['$scope', '$state', 'sessionData', 'productData', 'principal', '$translate', '$stateParams']

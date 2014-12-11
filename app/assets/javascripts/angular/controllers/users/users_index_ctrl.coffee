@@ -27,6 +27,6 @@
   # navigation
 
   $scope.navViewUser = (userId) ->
-    $state.go('user_view', {userId: userId})
+    $state.go('user_show', {userId: userId})
 
 @UsersIndexCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'userData']

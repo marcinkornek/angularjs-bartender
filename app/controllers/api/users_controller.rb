@@ -22,7 +22,12 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    render json: user.extend(UserRepresenter)
+    show_user = if current_user.role == 'Admin'
+      user.extend(UserRepresenter)
+    else
+      current_user.extend(UserRepresenter)
+    end
+    render json: show_user
   end
 
   def avatar_upload

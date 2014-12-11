@@ -36,7 +36,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
 
     # User
     .state('sign_up', {
-      url: '/user/new',
+      url: '/users/new',
       data: {
         roles: []
       },
@@ -46,8 +46,19 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "errors@sign_up": { templateUrl: 'body/users/user_new.errors.html' },
       }
     })
+    .state('users_index', {
+      url: '/users',
+      data: {
+        roles: ['Admin']
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
+        "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
+        "body":       { controller: 'UsersIndexCtrl',     templateUrl: 'body/users/users_index.html' }
+      }
+    })
     .state('user_show', {
-      url: '/user/:userId',
+      url: '/users/:userId',
       data: {
         roles: ['User', 'Admin']
       },
@@ -58,7 +69,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       }
     })
     .state('user_edit', {
-      url: '/user/:userId/edit',
+      url: '/users/:userId/edit',
       data: {
         roles: ['User', 'Admin']
       },

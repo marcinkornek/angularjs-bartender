@@ -3,11 +3,16 @@ module ProductRepresenter
 
   property :id
   property :name
+  property :parameterize
   property :description
   property :image
   property :category
   property :size_type
   collection :product_details
+
+  def parameterize
+    name.parameterize
+  end
 
 end
 

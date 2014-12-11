@@ -12,7 +12,7 @@ div ng-hide="data.product.product.error"
         div ng-show="data.product.product.image.thumb.url"
           img(ng-src="{{data.product.product.image.thumb.url}}")
 
-    button(type="button" class="btn btn-default navbar-btn" ng-click="navProductEdit(data.product.product.category, data.product.product.id, data.product.product.name)" ng-show="data.current_user.role == 'Admin'")
+    button(type="button" class="btn btn-default navbar-btn" ng-click="navProductEdit(data.product.product.category, data.product.product.id, data.product.product.parameterize)" ng-show="data.current_user.role == 'Admin'")
       ' {{ "PRODUCT_SHOW_EDIT_PRODUCT" | translate }}
 
   .order-details

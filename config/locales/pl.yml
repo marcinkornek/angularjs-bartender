@@ -77,6 +77,8 @@ pl:
   "USER_EDIT_ERROR_EMAIL_INVALID": "Email jest nieprawidłowy."
   "USER_EDIT_ERROR_EMAIL_EXISTS": "Email już istnieje."
 
+  "USERS_INDEX_TITLE": "Użytkownicy"
+
   # NAVIGATION
   "NAV_HOME": "Strona główna"
   "NAV_FOOD": "Jedzenie"

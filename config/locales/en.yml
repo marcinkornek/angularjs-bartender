@@ -70,6 +70,8 @@ en:
   "USER_EDIT_REMOVE_AVATAR": "remove"
   "USER_EDIT_UPDATE": "Edit user"
 
+  "USERS_INDEX_TITLE": "Users"
+
   # NAVIGATION
   "NAV_HOME": "Home"
   "NAV_FOOD": "Food"
