@@ -50,7 +50,7 @@ div ng-hide="data.product.product.error"
         strong
           ' {{ "PRODUCT_SHOW_TOTAL_PRICE" | translate }}
         br
-        ' {{ formData.amount * formData.product_detail.price }}
+        ' {{ formData.amount * formData.product_detail.price | number:2 }}
         ' {{ "PRODUCT_SHOW_CURRENCY" | translate }}
       button.btn.btn-primary(ng-click="createOrder()")
         ' {{ "PRODUCT_SHOW_ORDER_PRODUCT" | translate }}

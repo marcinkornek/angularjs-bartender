@@ -4,11 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:create, :destroy]
-    resources :categories
     resources :products
-    resources :food
-    resources :drinks
-    resources :snacks
     resources :orders
     resources :users do
       member do
@@ -30,6 +26,4 @@ Rails.application.routes.draw do
   get   '/api/order_summary'             => 'api/orders#order_summary', as: :order_order_summary
   get   '/api/search_results'            => 'api/products#search_results', as: :products_search_results
   get   '/api/product_names'             => 'api/products#search_product_names'
-  get   '/api/recent_bought_products'    => 'api/products#recent_bought_products'
-
 end

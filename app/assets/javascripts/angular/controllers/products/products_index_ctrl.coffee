@@ -75,6 +75,15 @@
       when 'size'
         size+" - "+price+" "+currency
 
+  $scope.changeNumber = (number, sign) ->
+    switch sign
+      when '+'
+        if $scope.formData.amount >= 0
+          $scope.formData.amount += number
+      when '-'
+        if $scope.formData.amount > 0
+          $scope.formData.amount -= number
+
   # # navigation
 
   $scope.navProductShow = (category, productId, productName) ->

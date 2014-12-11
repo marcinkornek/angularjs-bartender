@@ -42,7 +42,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
                   ' {{ "HEADER_DROPDOWN_EDIT" | translate }}
               li.text-center
                 a(ng-click="navOrdersHistory()")
-                  ' {{ "HEADER_DROPDOWN_HISTORY" | translate }}
+                  ' {{ "HEADER_DROPDOWN_ORDERS_HISTORY" | translate }}
+              li.text-center ng-show="data.user.role == 'Admin'"
+                a(ng-click="navUsersIndex()")
+                  ' {{ "HEADER_DROPDOWN_USERS_INDEX" | translate }}
               .border-bottom
               li.text-center
                 a(ng-click="destroySession()")

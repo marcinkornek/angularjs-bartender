@@ -6,6 +6,7 @@ en:
   "HEADER_DROPDOWN_VIEW": "View profile"
   "HEADER_DROPDOWN_EDIT": "Edit profile"
   "HEADER_DROPDOWN_ORDERS_HISTORY": "Orders history"
+  "HEADER_DROPDOWN_USERS_INDEX": "Users index"
   "HEADER_DROPDOWN_LOGOUT": "Logout"
   "HEADER_SIGN_IN": "Sign in"
   "HEADER_SIGN_UP": "Sign up"

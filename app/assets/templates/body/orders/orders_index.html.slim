@@ -31,7 +31,7 @@ div ng-show="data.orders.items"
           .inline-block ng-show="item.size_type == 'milliliters'"
             ' ml
         td
-          ' {{ item.price / item.amount }}
+          ' {{ item.price / item.amount | number:2 }}
           ' {{ "ORDERS_INDEX_CURRENCY" | translate }}
         td
           ' {{ item.amount }}

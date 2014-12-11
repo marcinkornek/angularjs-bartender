@@ -30,8 +30,8 @@ div ng-hide="data.product.product.error"
         label
           strong
             ' {{ "PRODUCT_SHOW_SIZE" | translate }}
-        select(ng-model="formData.product_detail" ng-options="label(data.product.product.size_type, product.size, product.price, 'zł') for product in data.product.product_details" required )
-
+        br
+        select(ng-model="formData.product_detail" ng-options="label(data.product.product.size_type, product.size, product.price, 'zł') for product in data.product.product_details" required style="display:inline-block;width:160px")
 
       .field ng-show="formData.product_detail" style="margin-bottom:10px;"
         strong
@@ -44,13 +44,18 @@ div ng-hide="data.product.product.error"
         label
           strong
             ' {{ "PRODUCT_SHOW_PRODUCT_AMOUNT" | translate }}
-        input.span12(name="amount" ng-model="formData.amount" min="0" required placeholder="{{ 'PRODUCT_SHOW_PRODUCT_AMOUNT_PLACEHOLDER' | translate }}" type="number")
+        br
+        button.btn.btn-default.btn-xs(ng-click="changeNumber(1, '-')")
+          ' -1
+        input.span12(name="amount" ng-model="formData.amount" min="0" required placeholder="{{ 'PRODUCT_SHOW_PRODUCT_AMOUNT_PLACEHOLDER' | translate }}" type="number" style="display:inline-block;width:100px")
+        button.btn.btn-default.btn-xs(ng-click="changeNumber(1, '+')")
+          ' +1
 
       .field ng-show="formData.amount && formData.product_detail" style="margin-bottom:10px;"
         strong
           ' {{ "PRODUCT_SHOW_TOTAL_PRICE" | translate }}
         br
-        ' {{ formData.amount * formData.product_detail.price }}
+        ' {{ formData.amount * formData.product_detail.price | number:2 }}
         ' {{ "PRODUCT_SHOW_CURRENCY" | translate }}
       button.btn.btn-primary(ng-click="createOrder()")
         ' {{ "PRODUCT_SHOW_ORDER_PRODUCT" | translate }}

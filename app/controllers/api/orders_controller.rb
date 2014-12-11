@@ -77,12 +77,12 @@ class Api::OrdersController < ApplicationController
       order.set_total_price
       items = order.order_details.map do |od|
         {
-          item: od.product,
-          price: od.price,
+          item: od.product.extend(OrderProductRepresenter).to_hash,
+          id: od.id,
           size_type: od.size_type,
           size: od.size,
+          price: od.price,
           amount: od.amount,
-          id: od.id
         }
       end
       render json: { items: items, total_price: order.total_price, state: order.state, id: order.id }
