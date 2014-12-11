@@ -50,7 +50,8 @@
       ordersData.save({}, {amount: amount, id: product_id, size: size, price: price }
         , (success) =>
           $state.go('home')
-        , (error) da          console.log 'error'
+        , (error) =>
+          console.log 'error'
           console.log error
       )
 

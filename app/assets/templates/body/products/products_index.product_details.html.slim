@@ -31,7 +31,11 @@ div ng-hide="data.product.product.error"
           strong
             ' {{ "PRODUCT_SHOW_SIZE" | translate }}
         br
-        select(ng-model="formData.product_detail" ng-options="label(data.product.product.size_type, product.size, product.price, 'zł') for product in data.product.product_details" required style="display:inline-block;width:160px")
+        button.btn.btn-default.btn-xs(ng-click="changeSelected('-')")
+          ' -
+        select(id="size" ng-model="formData.product_detail" ng-options="label(data.product.product.size_type, product.size, product.price, 'zł') for product in data.product.product_details" required style="display:inline-block;width:160px")
+        button.btn.btn-default.btn-xs(ng-click="changeSelected('+')")
+          ' +
 
       .field ng-show="formData.product_detail" style="margin-bottom:10px;"
         strong

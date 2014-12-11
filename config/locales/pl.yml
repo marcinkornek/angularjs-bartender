@@ -195,6 +195,7 @@ pl:
   "ORDERS_HISTORY_SHOW_CURRENCY": "zł"
   "ORDERS_HISTORY_SHOW_STATE": "Stan"
   "ORDERS_HISTORY_SHOW_DETAILS": "szczeóły"
+  "ORDERS_HISTORY_SHOW_STATE_BACK_TO_INDEX": "Powrót do historii zamówień"
 
   # SESSION
   "SESSION_NEW_SIGN_IN_WITH_FACEBOOK": "Zaloguj się z Facebookiem"

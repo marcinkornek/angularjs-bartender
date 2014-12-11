@@ -2,7 +2,7 @@
 
  # loading data
 
-  $scope.loadOrder = (pageNo) ->
+  $scope.loadOrders = (pageNo) ->
     $scope.data = {}
     ordersData.query({page: pageNo}
       , (orders) ->
@@ -17,7 +17,7 @@
         console.log error.status
     )
 
-  $scope.loadOrder($stateParams.pageNo)
+  $scope.loadOrders($stateParams.pageNo)
 
   # pagination
 

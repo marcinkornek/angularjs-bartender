@@ -85,7 +85,7 @@ class Api::OrdersController < ApplicationController
           amount: od.amount,
         }
       end
-      render json: { items: items, total_price: order.total_price, state: order.state, id: order.id }
+      render json: { items: items, total_price: order.total_price, order_closed: order.updated_at, order_bartender: order.bartender.username, state: order.state, id: order.id }
     else
       render json: {}
     end

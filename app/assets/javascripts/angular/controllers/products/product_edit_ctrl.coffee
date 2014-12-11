@@ -49,7 +49,7 @@
         $scope.formData.size_type = product.product.size_type
         $scope.formData.category = product.product.category
         $scope.formData.description = product.product.description
-        $scope.formData.image = product.product.image.thumb.url
+        $scope.formData.image = product.product.image.image.thumb.url
         $scope.formData.id = product.product.id
         $scope.formData.details = product.product_details
       , (error) ->

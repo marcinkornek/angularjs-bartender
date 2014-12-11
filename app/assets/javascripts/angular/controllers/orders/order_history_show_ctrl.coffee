@@ -21,4 +21,7 @@
   $scope.navProductShow = (category, productId, productName) ->
     $state.go('product_show', {category: category, productId: productId, productName: productName})
 
+  $scope.navOrdersHistory = ->
+    $state.go('orders_history', {pageNo: 1})
+
 @OrderHistoryShowCtrl.$inject = ['$scope', '$state', 'principal', '$stateParams', '$translate', 'ordersData']

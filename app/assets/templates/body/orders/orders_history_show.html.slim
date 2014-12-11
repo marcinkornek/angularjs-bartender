@@ -28,7 +28,7 @@
             ' {{ "ORDERS_HISTORY_SHOW_AMOUNT" | translate }}
           td.bold
             ' {{ "ORDERS_HISTORY_SHOW_TOTAL_PRICE" | translate }}
-          td
+          / td
 
         tr(ng-repeat="item in data.orders.items")
           td
@@ -47,10 +47,16 @@
           td
             ' {{ item.price }}
             ' {{ "ORDERS_HISTORY_SHOW_CURRENCY" | translate }}
-          td
-            a(ng-click="navProductShow(item.item.category, item.item.id, item.item.name)")
-              ' {{ "ORDERS_HISTORY_SHOW_DETAILS" | translate }}
+          / td
+          /   a(ng-click="navProductShow(item.item.category, item.item.id, item.item.name)")
+          /     ' {{ "ORDERS_HISTORY_SHOW_DETAILS" | translate }}
 
+      li
+        ' {{ "ORDERS_HISTORY_UPDATED" | translate }}:
+        ' {{ data.orders.order_closed | date:"dd/MM/yyyy - HH:mm" }}
+      li
+        ' {{ "ORDERS_HISTORY_BARTENDER" | translate }}:
+        ' {{ data.orders.order_bartender }}
       li
         ' {{ "ORDERS_HISTORY_SHOW_TOTAL_PRICE" | translate }}:
         b
@@ -60,3 +66,7 @@
         ' {{ "ORDERS_HISTORY_SHOW_STATE" | translate }}:
         .red
           ' {{ data.orders.state }}
+
+      button.btn.btn-default.btn-lg(ng-click="navOrdersHistory()")
+        ' {{ "ORDERS_HISTORY_SHOW_STATE_BACK_TO_INDEX" | translate }}
+

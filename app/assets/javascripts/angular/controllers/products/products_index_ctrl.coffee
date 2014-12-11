@@ -19,12 +19,10 @@
     $scope.formData = {}
     $scope.formData.amount = 1
     $scope.data.current_user = window.currentUser
-    # console.log window.currentUser
     productData.get({id: $stateParams.productId}
       , (product) ->
         $scope.data.product = product
         $scope.formData.product_detail = product.product_details[1] || product.product_details[0]
-        # console.log product
       , (error) ->
         console.log 'error'
         console.log error.status
@@ -40,6 +38,7 @@
 
   $scope.createOrder = ->
     console.log $scope.formData.product_detail
+    console.log $scope.formData.amount
     if $scope.formData.product_detail && $scope.formData.amount > 0
       amount = $scope.formData.amount
       product_id = $scope.data.product.product.id
@@ -49,9 +48,6 @@
 
       ordersData.save({}, {amount: amount, id: product_id, size: size, price: price }
         , (success) =>
-          # console.log 'success'
-          # console.log success
-          # $state.go('home')
           $state.go('home')
         , (error) ->
           console.log 'error'
@@ -74,6 +70,19 @@
         size+"g - "+price+" "+currency
       when 'size'
         size+" - "+price+" "+currency
+
+  $scope.changeSelected = (sign) ->
+    a = $('select')
+    max_value = $scope.data.product.product_details.length - 1
+    value = parseFloat(a.val())
+    switch sign
+      when '+'
+        if value < max_value
+          a.val(value + parseFloat(1))
+      when '-'
+        if value > 0
+          a.val(value - parseFloat(1))
+    return false
 
   $scope.changeNumber = (number, sign) ->
     switch sign
