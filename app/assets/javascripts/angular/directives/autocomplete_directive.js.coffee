@@ -9,16 +9,16 @@ angular.module("Bartender").directive "autoComplete",[ "$http", ($http) ->
       debouncedRequest = _.debounce((value) ->
         params = {}
         params['query'] = value
-        console.log value
+        # console.log value
         $http.get("/api/product_names",
           params: params
         )
         .success((data, status, headers, cfg) ->
-          console.log 'success'
+          # console.log 'success'
           $('#search').autocomplete
             source: data
             minLength: 2
-          console.log data
+          # console.log data
         )
         .error ((data, status, headers, cfg) ->
           console.log 'error'

@@ -159,7 +159,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       }
     })
       .state('recent_products_index.product_details', {
-        url: '/:productId-:productName',
+        url: '/:productId=:productName',
         data: {
           roles: ['User', 'Admin']
         },
@@ -180,7 +180,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       }
     })
       .state('products_index.product_details', {
-        url: '/:productId-:productName',
+        url: '/:productId=:productName',
         data: {
           roles: ['User', 'Admin']
         },
@@ -189,7 +189,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       })
 
     # .state('product_show', {
-    #   url: '/products/:category/:productId-:productName',
+    #   url: '/products/:category/:productId=:productName',
     #   data: {
     #     roles: ['User', 'Admin']
     #   },
@@ -202,7 +202,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
     # })
 
     .state('product_edit', {
-      url: '/products/:category/:productId-:productName/edit',
+      url: '/products/:category/:productId=:productName/edit',
       data: {
         roles: ['Admin']
       },
@@ -226,7 +226,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       }
     })
       .state('products_search.product_details', {
-        url: '/:productId-:productName',
+        url: '/:productId=:productName',
         data: {
           roles: ['User', 'Admin']
         },
