@@ -3,13 +3,14 @@
  # loading data
 
   $scope.loadOrder = ->
-    $scope.data = {}
+    $scope.data = window.mydata || {}
     ordersData.order_summary({}
       , (orders) ->
         $scope.data.orders = orders
         # console.log 'order'
         # console.log orders
         $scope.data.currentUser = window.currentUser  # it reads userId from head (see application.html.slim)
+        window.mydata = $scope.data
       , (error) ->
         console.log 'error'
         console.log error.status
