@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount JasmineRails::Engine => '/jasmine' if defined?(JasmineRails)
   root to: 'home#index'
 
   namespace :api, defaults: {format: :json} do

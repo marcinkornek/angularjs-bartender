@@ -1,15 +1,3 @@
-GIT
-  remote: git@github.com:guard/guard-jasmine.git
-  revision: d6a80e58401a782455667719bf054ef9faced35b
-  branch: jasmine-2
-  specs:
-    guard-jasmine (1.19.2)
-      childprocess
-      guard (>= 2.0.0)
-      multi_json
-      thor
-      tilt
-
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -65,10 +53,6 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-    celluloid (0.16.0)
-      timers (~> 4.0.0)
-    childprocess (0.5.5)
-      ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -93,7 +77,6 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.6)
     figaro (1.0.0)
       thor (~> 0.14)
     fog (1.23.0)
@@ -120,24 +103,11 @@ GEM
       fog-core
       fog-json
     formatador (0.2.5)
-    guard (2.6.1)
-      formatador (>= 0.2.4)
-      listen (~> 2.7)
-      lumberjack (~> 1.0)
-      pry (>= 0.9.12)
-      thor (>= 0.18.1)
     hashie (3.3.1)
     hike (1.2.3)
-    hitimes (1.2.2)
     i18n (0.6.11)
     inflecto (0.0.2)
     ipaddress (0.8.0)
-    jasmine-core (2.0.2)
-    jasmine-rails (0.10.2)
-      jasmine-core (>= 1.3, < 3.0)
-      phantomjs
-      railties (>= 3.1.0)
-      sprockets-rails
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -149,11 +119,6 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.2.0)
       launchy (~> 2.2)
-    listen (2.7.11)
-      celluloid (>= 0.15.2)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
-    lumberjack (1.0.9)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
@@ -195,7 +160,6 @@ GEM
       oauth2 (~> 0.9.3)
       omniauth (~> 1.2)
     pg (0.17.1)
-    phantomjs (1.9.7.1)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -253,9 +217,6 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
-    rb-fsevent (0.9.4)
-    rb-inotify (0.9.5)
-      ffi (>= 0.5.0)
     representable (1.8.5)
       multi_json
       nokogiri
@@ -316,8 +277,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    timers (4.0.1)
-      hitimes
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uber (0.0.9)
@@ -346,8 +305,6 @@ DEPENDENCIES
   faker
   figaro
   fog (~> 1.23.0)
-  guard-jasmine!
-  jasmine-rails
   jquery-rails
   jquery-ui-rails
   letter_opener

@@ -1,8 +1,8 @@
 h3.text-center translate="ABOUT_PAGE_TITLE"
 
 div
-  .col-md-2.align-center
-    = image_tag 'about.jpg', {size: "101x139", alt: "My photo"}
+  .col-md-2.align-center.about-me-image
+    img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/about_me_images/about.jpg")
 
   .col-md-10
     ' {{ "ABOUT_ME1" | translate }}

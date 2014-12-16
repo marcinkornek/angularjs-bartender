@@ -27,6 +27,8 @@ module Bartender
     config.i18n.available_locales = [:en, :pl]
     config.i18n.default_locale = :pl
 
+    config.assets.paths << Rails.root.join('spec/karma')
+
     config.assets.precompile += %w{locales/*.json}
   end
 end

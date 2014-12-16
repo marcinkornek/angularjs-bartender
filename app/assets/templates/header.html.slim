@@ -1,0 +1,61 @@
+nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
+  .container-fluid
+    .navbar-header
+      a.navbar-brand(ng-click="navHome()")
+        ' {{ "HEADER_LOGO" | translate }}
+
+    ul.nav.navbar-nav ng-show="data.user.id"
+      li
+        a(ng-click="navViewUser(data.user.id)")
+          ' {{ data.user.username }}
+
+    form.navbar-form.navbar-left role="search" ng-show="data.user.id"
+      .form-group(style='position:relative;')
+        input.form-control(id="search" placeholder="{{ 'HEADER_SEARCH_PRODUCTS_PLACEHOLDER' | translate }}" type="text" ng-model="formData.search_query" auto-complete)
+        / div(style='position:absolute;background-color:green;width:100%') 'asdasdasd'
+      button.btn.btn-default(type="submit" ng-click="searchProducts()")
+        ' {{ "HEADER_SEARCH_PRODUCTS_SUBMIT" | translate }}
+
+
+    ul.nav.navbar-nav.navbar-right
+      li
+        a
+          ' {{ formData.search_query }}
+      li(ng-show="data.locale=='en'")
+        a ng-click="changeLanguage('pl')" PL
+      li(ng-show="data.locale=='pl'")
+        a ng-click="changeLanguage('en')" EN
+
+      ul.nav.navbar-nav ng-show="data.user.id"
+        li.dropdown
+          /! Single button
+          li dropdown="" is-open="status.isopen"
+            a.dropdown-toggle ng-disabled="disabled" type="button"
+              ' {{ "HEADER_DROPDOWN_ACCOUNT" | translate }}
+              span.caret
+            ul.dropdown-menu role="menu"
+              li.text-center
+                a(ng-click="navViewUser(data.user.id)")
+                  ' {{ "HEADER_DROPDOWN_VIEW" | translate }}
+              li.text-center
+                a(ng-click="navEditUser(data.user.id)")
+                  ' {{ "HEADER_DROPDOWN_EDIT" | translate }}
+              li.text-center
+                a(ng-click="navOrdersHistory()")
+                  ' {{ "HEADER_DROPDOWN_ORDERS_HISTORY" | translate }}
+              li.text-center ng-show="data.user.role == 'Admin'"
+                a(ng-click="navUsersIndex()")
+                  ' {{ "HEADER_DROPDOWN_USERS_INDEX" | translate }}
+              .border-bottom
+              li.text-center
+                a(ng-click="destroySession()")
+                  ' {{ "HEADER_DROPDOWN_LOGOUT" | translate }}
+
+      ul.nav.navbar-nav.navbar-right ng-hide="data.user.id"
+        li
+          button(type="button" class="btn btn-default navbar-btn" ng-click="navNewSession()")
+            ' {{ "HEADER_SIGN_IN" | translate }}
+
+        li
+          a(ng-click="navNewUser()")
+            ' {{ "HEADER_SIGN_UP" | translate }}

@@ -6,7 +6,7 @@ div ng-repeat="category in data.categories"
   .category.pointer(ng-click="navProductIndex(category)")
     h3.text-center translate="{{category}}"
     .category-image
-      - if Rails.env.production?
-        img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/{{category}}.jpg")
-      - else
-        img(ng-src="uploads/categories/image/{{category}}.jpg")
+      / - if Rails.env.production?
+      / img(ng-src="https://s3.amazonaws.com/bartender-app-heroku/category_images/{{category}}.jpg")
+      / - else
+      img(ng-src="uploads/categories/image/{{category}}.jpg")
