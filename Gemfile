@@ -23,7 +23,7 @@ gem 'uglifier',                 '>= 1.3.0'
 gem 'coffee-rails',             '~> 4.0.0'
 gem 'coffee-rails-source-maps', '~> 1.4.0'
 gem 'execjs',                   '~> 2.1.0'
-gem 'ngmin-rails',              '~> 0.4.0'
+gem 'ngannotate-rails'
 gem 'autoprefixer-rails',       '~> 1.1.0'
 
 # assets
