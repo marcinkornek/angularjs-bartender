@@ -4,7 +4,7 @@ class Api::ProductsController < ApplicationController
 
   def index
     orders = OrderDetail.all.order(created_at: :desc)
-    recent_products = orders.map(&:product).uniq.extend(ProductsRepresenter)
+    recent_products = orders.map(&:product).uniq.take(12).extend(ProductsRepresenter)
     products = if !params[:category].blank?
       Product.send(params[:category]).order(:name).extend(ProductsRepresenter)
     else

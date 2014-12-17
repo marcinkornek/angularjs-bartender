@@ -164,7 +164,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
           roles: ['User', 'Admin']
         },
         templateUrl: 'body/products/products_index.product_details.html'
-        controller: 'ProductsIndexCtrl'
+        controller: 'ProductsIndexDetailsCtrl'
       })
 
     .state('products_index', {
@@ -185,7 +185,7 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
           roles: ['User', 'Admin']
         },
         templateUrl: 'body/products/products_index.product_details.html'
-        controller: 'ProductsIndexCtrl'
+        controller: 'ProductsIndexDetailsCtrl'
       })
 
     # .state('product_show', {
@@ -231,5 +231,5 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
           roles: ['User', 'Admin']
         },
         templateUrl: 'body/products/products_index.product_details.html'
-        controller: 'ProductsSearchCtrl'
+        controller: 'ProductsSearchDetailsCtrl'
       })

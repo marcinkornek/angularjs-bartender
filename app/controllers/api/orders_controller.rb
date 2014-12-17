@@ -32,11 +32,6 @@ class Api::OrdersController < ApplicationController
     end
   end
 
-  def last_orders
-    orders = OrderDetail.all.order(created_at: :desc)
-    render json: orders.map(&:product).uniq
-  end
-
   def order_summary
     session_order = session[:order] || session[:closed_order] || params[:id]
     session_items(session_order)
