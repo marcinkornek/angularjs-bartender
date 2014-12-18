@@ -40,7 +40,7 @@ gem 'rails-assets-angular-gravatar'
 gem 'rails-assets-Font-Awesome'
 
 # i18n
-gem 'rails-i18n'
+# gem 'rails-i18n'
 gem 'rails-assets-angular-translate'
 
 group :development, :test do
