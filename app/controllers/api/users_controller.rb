@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   before_action :current_user?, only:   [:update, :destroy]
   before_action :require_login, except: [:create, :activate, :show, :check_if_unique]
-  before_action :check_if_admin, except: [:create, :activate, :show, :check_if_unique]
+  before_action :check_if_admin, except: [:create, :activate, :show, :update, :avatar_upload, :check_if_unique]
 
   def index
     @users = User.all.order(created_at: :desc).extend(ListUsersRepresenter).paginate(:page => params[:page], :per_page => 10)

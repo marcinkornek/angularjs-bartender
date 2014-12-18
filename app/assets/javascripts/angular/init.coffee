@@ -39,6 +39,8 @@ angular.module('Bartender', [
     $translateProvider.useLoader('railsLocalesLoader')
     $translateProvider.preferredLanguage('pl')
 
+
+
 angular.module('Bartender').config(["$httpProvider", (provider) ->
   provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
 ])
@@ -62,3 +64,9 @@ angular.module('Bartender').run([ "$rootScope", "$state", "$stateParams", "autho
       # console.log 'false'
     authorization.authorize()
 ])
+
+angular.module("ui.gravatar").config [ "gravatarServiceProvider", (gravatarServiceProvider) ->
+  gravatarServiceProvider.defaults =
+    default: "mm" # Mystery man as default for missing avatars
+  gravatarServiceProvider.secure = true
+ ]

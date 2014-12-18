@@ -53,7 +53,7 @@ en:
 
   "USER_SHOW_USERNAME": "Username"
   "USER_SHOW_EMAIL": "Email"
-  "USER_SHOW_ID": "ID:"
+  "USER_SHOW_ID": "ID"
   "USER_SHOW_CREATED_AT": "Created at"
   "USER_SHOW_ROLE": "Role"
   "USER_SHOW_EDIT": "Edit"

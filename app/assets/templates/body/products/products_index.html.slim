@@ -3,7 +3,7 @@
     .inline-block translate="{{data.products.category}}"
     ' ({{ data.products.results }})
 
-  row(ng-repeat="product in data.products.products" class="products")
+  .inline-block(ng-repeat="product in data.products.products" class="products")
     .pointer class="product-{{product.id}} inline-block" ui-sref=".product_details({productId: product.id, productName: product.parameterize })"
       .align-center(ng-click="navProductOrder(product.category, product.id, product.name)")
         ' {{ product.name }}
@@ -16,7 +16,7 @@
     .inline-block translate="PRODUCTS_INDEX_ALL_PRODUCTS"
     ' ({{ data.products.results }})
 
-  row(ng-repeat="product in data.products.products" class="products")
+  .inline-block(ng-repeat="product in data.products.products" class="products")
     .pointer class="product-{{product.id}} inline-block" ui-sref="products_index.product_details({category: product.category, productId: product.id, productName: product.parameterize })"
       .align-center
         ' {{ product.name }}
