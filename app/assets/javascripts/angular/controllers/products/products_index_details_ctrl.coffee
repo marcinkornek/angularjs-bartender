@@ -9,6 +9,7 @@
     $scope.data.current_user = window.currentUser
     productData.get({id: $stateParams.productId}
       , (product) ->
+        $scope.data.product_category = product.product.category
         $scope.data.product = product
         $scope.formData.product_detail = product.product_details[1] || product.product_details[0]
       , (error) ->

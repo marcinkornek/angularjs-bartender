@@ -231,5 +231,5 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
           roles: ['User', 'Admin']
         },
         templateUrl: 'body/products/products_index.product_details.html'
-        controller: 'ProductsSearchDetailsCtrl'
+        controller: 'ProductsIndexDetailsCtrl'
       })
