@@ -6,6 +6,7 @@ angular.module('Bartender', [
   'ui.bootstrap',
   'angularFileUpload',
   'ui.gravatar',
+  'ngAnimate',
 ])
   .factory 'railsLocalesLoader', ($http) ->
     (options) ->

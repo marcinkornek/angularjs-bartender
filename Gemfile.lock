@@ -184,6 +184,8 @@ GEM
       sprockets-rails (~> 2.0)
     rails-assets-Font-Awesome (4.2.0)
     rails-assets-angular (1.2.16)
+    rails-assets-angular-animate (1.2.16)
+      rails-assets-angular (= 1.2.16)
     rails-assets-angular-bootstrap (0.11.2)
       rails-assets-angular (>= 1)
     rails-assets-angular-cache (2.3.4)
@@ -317,6 +319,7 @@ DEPENDENCIES
   rails (~> 4.1.7)
   rails-assets-Font-Awesome
   rails-assets-angular (~> 1.2.0)
+  rails-assets-angular-animate
   rails-assets-angular-bootstrap
   rails-assets-angular-cache
   rails-assets-angular-file-upload

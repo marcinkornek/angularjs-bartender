@@ -12,6 +12,7 @@
 //= require angular-mocks
 //= require angular-file-upload
 //= require angular-gravatar
+//= require angular-animate
 //
 //= require ./angular/init
 //= require ./angular/routes
