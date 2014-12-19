@@ -8,13 +8,20 @@
     .inline-block translate="PRODUCTS_INDEX_ALL_PRODUCTS"
     ' ({{ data.products.results }})
 
+div
+  button type="button" class="btn btn-default" aria-label="Left Align" ng-click="changeImagesSize(100, '+')"
+    span class="glyphicon glyphicon-plus" aria-hidden="true"
+  button type="button" class="btn btn-default" aria-label="Left Align" ng-click="changeImagesSize(100, '-')"
+    span class="glyphicon glyphicon-minus" aria-hidden="true"
+  button type="button" class="btn btn-default" aria-label="Left Align" ng-click="changeImagesSize(100, 'default')"
+    ' default
 .inline-block(ng-repeat="product in data.products.products" class="products")
   .pointer class="product-{{product.id}} inline-block" ui-sref="products_index.product_details({category: product.category, productId: product.id, productName: product.parameterize })" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"
     .align-center
       ' {{ product.name }}
 
       .product-image
-        img(ng-src="{{product.image.image.thumb.url}}")
+        img(ng-src="{{product.image.image.normal.url}}" id="image-{{product.id}}" loaded="setImageSizeFromCookie()")
 
         .absulute.alpha40.text-white ng-click="navProductEdit(product.category, product.id, product.parameterize)" ng-show="hoverEdit && data.current_user.role == 'Admin'" class="animate-show"
           ' {{ "PRODUCTS_INDEX_EDIT_PRODUCT" | translate }}
