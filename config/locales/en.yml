@@ -94,6 +94,7 @@ en:
   "PRODUCTS_INDEX_ALL_PRODUCTS": "All products"
   "PRODUCTS_INDEX_LAST_PRODUCTS": "Recently bought products"
   "PRODUCTS_INDEX_ADD_PRODUCT": "Add product"
+  "PRODUCTS_INDEX_EDIT_PRODUCT": "Edit product"
   "PRODUCTS_INDEX_CURRENCY": "zł"
 
   "PRODUCT_FORM_NEW_TITLE": "Add product"
@@ -115,7 +116,7 @@ en:
   "PRODUCT_FORM_CURRENT_IMAGE": "current image"
   "PRODUCT_FORM_REMOVE_IMAGE": "remove image"
   "PRODUCT_FORM_CREATE": "Add product"
-  "PRODUCT_FORM_EDIT": "Add product"
+  "PRODUCT_FORM_EDIT": "Edit product"
 
   "PRODUCT_FORM_ERROR_NAME_REQUIRED": "Name is required"
   "PRODUCT_FORM_ERROR_NAME_LONG": "Name is too long"

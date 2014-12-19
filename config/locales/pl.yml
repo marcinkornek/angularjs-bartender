@@ -101,6 +101,7 @@ pl:
   "PRODUCTS_INDEX_ALL_PRODUCTS": "Wszystkie produkty"
   "PRODUCTS_INDEX_LAST_PRODUCTS": "Ostatnio kupione produkty"
   "PRODUCTS_INDEX_ADD_PRODUCT": "Dodaj produkty"
+  "PRODUCTS_INDEX_EDIT_PRODUCT": "Edytuj produkt"
   "PRODUCTS_INDEX_CURRENCY": "zł"
 
   "PRODUCT_FORM_NEW_TITLE": "Dodaj produkt"

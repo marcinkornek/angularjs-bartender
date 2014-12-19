@@ -17,6 +17,14 @@
 
   $scope.loadProducts()
 
+  # # functions
+
+  $scope.hoverIn = ->
+    @hoverEdit = true
+
+  $scope.hoverOut = ->
+    @hoverEdit = false
+
   # # navigation
 
   $scope.navProductShow = (category, productId, productName) ->
@@ -24,5 +32,8 @@
 
   $scope.navProductNew = ->
     $state.go('product_new')
+
+  $scope.navProductEdit = (category, productId, productName) ->
+    $state.go('product_edit', {category: category, productId: productId, productName: productName})
 
 @ProductsIndexCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'productData', 'ordersData']

@@ -3,26 +3,21 @@
     .inline-block translate="{{data.products.category}}"
     ' ({{ data.products.results }})
 
-  .inline-block(ng-repeat="product in data.products.products" class="products")
-    .pointer class="product-{{product.id}} inline-block" ui-sref=".product_details({productId: product.id, productName: product.parameterize })"
-      .align-center(ng-click="navProductOrder(product.category, product.id, product.name)")
-        ' {{ product.name }}
-
-        .product-image
-          img(ng-src="{{product.image.image.thumb.url}}")
-
 .all ng-hide="data.products.category"
   h3.text-center
     .inline-block translate="PRODUCTS_INDEX_ALL_PRODUCTS"
     ' ({{ data.products.results }})
 
-  .inline-block(ng-repeat="product in data.products.products" class="products")
-    .pointer class="product-{{product.id}} inline-block" ui-sref="products_index.product_details({category: product.category, productId: product.id, productName: product.parameterize })"
-      .align-center
-        ' {{ product.name }}
+.inline-block(ng-repeat="product in data.products.products" class="products")
+  .pointer class="product-{{product.id}} inline-block" ui-sref="products_index.product_details({category: product.category, productId: product.id, productName: product.parameterize })" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"
+    .align-center
+      ' {{ product.name }}
 
-        .product-image
-          img(ng-src="{{product.image.image.thumb.url}}")
+      .product-image
+        img(ng-src="{{product.image.image.thumb.url}}")
+
+        .absulute.alpha40.text-white ng-click="navProductEdit(product.category, product.id, product.parameterize)" ng-show="hoverEdit && data.current_user.role == 'Admin'" class="animate-show"
+          ' {{ "PRODUCTS_INDEX_EDIT_PRODUCT" | translate }}
 
 div(ui-view="")
 

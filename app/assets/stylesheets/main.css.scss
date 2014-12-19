@@ -85,3 +85,26 @@ h2, h3 {
 .pointer {
     cursor: pointer;
 }
+
+.alpha40 {
+  /* Fallback for web browsers that don't support RGBa */
+  background-color: rgb(0, 0, 0);
+  /* RGBa with 0.4 opacity */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* For IE 5.5 - 7*/
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+.text-white {
+  color: white;
+}
+
+.absulute {
+  display: inline-block;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  width:102px
+}
