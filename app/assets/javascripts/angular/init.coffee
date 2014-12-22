@@ -69,7 +69,7 @@ angular.module('Bartender').run([ "$rootScope", "$state", "$stateParams", "autho
       # console.log 'false'
     authorization.authorize()
   $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
-    console.log 'success'
+    # console.log 'success'
 ])
 
 angular.module("ui.gravatar").config [ "gravatarServiceProvider", (gravatarServiceProvider) ->

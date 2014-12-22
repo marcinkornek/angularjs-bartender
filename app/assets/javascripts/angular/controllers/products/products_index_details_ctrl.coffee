@@ -1,4 +1,4 @@
-@ProductsIndexDetailsCtrl = ($scope, $state, $stateParams, $http, productData, ordersData ) ->
+@ProductsIndexDetailsCtrl = ($scope, $state, $stateParams, $http, productData, ordersData, product) ->
 
   # # loading data
 
@@ -7,16 +7,9 @@
     $scope.formData = {}
     $scope.formData.amount = 1
     $scope.data.current_user = window.currentUser
-    productData.get({id: $stateParams.productId}
-      , (product) ->
-        $scope.data.product_category = product.product.category
-        $scope.data.product = product
-        $scope.formData.product_detail = product.product_details[1] || product.product_details[0]
-      , (error) ->
-        console.log 'error'
-        console.log error.status
-        $scope.data.product.error = 'There is no such product'
-    )
+    $scope.data.product_category = product.product.category
+    $scope.data.product = product
+    $scope.formData.product_detail = product.product_details[1] || product.product_details[0]
 
   if $stateParams.productId
     $scope.loadProduct()
@@ -91,4 +84,4 @@
   $scope.navProductEdit = (category, productId, productName) ->
     $state.go('product_edit', {category: category, productId: productId, productName: productName})
 
-@ProductsIndexDetailsCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'productData', 'ordersData']
+@ProductsIndexDetailsCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'productData', 'ordersData', 'product']

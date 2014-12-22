@@ -175,6 +175,12 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         },
         templateUrl: 'body/products/products_index.product_details.html'
         controller: 'ProductsIndexDetailsCtrl'
+        resolve: {
+          product: (productData, $stateParams) ->
+            id = $stateParams.productId || null
+            data = productData.get({id: id})
+            data.$promise
+        }
       })
 
     .state('products_index', {
@@ -191,7 +197,6 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
       resolve: {
         products: (productData, $stateParams) ->
           category = $stateParams.category || null
-          console.log category
           data = productData.query({category: category})
           data.$promise
       }
@@ -203,6 +208,12 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         },
         templateUrl: 'body/products/products_index.product_details.html'
         controller: 'ProductsIndexDetailsCtrl'
+        resolve: {
+          product: (productData, $stateParams) ->
+            id = $stateParams.productId || null
+            data = productData.get({id: id})
+            data.$promise
+        }
       })
 
     # .state('product_show', {
@@ -249,4 +260,10 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         },
         templateUrl: 'body/products/products_index.product_details.html'
         controller: 'ProductsIndexDetailsCtrl'
+        resolve: {
+          product: (productData, $stateParams) ->
+            id = $stateParams.productId || null
+            data = productData.get({id: id})
+            data.$promise
+        }
       })
