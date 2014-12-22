@@ -19,6 +19,11 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'ProductsIndexCtrl',  templateUrl: 'body/products/products_index.html' }
         "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
+      },
+      resolve: {
+        products: (productData, $stateParams) ->
+          data = productData.query({})
+          data.$promise
       }
     })
 
@@ -156,6 +161,11 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'ProductsIndexCtrl',  templateUrl: 'body/products/recent_products_index.html' }
         "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
+      },
+      resolve: {
+        products: (productData, $stateParams) ->
+          data = productData.query({})
+          data.$promise
       }
     })
       .state('recent_products_index.product_details', {
@@ -177,6 +187,13 @@ angular.module('Bartender').config ($stateProvider, $urlRouterProvider) ->
         "navigation": { controller: 'GlobalNavigationCtrl', templateUrl: 'navigation/navigation.html' }
         "body":       { controller: 'ProductsIndexCtrl',  templateUrl: 'body/products/products_index.html' }
         "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
+      },
+      resolve: {
+        products: (productData, $stateParams) ->
+          category = $stateParams.category || null
+          console.log category
+          data = productData.query({category: category})
+          data.$promise
       }
     })
       .state('products_index.product_details', {

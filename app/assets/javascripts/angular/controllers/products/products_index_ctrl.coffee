@@ -1,4 +1,4 @@
-@ProductsIndexCtrl = ($scope, $state, $stateParams, $http, productData, ordersData, $cookies) ->
+@ProductsIndexCtrl = ($scope, $state, $stateParams, $http, productData, ordersData, $cookies, products) ->
 
   # # loading data
 
@@ -6,25 +6,33 @@
     $scope.data = window.products || {}
     $scope.data.category = $stateParams.category
     $scope.data.current_user = window.currentUser
-    a = productData.query({category: $stateParams.category}
-      , (products) =>
-        $scope.data.products = products
-        # console.log products
-        window.products = products
-      , (error) ->
-        console.log 'error'
-        console.log error.status
-    ).$promise.then ->
-        # console.log 'promise'
-        $scope.setImageSizeFromCookie()
+    $scope.data.products = products
+    $scope.setImageSizeFromCookie()
+
+  # $scope.loadProducts = ->
+  #   $scope.data = window.products || {}
+  #   $scope.data.category = $stateParams.category
+  #   $scope.data.current_user = window.currentUser
+  #   productData.query({category: $stateParams.category}
+  #     , (products) =>
+  #       $scope.data.products = products
+  #       # console.log products
+  #       window.products = products
+  #     , (error) ->
+  #       console.log 'error'
+  #       console.log error.status
+  #   ).$promise.then ->
+  #       # console.log 'promise'
+  #       $scope.setImageSizeFromCookie()
 
   $scope.setImageSizeFromCookie = ->
-    _.delay ->
+    _.defer ->
       img = $('.product-image img')
       height = $cookies.productImageSize || 100
       img.css('height', height)
-    , 1
     false
+
+  $scope.loadProducts()
 
   # # functions
 
@@ -51,7 +59,6 @@
 
     false
 
-  $scope.loadProducts()
 
   # # navigation
 
@@ -64,4 +71,4 @@
   $scope.navProductEdit = (category, productId, productName) ->
     $state.go('product_edit', {category: category, productId: productId, productName: productName})
 
-@ProductsIndexCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'productData', 'ordersData', '$cookies']
+@ProductsIndexCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'productData', 'ordersData', '$cookies', 'products']

@@ -52,9 +52,12 @@ angular.module('Bartender').config(["$httpProvider", (provider) ->
 # ###
 
 angular.module('Bartender').run([ "$rootScope", "$state", "$stateParams", "authorization", "principal", ($rootScope, $state, $stateParams, authorization, principal) ->
-  $rootScope.$on "$stateChangeStart", (event, toState, toStateParams) ->
+  $rootScope.$on "$stateChangeStart", (event, toState, toParams, fromState, fromParams) ->
+    # console.log "toState.name: " + toState.name
+    # console.log "fromState.name: " + fromState.name
+    # console.log "----------------------"
     $rootScope.toState = toState
-    $rootScope.toStateParams = toStateParams
+    $rootScope.toStateParams = toParams
     # console.log window.currentUser.id
     if window.currentUser.id
       # console.log 'true'
@@ -65,6 +68,8 @@ angular.module('Bartender').run([ "$rootScope", "$state", "$stateParams", "autho
       principal.authenticate(null)
       # console.log 'false'
     authorization.authorize()
+  $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
+    console.log 'success'
 ])
 
 angular.module("ui.gravatar").config [ "gravatarServiceProvider", (gravatarServiceProvider) ->
