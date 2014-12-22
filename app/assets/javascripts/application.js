@@ -13,6 +13,7 @@
 //= require angular-file-upload
 //= require angular-gravatar
 //= require angular-animate
+//= require angular-cookies
 //
 //= require ./angular/init
 //= require ./angular/routes

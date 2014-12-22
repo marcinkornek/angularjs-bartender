@@ -189,6 +189,8 @@ GEM
     rails-assets-angular-bootstrap (0.11.2)
       rails-assets-angular (>= 1)
     rails-assets-angular-cache (2.3.4)
+    rails-assets-angular-cookies (1.2.16)
+      rails-assets-angular (= 1.2.16)
     rails-assets-angular-file-upload (1.1.5)
       rails-assets-angular (~> 1.2.11)
       rails-assets-es5-shim (>= 3.4.0)
@@ -322,6 +324,7 @@ DEPENDENCIES
   rails-assets-angular-animate
   rails-assets-angular-bootstrap
   rails-assets-angular-cache
+  rails-assets-angular-cookies
   rails-assets-angular-file-upload
   rails-assets-angular-gravatar
   rails-assets-angular-mocks
