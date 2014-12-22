@@ -1,4 +1,4 @@
-@GlobalHeaderCtrl = ($scope, $state, sessionData, productData, principal, $translate, $stateParams, $cookies) ->
+@GlobalHeaderCtrl = ($scope, $state, sessionData, productData, principal, $translate, $stateParams, $cookies, $http) ->
 
   # loading data
 
@@ -9,6 +9,14 @@
   $scope.loadSearchQuery()
 
   # functions
+
+  $scope.getSearchResults = (val) ->
+    $http.get("/api/product_names",
+      params:
+        query: val
+    ).then (response) ->
+      response.data.map (item) ->
+        item
 
   $scope.destroySession = ->
     sessionData.delete((response) ->
@@ -79,4 +87,4 @@
   $scope.navUsersIndex = ->
     $state.go('users_index')
 
-@GlobalHeaderCtrl.$inject = ['$scope', '$state', 'sessionData', 'productData', 'principal', '$translate', '$stateParams', '$cookies']
+@GlobalHeaderCtrl.$inject = ['$scope', '$state', 'sessionData', 'productData', 'principal', '$translate', '$stateParams', '$cookies', '$http']

@@ -7,30 +7,6 @@
     $scope.data.category = $stateParams.category
     $scope.data.current_user = window.currentUser
     $scope.data.products = products
-    $scope.setImageSizeFromCookie()
-
-  # $scope.loadProducts = ->
-  #   $scope.data = window.products || {}
-  #   $scope.data.category = $stateParams.category
-  #   $scope.data.current_user = window.currentUser
-  #   productData.query({category: $stateParams.category}
-  #     , (products) =>
-  #       $scope.data.products = products
-  #       # console.log products
-  #       window.products = products
-  #     , (error) ->
-  #       console.log 'error'
-  #       console.log error.status
-  #   ).$promise.then ->
-  #       # console.log 'promise'
-  #       $scope.setImageSizeFromCookie()
-
-  $scope.setImageSizeFromCookie = ->
-    _.defer ->
-      img = $('.product-image img')
-      height = $cookies.productImageSize || 100
-      img.css('height', height)
-    false
 
   $scope.loadProducts()
 
