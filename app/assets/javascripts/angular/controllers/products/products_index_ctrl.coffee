@@ -1,4 +1,4 @@
-@ProductsIndexCtrl = ($scope, $state, $stateParams, $http, productData, ordersData ) ->
+@ProductsIndexCtrl = ($scope, $state, $stateParams, $http, productData, ordersData, $cookies) ->
 
   # # loading data
 
@@ -6,16 +6,25 @@
     $scope.data = window.products || {}
     $scope.data.category = $stateParams.category
     $scope.data.current_user = window.currentUser
-    productData.query({category: $stateParams.category}
+    a = productData.query({category: $stateParams.category}
       , (products) =>
         $scope.data.products = products
+        # console.log products
         window.products = products
       , (error) ->
         console.log 'error'
         console.log error.status
-    )
+    ).$promise.then ->
+        # console.log 'promise'
+        $scope.setImageSizeFromCookie()
 
-  $scope.loadProducts()
+  $scope.setImageSizeFromCookie = ->
+    _.delay ->
+      img = $('.product-image img')
+      height = $cookies.productImageSize || 100
+      img.css('height', height)
+    , 1
+    false
 
   # # functions
 
@@ -24,18 +33,6 @@
 
   $scope.hoverOut = ->
     @hoverEdit = false
-
-  $scope.readCookie = (name) ->
-    nameEQ = name + "="
-    ca = document.cookie.split(";")
-    i = 0
-
-    while i < ca.length
-      c = ca[i]
-      c = c.substring(1, c.length)  while c.charAt(0) is " "
-      return c.substring(nameEQ.length, c.length)  if c.indexOf(nameEQ) is 0
-      i++
-    null
 
   $scope.changeImagesSize = (def, sign) ->
     img = $('.product-image img')
@@ -49,22 +46,12 @@
       when 'default'
         height = def
     img.css('height', height)
-    document.cookie =
-      'productImageSize='+height+'; path=/'
-    console.log $scope.readCookie('productImageSize')
+    $cookies.productImageSize = height
+    console.log $cookies.productImageSize
+
     false
 
-  $scope.setImageSizeFromCookie = ->
-    # _.delay ->
-    img = $('.product-image img')
-    # console.log img
-    height = $scope.readCookie('productImageSize') || 100
-    # console.log height
-    img.css('height', height)
-    # , 2000
-    false
-
-  # $scope.setImageSizeFromCookie()
+  $scope.loadProducts()
 
   # # navigation
 
@@ -77,4 +64,4 @@
   $scope.navProductEdit = (category, productId, productName) ->
     $state.go('product_edit', {category: category, productId: productId, productName: productName})
 
-@ProductsIndexCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'productData', 'ordersData']
+@ProductsIndexCtrl.$inject = ['$scope', '$state', '$stateParams', '$http', 'productData', 'ordersData', '$cookies']

@@ -1,22 +1,10 @@
-@GlobalHeaderCtrl = ($scope, $state, sessionData, productData, principal, $translate, $stateParams) ->
+@GlobalHeaderCtrl = ($scope, $state, sessionData, productData, principal, $translate, $stateParams, $cookies) ->
 
   # loading data
 
   $scope.loadSearchQuery = ->
     $scope.formData = {}
     $scope.formData.search_query = $stateParams.searchQuery
-
-  $scope.readCookie = (name) ->
-    nameEQ = name + "="
-    ca = document.cookie.split(";")
-    i = 0
-
-    while i < ca.length
-      c = ca[i]
-      c = c.substring(1, c.length)  while c.charAt(0) is " "
-      return c.substring(nameEQ.length, c.length)  if c.indexOf(nameEQ) is 0
-      i++
-    null
 
   $scope.loadSearchQuery()
 
@@ -38,15 +26,14 @@
 
   $scope.setLanguage = ->
     $scope.data = {}
-    $scope.data.locale = $scope.readCookie('locale')
+    $scope.data.locale = $cookies.locale
     $translate.use $scope.data.locale
 
   $scope.setLanguage()
 
   $scope.changeLanguage = (key) ->
     $translate.use key
-    document.cookie = 'locale='+key+'; path=/'
-    $scope.data.locale = $scope.readCookie('locale')
+    $cookies.locale = $scope.data.locale = key
 
   # dropdown
 
@@ -65,7 +52,7 @@
   $scope.loadData = ->
     $scope.data = {}
     $scope.data.user =  window.currentUser
-    $scope.data.locale = $scope.readCookie('locale')
+    $scope.data.locale = $cookies.locale
 
   $scope.loadData()
 
@@ -92,4 +79,4 @@
   $scope.navUsersIndex = ->
     $state.go('users_index')
 
-@GlobalHeaderCtrl.$inject = ['$scope', '$state', 'sessionData', 'productData', 'principal', '$translate', '$stateParams']
+@GlobalHeaderCtrl.$inject = ['$scope', '$state', 'sessionData', 'productData', 'principal', '$translate', '$stateParams', '$cookies']
